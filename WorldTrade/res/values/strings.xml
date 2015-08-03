@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WorldTrade</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="CCmb1">首页</string>
+    <string name="CCmb2">分类</string>
+    <string name="CCmb3">商坛</string>
+        <string name="CCmb4">My Trade</string>
+        <string name="CCmb5">更多</string>
+     <string name="aa1">商户</string>   
+     <string name="aa2">供应商</string>   
+</resources>

@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+   
+    <FrameLayout
+        android:id="@+id/main_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/main_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/main_tab_item_jingxuan"
+            style="@style/main_tab_item"
+            android:checked="true"
+            android:drawableTop="@drawable/btn1"
+            android:text="@string/CCmb1" />
+
+        <RadioButton
+            android:id="@+id/main_tab_item_zhuanti"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/btn2"
+            android:text="@string/CCmb2" />
+        <RadioButton
+            android:id="@+id/main_add"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/btn3"
+            android:text="@string/CCmb3" />
+        
+      
+
+    
+        <RadioButton
+            android:id="@+id/main_tab_item_hongdong"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/btn4"
+            android:text="@string/CCmb4" />
+
+        <RadioButton
+            android:id="@+id/main_tab_item_article"
+            style="@style/main_tab_item"
+            android:drawableTop="@drawable/btn5"
+            android:text="@string/CCmb5" />
+    </RadioGroup>
+
+</LinearLayout>

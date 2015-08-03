@@ -1,0 +1,135 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+     <RelativeLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="130dp"
+       >
+    <com.tianshicoffeeom.app.imgscroll.MyImgScroll
+        android:id="@+id/myvp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <LinearLayout
+        android:id="@+id/vb"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal" >
+    </LinearLayout>
+</RelativeLayout>
+  <LinearLayout 
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical"
+      android:background="@drawable/aa1"
+      >
+     <RelativeLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         >
+         <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/aa2"
+             android:id="@+id/mIvaa2"
+             />
+         <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/aa4"
+             android:layout_alignParentRight="true"
+             android:id="@+id/mIvaa4"
+             />
+                  <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/aa3"
+             android:paddingTop="10dp"
+             android:layout_toLeftOf="@id/mIvaa4"
+             android:id="@+id/mIvaa3"
+             />
+         
+         </RelativeLayout>
+      <LinearLayout 
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          >
+          <RelativeLayout 
+           android:layout_width="0dp"
+           android:layout_weight="1"    
+           android:layout_marginRight="5dp"
+                      android:layout_marginLeft="5dp"
+           
+           android:id="@+id/mRlf11"
+           android:layout_height="wrap_content"
+           android:background="@drawable/aa7"
+              >
+             <TextView 
+              android:layout_width="fill_parent"
+              android:gravity="center"
+              android:paddingTop="4dp"
+              android:textColor="@color/black"
+              android:layout_height="wrap_content"
+              android:text="@string/aa1"
+              />
+          </RelativeLayout>
+          <RelativeLayout 
+           android:layout_width="0dp"
+           android:layout_marginRight="5dp"
+                      android:layout_marginLeft="5dp"
+                      android:id="@+id/mRlf12"
+           android:layout_weight="1"    
+           android:layout_height="wrap_content"
+           android:background="@drawable/aa8"
+              >
+           <TextView 
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+              
+                            android:gravity="center"
+               android:paddingTop="4dp"
+              android:text="@string/aa2"
+              />
+              
+          </RelativeLayout>
+          </LinearLayout>
+     <RelativeLayout 
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         >
+     <ListView 
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:id="@+id/mLvf11"
+                     android:visibility="gone"
+         
+         ></ListView>
+           <ProgressBar
+            android:id="@+id/progressBar_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+     
+        <TextView
+            android:id="@+id/tv_noresut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="無相關搜索結果"
+            android:visibility="invisible"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+     </RelativeLayout>
+     </LinearLayout>
+
+</LinearLayout>
