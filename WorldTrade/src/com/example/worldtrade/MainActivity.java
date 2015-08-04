@@ -11,9 +11,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
 public class MainActivity extends FragmentActivity implements OnCheckedChangeListener {
@@ -25,6 +27,7 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 	private Fragment5 f5;
 	private RadioGroup group;
 	private ArrayList<Fragment> fragments;
+	private long exitTime = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,20 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		
 	}
 
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		if(event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_BACK){
+			if((System.currentTimeMillis() - exitTime) > 2000){
+				Toast.makeText(getApplicationContext(), R.string.toast, 1).show();
+				exitTime = System.currentTimeMillis();
+				}else{
+					finish();
+					android.os.Process.killProcess(android.os.Process.myPid());
+				}
+			return true;
+			}
+		return super.dispatchKeyEvent(event);
+	}
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		int childCount = group.getChildCount();

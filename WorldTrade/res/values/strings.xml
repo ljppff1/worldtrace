@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+   <string name="back">返回</string>
     <string name="app_name">WorldTrade</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="CCmb1">首页</string>
     <string name="CCmb2">分类</string>
-    <string name="CCmb3">商坛</string>
+    <string name="CCmb3">展会</string>
         <string name="CCmb4">My Trade</string>
         <string name="CCmb5">更多</string>
+        <string name="toast">再按一次退出程序</string>
      <string name="aa1">商户</string>   
      <string name="aa2">供应商</string>   
+     <string name="aa3">地区</string>   
      <string name="ab1">行业分类</string>
      <string name="b1">消费品制造业</string>
      <string name="b2">能源业</string>
@@ -22,4 +24,50 @@
      <string name="b8">服务业</string>
      <string name="b9">电讯业</string>
      <string name="b10">公用事业</string>
+     
+     <string name="c1">化工产品</string>
+     <string name="c2">新能源材料</string>
+          <string name="c3">华肥产业</string>
+          <string name="c4">林木业</string>
+               <string name="c5">有色金属</string>
+               <string name="c6">其它矿物</string>
+                    <string name="c7">造纸</string>
+                    <string name="c8">贵金属</string>
+                         <string name="c9">钢铁</string>
+                         
+      <string name="ad1">XXXXXX有限公司</string>   
+      <string name="ad2">公司简介</string>   
+            <string name="ad3">我的收藏</string>   
+            <string name="ad4">客户评价</string>   
+                  <string name="ad5">行程表</string>   
+                  <string name="ad6">产品发布</string>   
+                        <string name="ad7">产品列表</string>   
+                        <string name="ad8">即时通讯(10)</string>   
+                        <string name="ad9">购买VIP全员</string>   
+                        <string name="ad10">刊登广告</string>
+                        <string name="ad11">消息中心</string>
+    <string name="ad12">设置</string>
+                        
+        <string name="ax1">收藏</string>
+        <string name="ax2">即时通讯</string>
+        <string name="ax3">xxxxxxxx文字简介XXXXXXXXXXXXXXXX</string>
+        <string name="ax4">地区：长沙湾</string>
+    
+     <string name="az1">翻译</string>                   
+     <string name="az2">公司详细介绍</string>                   
+     <string name="az3">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</string>
+     <string name="az4">联络我们</string>
+     <string name="az5">联络人:陈大文</string>
+          <string name="az6">联络电话:XXXXXXXX</string>
+          <string name="az7">电子邮箱:XXXXXXX@XXX.com</string>
+          <string name="az8">公司地址:XXXXXXXXXXXXXXX</string>
+          <string name="az9">产品详情(10)</string>
+                    <string name="az11">客户评价(110)</string>
+                    <string name="az12">行程表</string>
+                    <string name="ac11">进入</string>
+                    <string name="ac12">XXX公司建筑设计展会</string>
+                    <string name="ac13">公司简介</string>
+                                        <string name="ac14">联络我们</string>
+                                        <string name="ac15">产品详情XXXX</string>
+                                        
 </resources>

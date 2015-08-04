@@ -28,7 +28,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.worldtrade.ItemlistActivity"></activity>
         <activity android:name="com.example.worldtrade.MainActivity"></activity>
+        <activity android:name="com.example.worldtrade.ItemNextActivity"></activity>
+        <activity android:name="com.example.worldtrade.F3NextActivity"></activity>
+        <activity android:name="com.example.worldtrade.ItemNextDetailActivity"></activity>
     </application>
 
 </manifest>

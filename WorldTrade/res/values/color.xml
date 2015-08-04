@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-<color name="lightyellow">#FFFFE0</color><!--亮黄色 -->
+<color name="lightyellow">#e0ffffff</color><!--亮黄色 -->
+    <color name="half_transparent">#3f000000</color>
 
 <color name="yellow">#FFFF00</color><!--黄色 -->
      <color name="transparent">#00000000</color>
@@ -88,7 +89,7 @@
 
 <color name="honeydew">#F0FFF0</color><!--蜜色 -->
 
-<color name="aliceblue">#F0F8FF</color><!--艾利斯兰 -->
+<color name="aliceblue">#99ccff</color><!--艾利斯兰 -->
 
 <color name="khaki">#F0E68C</color><!--黄褐色 -->
 
