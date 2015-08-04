@@ -3,8 +3,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/ab1"
    >
-
+   
+    <include layout="@layout/layout_top"/>
+      <GridView 
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:id="@+id/mGvm1"
+      android:verticalSpacing="30dp"
+      android:horizontalSpacing="30dp"
+      android:numColumns="2"
+      ></GridView>
+    
+    
    
 
 </LinearLayout>

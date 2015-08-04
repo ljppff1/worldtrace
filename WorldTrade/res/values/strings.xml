@@ -11,4 +11,15 @@
         <string name="CCmb5">更多</string>
      <string name="aa1">商户</string>   
      <string name="aa2">供应商</string>   
+     <string name="ab1">行业分类</string>
+     <string name="b1">消费品制造业</string>
+     <string name="b2">能源业</string>
+     <string name="b3">金融业</string>
+     <string name="b4">工业制品业</string>
+     <string name="b5">资讯科技业</string>
+     <string name="b6">原材料业</string>
+     <string name="b7">地产建筑业</string>
+     <string name="b8">服务业</string>
+     <string name="b9">电讯业</string>
+     <string name="b10">公用事业</string>
 </resources>
