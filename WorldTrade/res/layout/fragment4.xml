@@ -61,11 +61,16 @@
             
         </RelativeLayout>
     </RelativeLayout>
-
+<View 
+            android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:background="@color/white"
+    
+    />
     <LinearLayout 
         android:layout_width="fill_parent"
-        android:layout_marginTop="15dp"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:orientation="horizontal"
         >
         <RelativeLayout 
@@ -81,6 +86,11 @@
                 android:drawableTop="@drawable/ad5"
                 />
         </RelativeLayout>
+        <View 
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/black"
+            />
         <RelativeLayout 
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -94,6 +104,12 @@
                 android:drawableTop="@drawable/ad6"
                 />
         </RelativeLayout>
+                <View 
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/black"
+            />
+        
                 <RelativeLayout 
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -109,10 +125,10 @@
         </RelativeLayout>
         
     </LinearLayout>
+    
    <LinearLayout 
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
-       android:layout_marginTop="15dp"
                   android:layout_marginLeft="15dp"
        
         android:layout_marginRight="15dp"
@@ -122,11 +138,17 @@
            android:layout_weight="1"
            android:layout_height="wrap_content"
            android:layout_marginRight="15dp"
+           android:layout_marginTop="15dp"
+           android:paddingTop="8dp"
+           android:paddingBottom="8dp"
+           android:background="@color/white"
            android:layout_width="wrap_content"
            >
             <ImageView 
                 android:layout_width="28dp"
                 android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                
                 android:src="@drawable/ad8"
                 />
            <TextView  android:textColor="@color/black" 
@@ -146,7 +168,10 @@
        </RelativeLayout>
        <RelativeLayout 
            android:layout_weight="1"           android:layout_marginLeft="15dp"
-          
+           android:paddingTop="8dp"
+           android:paddingBottom="8dp"
+           android:background="@color/white"
+          android:layout_marginTop="15dp"
            android:layout_height="wrap_content"
            android:layout_width="wrap_content"
            >
@@ -176,7 +201,11 @@
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
        android:layout_marginTop="25dp"
+           android:paddingTop="8dp"
+           android:paddingBottom="8dp"
+           android:background="@color/white"
        android:layout_marginLeft="15dp"
+       android:layout_marginRight="15dp"
        >
                        <ImageView 
                 android:layout_width="28dp"
@@ -200,6 +229,10 @@
        android:layout_height="wrap_content"
        android:layout_marginTop="25dp"
        android:layout_marginLeft="15dp"
+                  android:paddingTop="8dp"
+           android:paddingBottom="8dp"
+           android:background="@color/white"
+       
        android:layout_marginRight="15dp"
        >
                          <TextView  android:textColor="@color/black" 
@@ -220,8 +253,12 @@
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
        android:layout_marginTop="15dp"
+                  android:paddingTop="8dp"
+           android:paddingBottom="8dp"
+           android:background="@color/white"
        android:layout_marginLeft="15dp"
        android:layout_marginRight="15dp"
+       
        >
                          <TextView  android:textColor="@color/black" 
                android:layout_width="wrap_content"
@@ -241,6 +278,7 @@
     <RelativeLayout 
      android:layout_width="fill_parent"
        android:layout_height="wrap_content"
+       android:layout_marginBottom="15dp"
        android:layout_marginTop="15dp"
        android:layout_marginLeft="15dp"
        android:layout_marginRight="5dp"
@@ -326,5 +364,7 @@
                  </LinearLayout>
         
     </RelativeLayout>
+    
+    
 </LinearLayout>
 </ScrollView>
