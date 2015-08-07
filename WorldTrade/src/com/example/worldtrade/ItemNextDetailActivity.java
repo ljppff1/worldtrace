@@ -43,14 +43,14 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class ItemNextDetailActivity extends Activity {
-	private TextView mTvback;
+	private ImageView mTvback;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.itemnextdetail);
-		mTvback =(TextView)this.findViewById(R.id.mTvback);
+		mTvback =(ImageView)this.findViewById(R.id.mTvback);
 		mTvback.setOnClickListener(new OnClickListener() {
 			
 			@Override

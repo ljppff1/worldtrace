@@ -22,14 +22,14 @@ public class ItemlistActivity extends Activity {
     private int[] a ={R.string.c1,R.string.c2,R.string.c3,R.string.c4,R.string.c5,R.string.c6,R.string.c7,R.string.c8,R.string.c9};
 	private GridView mGvm1;
 	private Myadapter adapter;
-	private TextView mTvback;
+	private ImageView mTvback;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.itemlist);
-		mTvback =(TextView)this.findViewById(R.id.mTvback);
+		mTvback =(ImageView)this.findViewById(R.id.mTvback);
 		mTvback.setOnClickListener(new OnClickListener() {
 			
 			@Override

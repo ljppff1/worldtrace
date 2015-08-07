@@ -2,7 +2,7 @@
 <resources>
     
 <color name="lightyellow">#e0ffffff</color><!--亮黄色 -->
-    <color name="half_transparent">#3f000000</color>
+    <color name="half_transparent">#6fffffff</color>
 
 <color name="yellow">#FFFF00</color><!--黄色 -->
      <color name="transparent">#00000000</color>

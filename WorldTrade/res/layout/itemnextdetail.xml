@@ -15,18 +15,17 @@
         android:layout_height="180dp"
         android:background="@drawable/ad1"
         >
-        <TextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="21sp"
-                    android:paddingTop="5dp"
+
         
-        android:id="@+id/mTvback"
-        android:layout_marginLeft="5dp"
-        android:textColor="@color/black"
-       android:drawableLeft="@drawable/z4"
-        android:text="@string/back"
-        />
+     <ImageView 
+         android:layout_width="42dp"
+         android:layout_height="42dp"
+         android:layout_marginLeft="5dp"
+         android:src="@drawable/bbb"
+          android:paddingTop="5dp"
+                 android:id="@+id/mTvback"
+         
+         />
         <ImageView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

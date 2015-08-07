@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/aliceblue"
+    android:background="@color/white"
     android:layout_height="match_parent"
     android:orientation="vertical"
    >
@@ -28,13 +28,22 @@
         />
             
     </LinearLayout>
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+         android:paddingLeft="5dp"
+         android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:layout_height="fill_parent"
+        android:background="@color/aliceblue"
+        >
      <ListView 
          android:layout_width="fill_parent"
          android:layout_height="fill_parent"
          android:id="@+id/mLvf11"
-       
+       android:divider="@color/aliceblue" 
+       android:dividerHeight="8dp"
          ></ListView>
-    
+    </RelativeLayout>
    
 
 </LinearLayout>

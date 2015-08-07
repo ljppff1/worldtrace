@@ -43,7 +43,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class ItemNextActivity extends Activity {
-	private TextView mTvback;
+	private ImageView mTvback;
 	private RelativeLayout mRlf11;
 	private RelativeLayout mRlf12;
     private boolean flag =false;
@@ -59,7 +59,7 @@ public class ItemNextActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.itemlistnext);
-		mTvback =(TextView)this.findViewById(R.id.mTvback);
+		mTvback =(ImageView)this.findViewById(R.id.mTvback);
 		mTvback.setOnClickListener(new OnClickListener() {
 			
 			@Override

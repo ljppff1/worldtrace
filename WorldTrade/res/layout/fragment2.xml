@@ -7,15 +7,24 @@
    >
    
     <include layout="@layout/layout_top"/>
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="fill_parent"
+        >
+    
       <GridView 
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
       android:id="@+id/mGvm1"
-      android:verticalSpacing="30dp"
+      android:verticalSpacing="21dp"
       android:horizontalSpacing="30dp"
       android:numColumns="2"
       ></GridView>
-    
+    </RelativeLayout>
     
    
 

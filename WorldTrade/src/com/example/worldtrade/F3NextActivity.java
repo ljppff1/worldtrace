@@ -43,7 +43,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class F3NextActivity extends Activity {
-	private TextView mTvback;
+	private ImageView mTvback;
 	private ListView mLvf11;
 	   private ArrayList<String> mDataList =new ArrayList<String>();
 	   private Myadapter adapter;
@@ -53,7 +53,7 @@ public class F3NextActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.f3next);
-		mTvback =(TextView)this.findViewById(R.id.mTvback);
+		mTvback =(ImageView)this.findViewById(R.id.mTvback);
 		mTvback.setOnClickListener(new OnClickListener() {
 			
 			@Override
