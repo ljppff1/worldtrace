@@ -69,5 +69,69 @@
                     <string name="ac13">公司簡介</string>
                                         <string name="ac14">聯絡我們</string>
                                         <string name="ac15">產品詳情XXXX</string>
-                                        
+                    <string name="abc1">產品展示</string>
+                    <string name="abc2">详细> ></string>
+                    <string name="abc3">公司简介</string>
+                    <string name="abc4">公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介公司简介</string>
+                   <string name="abc21">首页</string>
+<string name="abc22">分类</string>
+<string name="abc23">展会</string>
+<string name="abc24">计数器</string>
+<string name="abc25">翻译</string>
+<string name="abc26">我的通讯</string>
+<string name="abc27">My Trade</string>
+<string name="abc31">开通VIP</string>
+<string name="abc32">高级会员</string>
+<string name="abc33">3个月</string>
+<string name="abc34">12个月</string>
+<string name="abc35">XXX元</string>
+<string name="abc36">白金会员</string>
+<string name="abc37">黄金VIP会员特权</string>
+<string name="abc38">免费XX</string>
+<string name="abc41">公司简介</string>
+<string name="abc42">公司图片</string>
+<string name="abc43">公司名称</string>
+<string name="abc44">会员等级</string>
+<string name="abc45">爱尚信息科技有限公司  ></string>
+<string name="abc46">普通会员  ></string>
+
+<string name="abc47">联络人</string>
+<string name="abc48">联络电话</string>
+<string name="abc49">电子邮箱</string>
+<string name="abc50">公司地址</string>
+<string name="abc51">公司网址</string>
+<string name="abc52">陈大文</string>
+<string name="abc53">6543214584</string>
+<string name="abc54">info@gmail.com</string>
+<string name="abc55">香港观塘开源道创贸广场1301  ></string>
+<string name="abc56">.xxxxxx.com.hk  ></string>
+<string name="abc57">公司介绍</string>
+<string name="abc58">修改密码</string>
+<string name="abc59">退出登录</string>
+<string name="abc61">新评价</string>
+<string name="abc62">已回复</string>
+<string name="abc63">18分钟</string>
+<string name="abc64">消息中心</string>
+<string name="abc65">推荐</string>
+<string name="abc66">XXXXXXXXXXXXX免费抢</string>
+<string name="abc67">2015-8-15至2015-8-31</string>
+<string name="abc68">XXXX有限公司评价</string>
+<string name="abc69">9月</string>
+<string name="abc70">XXXX</string>
+<string name="abc71">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</string>
+<string name="abc72">35分钟前</string>
+<string name="abc73">1个回答</string>
+<string name="abc74">我来回答</string>
+<string name="abc75">提问</string>
+<string name="abc76">产品列表</string>
+<string name="abc77">即时通讯</string>
+<string name="abc78">产品说明</string>
+<string name="abc79">产品详情</string>
+
+
+
+
+
+
+
 </resources>

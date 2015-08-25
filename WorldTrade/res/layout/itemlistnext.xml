@@ -21,15 +21,34 @@
         android:text="@string/ab1"
         />
 
+       <RelativeLayout 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/mRlgs1"
+                          android:paddingTop="5dp"
+            android:paddingLeft="5dp"
+              
+              >
      <ImageView 
          android:layout_width="42dp"
          android:layout_height="42dp"
          android:layout_marginLeft="5dp"
-         android:src="@drawable/bbb"
+         android:src="@drawable/abc1"
+               android:layout_centerVertical="true"
                  android:id="@+id/mTvback"
          
-         android:layout_centerVertical="true"
          />
+                 <TextView 
+               android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                android:textColor="@color/my2"
+                android:layout_toRightOf="@id/mTvback"
+               android:layout_centerVertical="true"
+                android:text="@string/back"
+                />
+     </RelativeLayout>
     
 </RelativeLayout>    
  

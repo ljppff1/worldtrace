@@ -53,14 +53,15 @@ public class ItemNextActivity extends Activity {
 	private DisplayImageOptions options;
 	private Myadapter myadapter;
 	protected ImageLoader imageLoader = ImageLoader.getInstance();
+	private RelativeLayout mRlgs1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.itemlistnext);
-		mTvback =(ImageView)this.findViewById(R.id.mTvback);
-		mTvback.setOnClickListener(new OnClickListener() {
+		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
+		mRlgs1.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -23,14 +24,15 @@ public class ItemlistActivity extends Activity {
 	private GridView mGvm1;
 	private Myadapter adapter;
 	private ImageView mTvback;
+	private RelativeLayout mRlgs1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.itemlist);
-		mTvback =(ImageView)this.findViewById(R.id.mTvback);
-		mTvback.setOnClickListener(new OnClickListener() {
+		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
+		mRlgs1.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

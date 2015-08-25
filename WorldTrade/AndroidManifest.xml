@@ -33,6 +33,14 @@
         <activity android:name="com.example.worldtrade.ItemNextActivity"></activity>
         <activity android:name="com.example.worldtrade.F3NextActivity"></activity>
         <activity android:name="com.example.worldtrade.ItemNextDetailActivity"></activity>
+        <activity android:name="com.example.worldtrade.KaiTonghuiyuanActivity"></activity>
+        <activity android:name="com.example.worldtrade.GongsijianjieActivity"></activity>
+        <activity android:name="com.example.worldtrade.PingJiaActivity"></activity>
+        <activity android:name="com.example.worldtrade.XiaoxizhongxinActivity"></activity>
+        <activity android:name="com.example.worldtrade.GongsXiangQingActivity"></activity>
+        <activity android:name="com.example.worldtrade.ChanPinLieBiaoActivity"></activity>
+        <activity android:name="com.example.worldtrade.ChanPingXiangQingActivity"></activity>
+        
     </application>
 
 </manifest>

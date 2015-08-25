@@ -3,7 +3,15 @@
     
 <color name="lightyellow">#e0ffffff</color><!--亮黄色 -->
     <color name="half_transparent">#6fffffff</color>
-
+    <color name="myradio1">#0099dc</color><!--亮黄色 -->
+    <color name="myradio2">#007ad1</color><!--亮黄色 -->
+    
+<color name="my1">#00a0e9</color>
+<color name="my6">#99c382</color>
+<color name="my5">#86c5e4</color>
+<color name="my4">#979696</color>
+<color name="my2">#005c88</color>
+<color name="my3">#ebf4f9</color>
 <color name="yellow">#FFFF00</color><!--黄色 -->
      <color name="transparent">#00000000</color>
  <color name="result_view">#b0000000</color>
