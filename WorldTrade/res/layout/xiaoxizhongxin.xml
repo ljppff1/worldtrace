@@ -1,0 +1,91 @@
+<RelativeLayout 
+     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my5"
+    >
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+>
+
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        
+        android:background="@color/white"
+        >
+        <RelativeLayout 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                             android:layout_centerVertical="true"
+              android:id="@+id/mRL123"
+              >
+     <ImageView 
+         android:layout_width="42dp"
+         android:layout_height="42dp"
+         android:layout_marginLeft="5dp"
+         android:src="@drawable/abc1"
+               android:layout_centerVertical="true"
+                 android:id="@+id/mTvback"
+         
+         />
+                 <TextView 
+               android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                android:textColor="@color/my2"
+                android:layout_toRightOf="@id/mTvback"
+               android:layout_centerVertical="true"
+                android:text="@string/back"
+                />
+     </RelativeLayout>
+                      <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                                android:textSize="24sp"
+                android:textColor="@color/my1"
+                               android:layout_centerVertical="true"
+                
+               android:layout_centerHorizontal="true"
+                android:text="@string/abc64"
+                />
+             <ImageView 
+         android:layout_width="42dp"
+         android:layout_height="42dp"
+         android:layout_marginRight="5dp"
+         android:src="@drawable/abd56"
+               android:layout_centerVertical="true"
+               android:layout_alignParentRight="true"         
+         />
+                      
+    </RelativeLayout>
+              </RelativeLayout>
+          <ListView 
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     android:id="@+id/mLv1"
+          android:divider="@null" 
+     android:dividerHeight="10dp"
+     android:layout_marginLeft="4dp"
+     android:layout_marginRight="4dp"
+     android:layout_marginTop="15dp"
+     ></ListView>
+    
+</LinearLayout>
+
+            <ProgressBar
+            android:id="@+id/progressBar_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+</RelativeLayout>

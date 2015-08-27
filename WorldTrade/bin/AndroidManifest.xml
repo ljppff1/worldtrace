@@ -16,9 +16,9 @@
     <application
         android:name="com.example.utils.UILApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/abd4"
         android:label="@string/app_name"
-        android:theme="@style/activityTheme" >
+        >
         <activity
             android:name="com.example.worldtrade.SplishActivity"
             android:label="@string/app_name" >
@@ -40,6 +40,8 @@
         <activity android:name="com.example.worldtrade.GongsXiangQingActivity"></activity>
         <activity android:name="com.example.worldtrade.ChanPinLieBiaoActivity"></activity>
         <activity android:name="com.example.worldtrade.ChanPingXiangQingActivity"></activity>
+        <activity android:name="com.example.worldtrade.ChanPinFabuActivity"></activity>
+        <activity android:name="com.example.worldtrade.ChanPingXiangQing1Activity"></activity>
         
     </application>
 

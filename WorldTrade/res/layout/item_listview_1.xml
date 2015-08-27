@@ -27,11 +27,11 @@
            android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/iv_listview_rent_pic" >
           <TextView 
-              android:text="####"
+              android:text="@string/abc83"
               android:textSize="18sp"
-              android:layout_centerVertical="true"
               android:textColor="@color/black"
               android:id="@+id/mTvri10"
+              android:layout_marginTop="10dp"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_alignParentRight="true"

@@ -17,6 +17,7 @@
         android:background="@drawable/ad1"
         >
         <ImageView 
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ad4"
@@ -45,6 +46,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:id="@+id/mLLf41"
+                android:layout_marginRight="15dp"
                 >
                 <ImageView 
                     android:layout_width="30dp"
@@ -143,6 +145,7 @@
            android:layout_height="0dp"
            android:layout_marginTop="15dp"
            android:paddingTop="8dp"
+           android:id="@+id/mRlf4211"
            android:paddingBottom="8dp"
            android:background="@color/white"
            android:layout_width="fill_parent"

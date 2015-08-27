@@ -61,6 +61,8 @@ public class F3NextActivity extends Activity {
 	private HorizontalListViewAdapter hListViewAdapter;
 	private ImageView mIvright1;
 	private TextView mTvrightdetail;
+	private TextView mTvrightdetailas;
+	private RelativeLayout mRlf3n1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,15 @@ public class F3NextActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.f3next);
 		hListView = (HorizontalListView)this.findViewById(R.id.horizon_listview);
+		hListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				startActivity(new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQingActivity.class));
+			}
+		});
+
 		final int[] ids = {R.drawable.abc2, R.drawable.abc2,
 				R.drawable.abc2, R.drawable.abc2,R.drawable.abc2, R.drawable.abc2,
 				R.drawable.abc2, R.drawable.abc2
@@ -80,6 +91,11 @@ public class F3NextActivity extends Activity {
 		mTvback =(ImageView)this.findViewById(R.id.mTvback);
 		mIvright1 =(ImageView)this.findViewById(R.id.mIvright1);
 		mIvright1.setOnClickListener(listener);
+		mRlf3n1 =(RelativeLayout)this.findViewById(R.id.mRlf3n1);
+		mRlf3n1.setOnClickListener(listener);
+		
+		mTvrightdetailas=(TextView)this.findViewById(R.id.mTvrightdetailas);
+		mTvrightdetailas.setOnClickListener(listener);
 		mTvback.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -104,7 +120,15 @@ public class F3NextActivity extends Activity {
 				showWindow();
 				break;
 			case R.id.mTvrightdetail:
-				startActivity(new Intent(getApplicationContext(), GongsXiangQingActivity.class));
+				startActivity(new Intent(getApplicationContext(), GongsijianjieActivity.class));
+				break;
+			case R.id.mTvrightdetailas:
+				startActivity(new Intent(getApplicationContext(), ChanPinLieBiaoActivity.class));
+
+				break;
+			case R.id.mRlf3n1:
+				startActivity(new Intent(getApplicationContext(), PingJiaActivity.class));
+
 				break;
 			default:
 				break;

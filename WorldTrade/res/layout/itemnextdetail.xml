@@ -51,6 +51,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ad4"
             android:layout_alignParentRight="true"
+            android:visibility="gone"
             android:paddingTop="5dp"
             android:paddingRight="5dp"
             android:id="@+id/mIvn1"
@@ -81,7 +82,9 @@
                 <ImageView 
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/az2"
+                    android:src="@drawable/aa3"
+                                        android:scaleType="fitXY"
+                    
                     android:layout_gravity="center"
                     />
                             <TextView 
@@ -105,6 +108,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/az1"
+                    android:scaleType="fitXY"
                     android:layout_gravity="center"
                     />
                             <TextView 

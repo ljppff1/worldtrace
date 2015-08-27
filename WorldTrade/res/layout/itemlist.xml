@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/ab1"
+    android:background="@drawable/background"
    >
    
 <RelativeLayout
     android:layout_width="fill_parent"
-    android:layout_height="45dp"
+    android:layout_height="50dp"
+    android:background="@color/white"
     android:orientation="vertical"
    >
    
@@ -53,15 +54,30 @@
     
 
 </RelativeLayout>    
+<RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    
+    >
+                         <ImageView 
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="40dp"
+           android:layout_centerInParent="true"
+           android:src="@drawable/abb6"
+           android:layout_marginRight="40dp"
+           />
+    
   <GridView 
+      android:layout_margin="10dp"
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
       android:id="@+id/mGvm1"
-      android:verticalSpacing="38dp"
+      android:verticalSpacing="10dp"
       android:horizontalSpacing="10dp"
       android:numColumns="3"
       ></GridView>
-    
+    </RelativeLayout>
     
    
 

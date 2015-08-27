@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="2dip"
+    android:paddingRight="2dip"
+    android:paddingTop="2dip"
+    android:paddingBottom="2dip"
+    android:orientation="vertical" 
+    android:gravity="center"
+    android:clickable="true"
+    android:background="@drawable/selector_item_background">
+
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:padding="10dp"
+        android:layout_alignParentTop="true" >
+
+        <ImageView
+            android:id="@+id/iv_listview_rent_pic"
+            android:layout_width="160dp"
+         android:layout_height="170dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:background="@drawable/a" />
+
+        <RelativeLayout
+            android:padding="5dp"
+            android:layout_width="100dp"
+            android:id="@+id/mRL_listview_rent_2"
+            android:layout_height="wrap_content"
+           android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_listview_rent_pic" >
+          <TextView 
+              android:text="@string/ac15"
+              android:textSize="18sp"
+              android:layout_centerVertical="true"
+              android:textColor="@color/black"
+              android:id="@+id/mTvri10"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    
+</LinearLayout>
