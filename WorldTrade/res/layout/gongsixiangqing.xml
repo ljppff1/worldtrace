@@ -1,11 +1,11 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     
     android:layout_height="match_parent"
-    android:orientation="vertical" 
     android:background="@drawable/aa1">
     
+   
     <RelativeLayout 
         android:layout_width="fill_parent"
         android:layout_height="50dp"
@@ -56,11 +56,31 @@
         
     </RelativeLayout>
     
+    
+    
+    
+    
+    
+    <ScrollView 
+        android:layout_width="fill_parent"
+                android:layout_marginTop="50dp"
+                android:layout_height="fill_parent"
+        android:fillViewport="true"
+        >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+    
     <RelativeLayout 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:paddingTop="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
         >
                       <RelativeLayout 
                           android:layout_width="fill_parent"
@@ -135,6 +155,7 @@
             
         </RelativeLayout>
         </RelativeLayout>
+        
     <TextView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -151,6 +172,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@color/white"
+                       android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
        
         >
     <RelativeLayout 
@@ -189,7 +212,7 @@
     <TextView 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/abc71"
+            android:text="@string/abc711"
             android:textSize="19sp"
             android:id="@+id/mTv9"
             android:layout_marginTop="18dp"
@@ -198,11 +221,30 @@
             />
     </RelativeLayout>
     
+    </RelativeLayout>
+    <View 
+        android:layout_width="fill_parent"
+        android:layout_height="78dp"
+        />
+    </LinearLayout>
+    
+    </ScrollView>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <RelativeLayout 
         android:layout_width="fill_parent"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/abd72"
         >
         <LinearLayout 
             android:layout_width="fill_parent"
@@ -255,4 +297,3 @@
     
     
     
-</LinearLayout>

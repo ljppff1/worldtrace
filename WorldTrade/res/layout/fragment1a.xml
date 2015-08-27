@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/aliceblue"
  >
  <ListView 
      android:layout_width="fill_parent"
      android:layout_height="fill_parent"
      android:id="@+id/mLv1"
           android:divider="@null" 
-     
+     android:dividerHeight="1dp"
      ></ListView>
             <ProgressBar
             android:id="@+id/progressBar_sale"
