@@ -205,7 +205,9 @@
        <org.yanzi.ui.HorizontalListView
         android:id="@+id/horizon_listview"
         android:layout_width="fill_parent"
-        android:layout_height="180dip"
+        android:layout_height="104dp"
+        android:layout_marginTop="3dp"
+        
         >
     </org.yanzi.ui.HorizontalListView>
             

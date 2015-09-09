@@ -144,10 +144,10 @@ public void downloadsearch(String area11){
 							  mDataList.clear();
 							  mDataList.addAll(mDataList_origin);
 								if (mDataList_origin.size()==0) {
-									findViewById(R.id.tv_noresut).setVisibility(View.VISIBLE);
+									 Toast.makeText(getApplicationContext(), "ï∫üoœ‡ÍPÉ»»›", 0).show();
 								}
 								else {
-									findViewById(R.id.tv_noresut).setVisibility(View.GONE);
+									//findViewById(R.id.tv_noresut).setVisibility(View.GONE);
 								}
 
 							  initListView();
@@ -183,7 +183,7 @@ private void initListView() {
 			@Override
 			public void onItemClick(AdapterView<?> parent,
 					View view, int position, long id) {
-				startActivity(new Intent(getApplicationContext(), ItemNextDetailActivity.class));
+				startActivity(new Intent(getApplicationContext(), F3NextActivity.class));
 			}
 		});
 	}

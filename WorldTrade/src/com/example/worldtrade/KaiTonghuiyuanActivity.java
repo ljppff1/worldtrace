@@ -7,11 +7,16 @@ import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 public class KaiTonghuiyuanActivity extends Activity {
 
 	private RelativeLayout mRlgs1;
+	private LinearLayout mLL4;
+	private LinearLayout mLL1;
+	private LinearLayout mLL3;
+	private LinearLayout mLL2;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -22,7 +27,14 @@ public class KaiTonghuiyuanActivity extends Activity {
 		
 		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
 		mRlgs1.setOnClickListener(listener);
-
+		mLL4 =(LinearLayout)this.findViewById(R.id.mLL4);
+		mLL4.setOnClickListener(listener);
+		mLL1 =(LinearLayout)this.findViewById(R.id.mLL1);
+		mLL1.setOnClickListener(listener);
+		mLL3 =(LinearLayout)this.findViewById(R.id.mLL3);
+		mLL3.setOnClickListener(listener);
+		mLL2 =(LinearLayout)this.findViewById(R.id.mLL2);
+		mLL2.setOnClickListener(listener);
 }
 	
 	OnClickListener listener =new  OnClickListener() {
@@ -32,6 +44,22 @@ public class KaiTonghuiyuanActivity extends Activity {
 			switch (v.getId()) {
 			case R.id.mRlgs1:
 				finish();
+				break;
+			case R.id.mLL2:
+				startActivity(new Intent(getApplicationContext(), ZhiFuActivity.class));
+				
+				break;
+			case R.id.mLL3:
+				startActivity(new Intent(getApplicationContext(), ZhiFuActivity.class));
+				
+				break;
+			case R.id.mLL4:
+				startActivity(new Intent(getApplicationContext(), ZhiFuActivity.class));
+				
+				break;
+			case R.id.mLL1:
+				startActivity(new Intent(getApplicationContext(), ZhiFuActivity.class));
+				
 				break;
 
 			default:

@@ -14,13 +14,14 @@
         >
         <RelativeLayout 
               android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
+              android:layout_height="fill_parent"
                              android:layout_centerVertical="true"
               android:id="@+id/mRlgs1"
               >
      <ImageView 
-         android:layout_width="42dp"
-         android:layout_height="42dp"
+         android:layout_width="38dp"
+         android:layout_height="38dp"
+         android:scaleType="fitXY"
          android:layout_marginLeft="5dp"
          android:src="@drawable/abc1"
                android:layout_centerVertical="true"

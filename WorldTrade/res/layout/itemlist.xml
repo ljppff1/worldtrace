@@ -24,17 +24,16 @@
   
                   <RelativeLayout 
               android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
+              android:layout_height="fill_parent"
               android:id="@+id/mRlgs1"
-                          android:paddingTop="5dp"
-            android:paddingLeft="5dp"
               
               >
      <ImageView 
-         android:layout_width="42dp"
-         android:layout_height="42dp"
-         android:layout_marginLeft="5dp"
+         android:layout_width="38dp"
+         android:layout_height="38dp"
          android:src="@drawable/abc1"
+         android:scaleType="fitXY"
+         android:layout_marginLeft="5dp"
                android:layout_centerVertical="true"
                  android:id="@+id/mTvback"
          
@@ -57,7 +56,6 @@
 <RelativeLayout 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    
     >
                          <ImageView 
            android:layout_width="fill_parent"
@@ -69,12 +67,10 @@
            />
     
   <GridView 
-      android:layout_margin="10dp"
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
       android:id="@+id/mGvm1"
-      android:verticalSpacing="10dp"
-      android:horizontalSpacing="10dp"
+      
       android:numColumns="3"
       ></GridView>
     </RelativeLayout>

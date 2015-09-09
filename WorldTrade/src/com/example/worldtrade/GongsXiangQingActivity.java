@@ -24,7 +24,6 @@ public class GongsXiangQingActivity extends Activity {
 		
 }
 	OnClickListener listener =new  OnClickListener() {
-		
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {

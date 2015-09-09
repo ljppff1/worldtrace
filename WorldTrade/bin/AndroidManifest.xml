@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,7 +16,8 @@
     <application
         android:name="com.example.utils.UILApplication"
         android:allowBackup="true"
-        android:icon="@drawable/abd4"
+        android:icon="@drawable/tttt"
+        android:theme="@android:style/Theme.Light.NoTitleBar"
         android:label="@string/app_name"
         >
         <activity
@@ -28,10 +29,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity android:name="com.example.worldtrade.ItemlistActivity"></activity>
+        <activity android:name="com.example.worldtrade.MyMingPianActivity"></activity>
         <activity android:name="com.example.worldtrade.MainActivity"></activity>
         <activity android:name="com.example.worldtrade.ItemNextActivity"></activity>
         <activity android:name="com.example.worldtrade.F3NextActivity"></activity>
+        <activity android:name="com.example.worldtrade.F3Next1Activity"></activity>
         <activity android:name="com.example.worldtrade.ItemNextDetailActivity"></activity>
         <activity android:name="com.example.worldtrade.KaiTonghuiyuanActivity"></activity>
         <activity android:name="com.example.worldtrade.GongsijianjieActivity"></activity>
@@ -42,6 +46,11 @@
         <activity android:name="com.example.worldtrade.ChanPingXiangQingActivity"></activity>
         <activity android:name="com.example.worldtrade.ChanPinFabuActivity"></activity>
         <activity android:name="com.example.worldtrade.ChanPingXiangQing1Activity"></activity>
+        <activity android:name="com.example.worldtrade.MyCollectionActivity"></activity>
+        <activity android:name="com.example.worldtrade.MainActivity1"></activity>
+        <activity android:name="com.example.worldtrade.huiyuandengluActivity"></activity>
+        <activity android:name="com.example.worldtrade.MingPianShouCangActivity"></activity>
+        <activity android:name="com.example.worldtrade.ZhiFuActivity"></activity>
         
     </application>
 

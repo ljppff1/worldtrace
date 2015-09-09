@@ -28,8 +28,8 @@
               android:id="@+id/mRL123"
               >
      <ImageView 
-         android:layout_width="42dp"
-         android:layout_height="42dp"
+         android:layout_width="38dp"
+         android:layout_height="38dp"
          android:layout_marginLeft="5dp"
          android:src="@drawable/abc1"
                android:layout_centerVertical="true"
@@ -58,8 +58,8 @@
                 android:text="@string/abc81"
                 />
              <ImageView 
-         android:layout_width="42dp"
-         android:layout_height="42dp"
+         android:layout_width="38dp"
+         android:layout_height="38dp"
          android:layout_marginRight="5dp"
          android:src="@drawable/abd56"
                android:layout_centerVertical="true"

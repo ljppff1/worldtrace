@@ -10,7 +10,7 @@
         <string name="CCmb4">My Trade</string>
         <string name="CCmb5">更多</string>
         <string name="toast">再按壹次退出程序</string>
-     <string name="aa1">商   護</string>   
+     <string name="aa1">商   户</string>   
      <string name="aa2">供 應 商</string>   
      <string name="aa3">地   區</string>   
      <string name="ab1">行業分類</string>
@@ -36,14 +36,14 @@
                          <string name="c9">鋼鐵</string>
                          
       <string name="ad1">XXXXXX有限公司</string>   
-      <string name="ad2">公司間介</string>   
+      <string name="ad2">公司简介</string>   
             <string name="ad3">我的收藏</string>   
-            <string name="ad4">客護評價</string>   
+            <string name="ad4">客户評價</string>   
                   <string name="ad5">行程表</string>   
                   <string name="ad6">產品發布</string>   
                         <string name="ad7">產品列表</string>   
                         <string name="ad8">即時通訊(10)</string>   
-                        <string name="ad9">購買VIP全員</string>   
+                        <string name="ad9">購買VIP會員</string>   
                         <string name="ad10">刊登廣告</string>
                         <string name="ad11">消息中心</string>
     <string name="ad12">設置</string>
@@ -62,9 +62,9 @@
           <string name="az7">電子郵箱:XXXXXXX@XXX.com</string>
           <string name="az8">公司地址:XXXXXXXXXXXXXXX</string>
           <string name="az9">產品詳情(10)</string>
-                    <string name="az11">客護評價(110)</string>
+                    <string name="az11">客户評價(110)</string>
                     <string name="az12">行程表</string>
-                    <string name="ac11">進入</string>
+                    <string name="ac11">進入>></string>
                     <string name="ac12">XXX公司建築設計展會</string>
                     <string name="ac13">公司間介</string>
                                         <string name="ac14">聯酪我們</string>
@@ -130,7 +130,7 @@
 <string name="abc77">即時通訊</string>
 <string name="abc78">產品說明</string>
 <string name="abc79">產品詳情</string>
-<string name="abc81">客護評價</string>
+<string name="abc81">客户評價</string>
 <string name="abc82">XXXXXXXXXXX</string>
 <string name="abc83">美國</string>
 
@@ -148,8 +148,58 @@
 <string name="abb3">廣告查詢</string>
 <string name="abc45b">公司詳情</string>
 <string name="abc45c">國際壹流開發團隊,專註於移動互聯網開發、APP開發、企業APP、O2O應用開發,IOS開發、移動應用平臺開發,香港手機軟件開發,手機APP應用軟件開發公司深圳愛尚信息科技. </string>
+<string name="abc45b1">所属国家</string>
+<string name="abc45b2">美国  ></string>
 
 
+     <string name="b11">综合分类</string>
+     <string name="b12">注册</string>
+     <string name="b13">登录</string>
+     
+               <string name="za1">會員登入</string>
+          <string name="za1a">會員登記</string>
+          <string name="za2">登入</string>
+          <string name="za3">登記</string>
+          <string name="za4">電郵/會員名稱</string>
+          <string name="za5">密碼</string>
+          <string name="za6">忘記密碼</string>
+          <string name="za7">以社交網絡登入</string>
+          
+          <string name="aaz1">登入電郵</string>
+          <string name="aaz2">用作登入及接收確認電郵</string>
+          <string name="aaz3">稱謂</string>
+          <string name="aaz4">請選擇</string>
+          <string name="aaz5">會員名稱</string>
+          <string name="aaz6">2至18個字，必須包含最少壹個中文字/英文字母</string>
+          <string name="aaz7">姓名</string>
+          <string name="aaz8">必須確認</string>
+          <string name="aaz9">密碼</string>
+          <string name="aaz11">6至20個字符</string>
+          <string name="aaz12">出生年份</string>
+          <string name="aaz13">請選擇</string>
+          <string name="aaz14">替代文字替代文字替代文字替代文字替代文字替代文字替代文字替代文字替代文字替代文字替代文字替代文字</string>
+          <string name="aaz15">按以上登記鍵即代表妳願意接受World Trade之隱私權限聲明及使用條款細則所約束</string>
+          <string name="aaz16">----------------------------------------------------------------------------</string>
+  <string name="aaaz13">行業分類</string> 
+      <string name="aaaz14">XXXXXX  ></string>    
+    <string name="aaaz13a">會員分類</string> 
+                  <string name="ad3a">我的名片</string>   
+                  <string name="ad3a1">個人相片</string>   
+                            <string name="aaz1a">電郵</string>
+                            <string name="aaz1b">電话</string>
+                                           <string name="ad3a2">名片收藏</string>   
+<string name="abcaa1">收銀臺</string>
+<string name="abcaa2">套餐名稱：</string>
+<string name="abcaa21">高級會員</string>
+<string name="abcaa3">包月時長</string>
+<string name="abcaa4">1個月</string>
+<string name="abcaa5">總金額：</string>
+<string name="abcaa6">19.8</string>
+<string name="abcaa7">元</string>
+<string name="abcaa8">選擇支付方式</string>
+<string name="abcaa9">paypal支付</string>
+<string name="abcaa10">支付寶支付</string>
+<string name="abcaa11">立即付款：19.8元</string>
 
 
 </resources>

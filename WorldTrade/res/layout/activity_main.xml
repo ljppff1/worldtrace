@@ -17,7 +17,7 @@
         android:id="@+id/main_tab_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="3dp"
+        android:padding="5dp"
         android:background="@android:color/white"
         android:gravity="center"
         android:orientation="horizontal" >
@@ -40,14 +40,11 @@
         <RadioButton
             android:id="@+id/main_add"
                         android:drawablePadding="0dp"
-            
+            android:textColor="#0f407c"
             style="@style/main_tab_item"
             android:drawableTop="@drawable/btn3"
             android:text="@string/CCmb3" />
-        
-      
 
-    
         <RadioButton
             android:id="@+id/main_tab_item_hongdong"
             style="@style/main_tab_item"

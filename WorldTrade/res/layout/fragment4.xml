@@ -27,9 +27,75 @@
             android:paddingTop="5dp"
             android:paddingRight="5dp"
             />
+                <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/half_transparent"
+            android:layout_alignParentBottom="true"
+            >
+            <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                >
+                <View 
+                    android:layout_width="0dp"
+                    android:layout_weight="0.6"
+                    android:layout_height="1dp"
+                    />
+              <RelativeLayout 
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/ad15"
+                   android:id="@+id/mRlf43aa"
+                   >
+                   <TextView 
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       android:textSize="20sp"
+                       android:textColor="@color/white"
+                       android:text="@string/za2"
+                       />
+                   </RelativeLayout>
+                                   <View 
+                    android:layout_width="0dp"
+                    android:layout_weight="0.6"
+                    android:layout_height="1dp"
+                    />
+              
+              <RelativeLayout 
+                   android:layout_weight="1"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
+                   android:background="@drawable/ad15"
+                   android:id="@+id/mRlf43ab"
+                   >
+                                      <TextView 
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       android:textSize="20sp"
+                       android:textColor="@color/white"
+                       android:text="@string/za3"
+                       />
+                  
+                   </RelativeLayout>
+                                   <View 
+                    android:layout_width="0dp"
+                    android:layout_weight="0.6"
+                    android:layout_height="1dp"
+                    />
+              
+              </LinearLayout>
+        </RelativeLayout>
+        
         <RelativeLayout 
             android:layout_width="fill_parent"
             android:layout_height="60dp"
+            
             android:background="@color/half_transparent"
             android:layout_alignParentBottom="true"
             >
@@ -58,6 +124,7 @@
                 android:layout_height="fill_parent"
                 android:gravity="center_vertical"
                 android:text="@string/ad2"
+                android:textSize="20sp"
                 />
                 
             </LinearLayout>
@@ -79,15 +146,30 @@
         <RelativeLayout 
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:id="@+id/mRlf42ab"
             android:layout_height="wrap_content"
             >
-            <TextView  android:textColor="@color/black" 
-                android:layout_centerInParent="true"
-                android:text="@string/ad3"
+            <RelativeLayout 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ad5"
+                android:layout_centerInParent="true"
+                >
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/ad5"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/mIvte1"
                 />
+            <TextView  android:textColor="@color/black" 
+                android:text="@string/ad3"
+                android:layout_below="@id/mIvte1"
+                                android:layout_centerHorizontal="true"
+                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            </RelativeLayout>
         </RelativeLayout>
         <View 
             android:layout_width="0.4dp"
@@ -97,16 +179,30 @@
         <RelativeLayout 
             android:layout_weight="1"
             android:layout_width="0dp"
-            android:id="@+id/mRlf42"
+            android:id="@+id/mRlf421a"
             android:layout_height="wrap_content"
             >
-            <TextView  android:textColor="@color/black" 
-                android:layout_centerInParent="true"
-                android:text="@string/ad4"
+            <RelativeLayout 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ad6"
+                android:layout_centerInParent="true"
+                >
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/aad1"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/mIvte2"
                 />
+            <TextView  android:textColor="@color/black" 
+                android:text="@string/ad3a"
+                android:layout_below="@id/mIvte2"
+                                android:layout_centerHorizontal="true"
+                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            </RelativeLayout>
         </RelativeLayout>
                 <View 
             android:layout_width="0.4dp"
@@ -117,15 +213,31 @@
                 <RelativeLayout 
             android:layout_weight="1"
             android:layout_width="0dp"
+            android:id="@+id/mRlf42abc"
             android:layout_height="wrap_content"
             >
-            <TextView  android:textColor="@color/black" 
-                android:layout_centerInParent="true"
-                android:text="@string/ad5"
+                        <RelativeLayout 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableTop="@drawable/ad7"
+                android:layout_centerInParent="true"
+                >
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/ad7"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/mIvte3"
                 />
+            <TextView  android:textColor="@color/black" 
+                android:text="@string/ad5"
+                android:layout_below="@id/mIvte3"
+                                android:layout_centerHorizontal="true"
+                
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            </RelativeLayout>
+                
         </RelativeLayout>
         
     </LinearLayout>
@@ -231,6 +343,34 @@
                android:layout_toRightOf="@id/mIvf42"
                />     
         </RelativeLayout>
+    <RelativeLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="25dp"
+           android:paddingTop="8dp"
+           android:paddingBottom="8dp"
+                       android:id="@+id/mRlf42"
+           
+           android:background="@color/white"
+       >
+                       <ImageView 
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ad6"
+                android:id="@+id/mIvf421"
+                    android:layout_marginLeft="18dp"
+                
+                android:layout_centerVertical="true"
+                />
+               <TextView  android:textColor="@color/black" 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/ad4"
+                               android:layout_centerVertical="true"
+               android:layout_marginLeft="10dp"
+               android:layout_toRightOf="@id/mIvf421"
+               />     
+        </RelativeLayout>
     
      <RelativeLayout 
        android:layout_width="fill_parent"
@@ -298,11 +438,16 @@
                      android:layout_centerVertical="true"
                      android:layout_toRightOf="@id/mIvf413"
                      >
-               <RelativeLayout 
-                   android:layout_weight="1"
+                          <RelativeLayout 
+                   android:layout_weight="0.3"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
-                   android:layout_marginLeft="10dp"
+                   >
+                     </RelativeLayout>
+               <RelativeLayout 
+                   android:layout_weight="1.4"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
                    android:background="@drawable/ad15"
                    android:id="@+id/mRlf43"
                    >
@@ -335,7 +480,13 @@
 
                         
                </RelativeLayout>      
-                   
+                                             <RelativeLayout 
+                   android:layout_weight="0.3"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
+                   >
+                     </RelativeLayout>
+               
                         <RelativeLayout 
                    android:layout_weight="1"
                    android:layout_width="0dp"
@@ -366,7 +517,14 @@
                />
 
                         </RelativeLayout>
-               </RelativeLayout>        
+               </RelativeLayout>     
+                                         <RelativeLayout 
+                   android:layout_weight="0.3"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
+                   >
+                     </RelativeLayout>
+                        
                  </LinearLayout>
         
     </RelativeLayout>

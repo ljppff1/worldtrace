@@ -157,7 +157,7 @@ private void initListView() {
 			@Override
 			public void onItemClick(AdapterView<?> parent,
 					View view, int position, long id) {
-				startActivity(new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQing1Activity.class));
+				startActivity(new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQingActivity.class));
 			}
 		});
 	}

@@ -1,7 +1,72 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@drawable/splish">
-</LinearLayout>
+    android:background="@drawable/background">
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        >
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            >
+            <View 
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:src="@drawable/abq3" />
+ 
+            <ImageView 
+                               android:layout_width="fill_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:layout_marginTop="20dp"
+               android:src="@drawable/abq2"
+                
+                />
+            <ImageView 
+                               android:layout_width="fill_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               
+               android:src="@drawable/abq1"
+                
+                />
+                
+            </LinearLayout>
+            <View 
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+            </LinearLayout>
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
+        </LinearLayout>
+</RelativeLayout>

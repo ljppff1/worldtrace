@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
      <style name="activityTheme" parent="@android:style/Theme">         
  <item name="android:windowIsTranslucent">true</item>     
@@ -10,6 +10,7 @@
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/main_tab_item_text_color</item>
+        <item name="android:textSize">12sp</item>
     </style>
      
 </resources>
