@@ -16,7 +16,7 @@
     <application
         android:name="com.example.utils.UILApplication"
         android:allowBackup="true"
-        android:icon="@drawable/tttt"
+        android:icon="@drawable/bbbb"
         android:theme="@android:style/Theme.Light.NoTitleBar"
         android:label="@string/app_name"
         >
