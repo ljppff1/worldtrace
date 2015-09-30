@@ -1,1 +1,1 @@
-package com.example.utils;public class Content {	public  final  static String   URL="http://www.hk-compass.com/json/";	  public final static String URL_Search =URL+"propertysearch.php";}
+package com.example.utils;public class Content {	public  final  static String   URL="http://www.hk-compass.com/json/";	  public final static String URL_Search =URL+"propertysearch.php";	  public final static String ImageUrl ="http://pine.i3.com.hk/trade/UPFILE/";      }

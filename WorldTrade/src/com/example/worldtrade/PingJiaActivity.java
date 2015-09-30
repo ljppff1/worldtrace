@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.fragment.FragmentFJ1a;
+import com.example.fragment.FragmentFJ1b;
 
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -37,13 +39,23 @@ public class PingJiaActivity extends FragmentActivity {
 	private ArrayList<Fragment> list;
 	private RelativeLayout mIvtt1;
 	private FragmentFJ1a fa;
-	private FragmentFJ1a fb;
+	private FragmentFJ1b fb;
+	private String CHINESE;
 	@SuppressLint("ResourceAsColor")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		AppManager.getAppManager().addActivity(this);
+
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		if(CHINESE.equals("1")){
 		setContentView(R.layout.fujinchefang);
+		}else{
+			setContentView(R.layout.fujinchefange);
+		}
+
 		rg1 = (RadioGroup) this.findViewById(R.id.rg1);
 		rb1 = (RadioButton) this.findViewById(R.id.rb1);
 		rb2 = (RadioButton) this.findViewById(R.id.rb2);
@@ -78,7 +90,7 @@ public class PingJiaActivity extends FragmentActivity {
 
 		list = new ArrayList<Fragment>();
 		 fa=new FragmentFJ1a();
-		 fb=new FragmentFJ1a();
+		 fb=new FragmentFJ1b();
 		list.add(fa);
 		list.add(fb);
         

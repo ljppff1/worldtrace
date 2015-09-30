@@ -5,7 +5,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/aa1">
     
-   
+               <ProgressBar
+            android:id="@+id/progressBar_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    
     <RelativeLayout 
         android:layout_width="fill_parent"
         android:layout_height="50dp"
@@ -94,6 +100,7 @@
             android:layout_height="wrap_content"
             android:text="@string/abc69"
             android:textSize="19sp"
+            android:visibility="gone"
             android:id="@+id/mTv1"
             android:layout_marginLeft="10dp"
             android:textColor="@color/black"
@@ -115,6 +122,7 @@
             android:textSize="19sp"
             android:id="@+id/mTv3"
             android:layout_toRightOf="@id/mTv2"
+            android:visibility="gone"
             android:layout_marginLeft="10dp"
             android:textColor="@color/black"
             />
@@ -123,6 +131,7 @@
             android:layout_height="30dp"
             android:src="@drawable/abd64"
             android:layout_alignParentRight="true"
+            android:visibility="gone"
             android:layout_marginRight="10dp"
             />
         </RelativeLayout>
@@ -206,6 +215,7 @@
             android:text="@string/abc70"
             android:layout_marginLeft="40dp"
             android:textSize="19sp"
+            android:visibility="gone"
             android:id="@+id/mTv8"
             android:layout_toRightOf="@id/mTv7"
             android:textColor="@color/black"
@@ -218,6 +228,18 @@
             android:id="@+id/mTv9"
             android:layout_marginTop="18dp"
             android:layout_below="@id/mIvgs2"
+            android:textColor="@color/black"
+            />
+    <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/abc72"
+            android:textSize="19sp"
+            android:id="@+id/mTv10"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/mTv9"
+            android:layout_marginLeft="10dp"
+            android:paddingBottom="15dp"
             android:textColor="@color/black"
             />
     </RelativeLayout>
@@ -249,6 +271,7 @@
         >
         <LinearLayout 
             android:layout_width="fill_parent"
+            android:visibility="gone"
             android:layout_height="45dp"
             android:layout_centerVertical="true"
             android:orientation="horizontal"
@@ -266,6 +289,7 @@
                 android:text="@string/abc74"
                 android:textColor="@color/black"
                 android:gravity="center"
+                
                 android:textSize="20sp"
                 android:background="@drawable/abd73"
                 android:drawableLeft="@drawable/abd74"

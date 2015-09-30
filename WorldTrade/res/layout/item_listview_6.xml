@@ -39,16 +39,15 @@
         android:textSize="18sp"
         android:id="@+id/mTvi3"
         android:layout_below="@id/mTvi2"
-        android:textColor="@color/black"
+        android:textColor="@color/lightgray"
         />
                 <TextView 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/abc65"
+        android:text="@string/ds1"
         android:textSize="16sp"
         android:id="@+id/mTvi4"
         android:gravity="center_vertical"
-        android:drawableLeft="@drawable/abd59"
         android:layout_alignParentRight="true"
         android:textColor="@color/my1"
         />
@@ -61,6 +60,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:scaleType="fitXY"
+                    android:id="@+id/mIvw1"
                     android:src="@drawable/abd62"
                     />
         

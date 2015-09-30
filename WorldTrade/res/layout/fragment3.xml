@@ -56,6 +56,12 @@
        android:divider="@color/aliceblue" 
        android:dividerHeight="8dp"
          ></ListView>
+     <ProgressBar
+            android:id="@+id/progressBar_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
     </RelativeLayout>
    
 

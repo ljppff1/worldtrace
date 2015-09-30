@@ -2,6 +2,7 @@ package com.example.worldtrade;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -10,19 +11,26 @@ import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-public class KaiTonghuiyuanActivity extends Activity {
+public class KaiTonghuiyuanActivity extends BaseActivity {
 
 	private RelativeLayout mRlgs1;
 	private LinearLayout mLL4;
 	private LinearLayout mLL1;
 	private LinearLayout mLL3;
 	private LinearLayout mLL2;
+	private String CHINESE;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		if(CHINESE.equals("1")){
 		setContentView(R.layout.kaitonghuiyuan);
-		
+		}else{
+			setContentView(R.layout.kaitonghuiyuane);
+		}
+
 		
 		
 		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);

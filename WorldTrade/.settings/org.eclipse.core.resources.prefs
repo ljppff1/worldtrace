@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/com/easemob/chatuidemo/DemoHXSDKHelper.java=UTF-8
+encoding//src/com/easemob/chatuidemo/activity/AlertDialog.java=UTF-8
+encoding//src/com/easemob/chatuidemo/activity/ChatActivity.java=UTF-8
+encoding//src/com/easemob/chatuidemo/activity/WodeActivity.java=UTF-8
+encoding//src/com/easemob/chatuidemo/adapter/ChatAllHistoryAdapter.java=UTF-8
+encoding//src/com/easemob/chatuidemo/adapter/ChatHistoryAdapter.java=UTF-8
+encoding//src/com/easemob/chatuidemo/adapter/ContactAdapter.java=UTF-8
+encoding//src/com/easemob/chatuidemo/adapter/MessageAdapter.java=UTF-8
+encoding//src/com/easemob/chatuidemo/adapter/VoicePlayClickListener.java=UTF-8
+encoding//src/com/easemob/chatuidemo/utils/CommonUtils.java=UTF-8
+encoding//src/com/easemob/chatuidemo/utils/UserUtils.java=UTF-8
+encoding//src/com/example/utils/UILApplication1.java=UTF-8
+encoding//src/com/example/view/pager/CycleViewPager.java=UTF-8

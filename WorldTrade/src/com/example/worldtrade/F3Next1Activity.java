@@ -12,7 +12,10 @@ import org.json.JSONObject;
 import org.yanzi.ui.HorizontalListView;
 import org.yanzi.ui.HorizontalListViewAdapter;
 
+import com.easemob.chatuidemo.activity.ChatActivity;
 import com.example.fragment.Fragment1;
+import com.example.fragment.Fragment3;
+import com.example.utils.Content;
 import com.example.worldtrade.ChanPinLieBiaoActivity.Data;
 import com.example.worldtrade.ChanPinLieBiaoActivity.Holder;
 import com.example.worldtrade.ChanPinLieBiaoActivity.Myadapter;
@@ -29,9 +32,11 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -49,6 +54,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.ProgressBar;
@@ -57,7 +63,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class F3Next1Activity extends Activity {
+public class F3Next1Activity extends BaseActivity {
 	private ImageView mTvback;
 	private ListView mLvf11;
 	   private ArrayList<String> mDataList =new ArrayList<String>();
@@ -68,6 +74,7 @@ public class F3Next1Activity extends Activity {
 	private TextView mTvrightdetail;
 	private TextView mTvrightdetailas;
 	private RelativeLayout mRlf3n1;
+	   private List<Data1> mlist =new ArrayList<F3Next1Activity.Data1>();
 
 	private ProgressBar progressBar_sale;
 	   private ListView mLv1;
@@ -78,19 +85,39 @@ public class F3Next1Activity extends Activity {
 	   protected ImageLoader imageLoader = ImageLoader.getInstance();
 	private RelativeLayout mRlgs1;
 	private Button mTvf31a1;
+	private String ID;
+	private LinearLayout mLLind3;
+	private TextView mV1;
+	private LinearLayout mLLind2;
+	private String userid;
+	private String CHINESE;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		if(CHINESE.equals("1")){
 		setContentView(R.layout.f3next1);
+		}else{
+			setContentView(R.layout.f3next1e);
+		}
+
+		ID=	getIntent().getStringExtra("ID");
+
+		mLLind3 =(LinearLayout)this.findViewById(R.id.mLLind3);
+		mLLind3.setOnClickListener(listener);
 		mTvf31a1 =(Button)this.findViewById(R.id.mTvf31a1);
 		mTvf31a1.setOnClickListener(listener);
 		mLv1 =(ListView)this.findViewById(R.id.mLv1);
 	//	initData();
 		progressBar_sale =(ProgressBar)this.findViewById(R.id.progressBar_sale);
 		progressBar_sale.setVisibility(View.GONE);
-		  initListView();
+		//  initListView();
+		SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+
+		userid =mySharedPreferences.getString("id", "");
 
 		
 		hListView = (HorizontalListView)this.findViewById(R.id.horizon_listview);
@@ -99,17 +126,13 @@ public class F3Next1Activity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				startActivity(new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQingActivity.class));
+				Intent intent =new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQing1Activity.class);
+				intent.putExtra("ID", mlist.get(position).oid);
+				startActivity(intent);
 			}
 		});
+		mV1 =(TextView)this.findViewById(R.id.mV1);
 
-		final int[] ids = {R.drawable.abc2, R.drawable.abc2,
-				R.drawable.abc2, R.drawable.abc2,R.drawable.abc2, R.drawable.abc2,
-				R.drawable.abc2, R.drawable.abc2
-				};
-		final  String[] titles ={"d","d","d","d","d","d","d","d"};
-		hListViewAdapter = new HorizontalListViewAdapter(getApplicationContext(),titles,ids);
-		hListView.setAdapter(hListViewAdapter);
 		mTvrightdetail= (TextView)this.findViewById(R.id.mTvrightdetail);
 		mTvrightdetail.setOnClickListener(listener);
 		mTvback =(ImageView)this.findViewById(R.id.mTvback);
@@ -117,7 +140,9 @@ public class F3Next1Activity extends Activity {
 		mIvright1.setOnClickListener(listener);
 		mRlf3n1 =(RelativeLayout)this.findViewById(R.id.mRlf3n1);
 		mRlf3n1.setOnClickListener(listener);
-		
+		mLLind2 =(LinearLayout)this.findViewById(R.id.mLLind2);
+		mLLind2.setOnClickListener(listener);
+
 		mTvrightdetailas=(TextView)this.findViewById(R.id.mTvrightdetailas);
 		mTvrightdetailas.setOnClickListener(listener);
 		mTvback.setOnClickListener(new OnClickListener() {
@@ -128,13 +153,148 @@ public class F3Next1Activity extends Activity {
 			}
 		});
 		
-
+		initDatao1();
 		
-		
+		initDatao2();
 		
 
 		
 	}
+
+private void initDatao2() {
+	downloadsearcho2("0");
+}			private String number;
+
+public void downloadsearcho2(String area11){
+	progressBar_sale.setVisibility(View.VISIBLE);
+	 RequestParams params = new RequestParams();
+   List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
+   nameValuePairs.add(new BasicNameValuePair("id", ID));
+   params.addBodyParameter(nameValuePairs);
+   HttpUtils http = new HttpUtils();
+   http.send(HttpRequest.HttpMethod.POST,
+  		 "http://pine.i3.com.hk/trade/json/companyshow.php",
+           params,
+           new RequestCallBack<String>() {
+				private String msg;
+				private String conpany;
+				private String introduction;
+				private String username;
+				private String tell;
+				private String emall;
+				private String locationone;
+				private String locationtwo;
+				private String locationthree;
+				private String address;
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					
+				}
+				@Override
+				public void onSuccess(ResponseInfo<String> arg0) {
+					JSONObject jsonObject;
+					try {
+						jsonObject = new JSONObject(arg0.result);
+						String string_code = jsonObject.getString("code");
+						 msg = jsonObject.getString("msg");
+						 int  num_code=Integer.valueOf(string_code);
+						 if (num_code==1) {
+							 //保存到本地
+							 JSONObject array = jsonObject.getJSONObject("data");
+							 
+							 number = array.getString("number");
+							 conpany = array.getString("conpany");
+							 introduction = array.getString("introduction");
+							 username = array.getString("username");
+							 tell = array.getString("tell");
+							 emall = array.getString("emall");
+							 locationone = array.getString("locationone");
+							 locationtwo = array.getString("locationtwo");
+							 locationthree = array.getString("locationthree");
+							 address = array.getString("address");
+							 progressBar_sale.setVisibility(View.GONE);
+                            initView();
+						 }
+						 else {
+								 Toast.makeText(getApplicationContext(),msg, 0).show();
+								 progressBar_sale.setVisibility(View.GONE);
+						}
+					} catch (JSONException e) {
+						progressBar_sale.setVisibility(View.GONE);
+						 Toast.makeText(getApplicationContext(),msg, 0).show();
+					}
+				}
+
+				private void initView() {
+					mV1.setText(conpany);
+					
+				}
+     
+   });
+}
+
+private void initDatao1() {
+	downloadsearcho1("0");
+}
+public void downloadsearcho1(String area11){
+	progressBar_sale.setVisibility(View.VISIBLE);
+	 RequestParams params = new RequestParams();
+   List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
+   nameValuePairs.add(new BasicNameValuePair("id", ID));
+   params.addBodyParameter(nameValuePairs);
+   HttpUtils http = new HttpUtils();
+   http.send(HttpRequest.HttpMethod.POST,
+  		 "http://pine.i3.com.hk/trade/json/companyproduct.php",
+           params,
+           new RequestCallBack<String>() {
+
+				private String msg;
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<String> arg0) {
+					JSONObject jsonObject;
+					try {
+						jsonObject = new JSONObject(arg0.result);
+						String string_code = jsonObject.getString("code");
+						 msg = jsonObject.getString("msg");
+						
+						 int  num_code=Integer.valueOf(string_code);
+						 if (num_code==1) {
+							 //保存到本地
+							 mlist.clear();
+							 JSONArray array = jsonObject.getJSONArray("data");
+							 for(int i=0;i<array.length();i++){
+								 Data1 d1 =new Data1();
+								 d1.oid=array.getJSONObject(i).getString("id");
+								 d1.oname=array.getJSONObject(i).getString("title");
+								 d1.pic=array.getJSONObject(i).getString("img");
+								 mlist.add(d1);
+							 }
+								progressBar_sale.setVisibility(View.GONE);
+                            initListView();
+						 }
+						 else {
+								 Toast.makeText(getApplicationContext(),msg, 0).show();
+									progressBar_sale.setVisibility(View.GONE);
+						}
+					} catch (JSONException e) {
+						progressBar_sale.setVisibility(View.GONE);
+						 Toast.makeText(getApplicationContext(),msg, 0).show();
+					}
+				}
+     
+   });
+}
+class Data1 {
+	public String oid;
+	public String oname;
+	public String pic;
+}
+	
 	private void initListView() {
 	       myadapter = new Myadapter1();
 	       
@@ -144,7 +304,9 @@ public class F3Next1Activity extends Activity {
 				@Override
 				public void onItemClick(AdapterView<?> parent,
 						View view, int position, long id) {
-					startActivity(new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQingActivity.class));
+					Intent intent =new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQing1Activity.class);
+					intent.putExtra("ID", mlist.get(position).oid);
+					startActivity(intent);
 				}
 			});
 		}
@@ -162,29 +324,26 @@ public class F3Next1Activity extends Activity {
 				convertView = LayoutInflater.from(getApplicationContext())
 						.inflate(R.layout.item_listview_7, null);
 				holder = new Holder1();
-	/*			holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri10);
-				holder.mTvri11 =(TextView)convertView.findViewById(R.id.mTvri11);
-				holder.mTvri12 =(TextView)convertView.findViewById(R.id.mTvri12);
+				holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri10);
 				holder.imageView =(ImageView)convertView.findViewById(R.id.iv_listview_rent_pic);
-	*/			convertView.setTag(holder);
+				convertView.setTag(holder);
 
 			}else{
 				holder =(Holder1)convertView.getTag();
 			}
 			
-		/*	holder.mTvri10.setText(mDataList.get(position).Name);
-			holder.mTvri11.setText(mDataList.get(position).StreetName);
+			holder.mTvri10.setText(mlist.get(position).oname);
 			initImageLoaderOptions();
-			imageLoader.displayImage(mDataList.get(position).CoverPic,
+			imageLoader.displayImage(Content.ImageUrl+mlist.get(position).pic,
 					holder.imageView, options);
-			*/
+			
 			return convertView;
 
 		}
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return 16;
+			return mlist.size();
 		}
 		@Override
 		public Object getItem(int position) {
@@ -197,12 +356,81 @@ public class F3Next1Activity extends Activity {
 			return 0;
 		}
 	}
+	private void initImageLoaderOptions() {
+		options = new DisplayImageOptions.Builder()
+				.showImageForEmptyUri(R.drawable.a)
+				.cacheInMemory()
+				.cacheOnDisc().displayer(new FadeInBitmapDisplayer(2000))
+				.bitmapConfig(Bitmap.Config.RGB_565).build();
+	}
+
+private void initDataos() {
+	downloadsearchos("0");
+}
+public void downloadsearchos(String area11){
+	progressBar_sale.setVisibility(View.VISIBLE);
+	 RequestParams params = new RequestParams();
+   List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
+   nameValuePairs.add(new BasicNameValuePair("anid", ID));
+   nameValuePairs.add(new BasicNameValuePair("userid", userid));
+   params.addBodyParameter(nameValuePairs);
+   HttpUtils http = new HttpUtils();
+   http.send(HttpRequest.HttpMethod.POST,
+  		 "http://pine.i3.com.hk/trade/json/addcollection.php",
+           params,
+           new RequestCallBack<String>() {
+
+				private String msg;
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<String> arg0) {
+					JSONObject jsonObject;
+					try {
+						jsonObject = new JSONObject(arg0.result);
+						String string_code = jsonObject.getString("code");
+						 msg = jsonObject.getString("msg");
+						
+						 int  num_code=Integer.valueOf(string_code);
+						 Toast.makeText(getApplicationContext(),msg, 0).show();
+						 progressBar_sale.setVisibility(View.GONE);
+					} catch (JSONException e) {
+						progressBar_sale.setVisibility(View.GONE);
+						 Toast.makeText(getApplicationContext(),msg, 0).show();
+					}
+				}
+   });
+}
 
 	OnClickListener listener =new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
+			case R.id.mLLind2:
+				if(!TextUtils.isEmpty(number)){
+
+				initDataos();
+				}else{
+					startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+
+				}
+				break;
+
+			case R.id.mLLind3:
+				if(!TextUtils.isEmpty(number)){
+				Intent intent =new Intent(getApplicationContext(), ChatActivity.class);
+				intent.putExtra("userId", "l");
+             startActivity(intent);	
+				}else{
+					startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+
+				}
+
+				break;
 			case R.id.mIvright1:
 				showWindow();
 				break;

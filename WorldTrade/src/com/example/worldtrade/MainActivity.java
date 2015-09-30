@@ -3,9 +3,12 @@ package com.example.worldtrade;
 
 import java.util.ArrayList;
 
+import com.easemob.chat.EMChatManager;
+import com.easemob.exceptions.EaseMobException;
 import com.example.fragment.*;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -28,14 +31,18 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 	private RadioGroup group;
 	private ArrayList<Fragment> fragments;
 	private long exitTime = 0;
+	private String number;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		AppManager.getAppManager().addActivity(this);
 		setContentView(R.layout.activity_main);
 		initViews();
-		
+		SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		number =mySharedPreferences.getString("number","");
+
 		group = (RadioGroup) findViewById(R.id.main_tab_bar);
 		group.setOnCheckedChangeListener(this);
 		fragments = new ArrayList<Fragment>();
@@ -45,15 +52,34 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		fragments.add(f4);
 		fragments.add(f5);
 		
-
+		
 		FragmentManager manager = getSupportFragmentManager();
 		FragmentTransaction transaction = manager.beginTransaction();
 		Fragment fragment = null;
 		fragment = fragments.get(0);
 		transaction.replace(R.id.main_framelayout, fragment);
 		transaction.commit();
+         
+	
 
 		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				try {
+					EMChatManager.getInstance().createAccountOnServer(number, "asdf22");
+				} catch (EaseMobException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+			}
+		}).start();
+		
+		
+
 	}
 
 	private void initViews() {
@@ -65,6 +91,8 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 		
 	}
 
+
+	
 	@Override
 	public boolean dispatchKeyEvent(KeyEvent event) {
 		if(event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_BACK){
@@ -72,14 +100,14 @@ public class MainActivity extends FragmentActivity implements OnCheckedChangeLis
 				Toast.makeText(getApplicationContext(), R.string.toast, 1).show();
 				exitTime = System.currentTimeMillis();
 				}else{
-					finish();
+				AppManager.getAppManager().AppExit(getApplicationContext());
 					android.os.Process.killProcess(android.os.Process.myPid());
 				}
 			return true;
 			}
-		return super.dispatchKeyEvent(event);
-	}
-	@Override
+		return false;
+		}
+		@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		int childCount = group.getChildCount();
 		int checkedIndex = 0;

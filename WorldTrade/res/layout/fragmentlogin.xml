@@ -54,6 +54,7 @@
                       android:textSize="18sp"
                       android:textColor="@color/black"
                       android:paddingTop="10dp"
+                      android:inputType="textEmailAddress"
                       android:paddingBottom="10dp"
                       android:id="@+id/ui_username_input"
                       />
@@ -64,14 +65,12 @@
                       
                       />
                   <EditText 
-                                            android:textColor="@color/black"
-                                            android:textSize="18sp"
-                      
+                    android:textColor="@color/black"
+                      android:textSize="18sp"
                       android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:hint="@string/za5"
-                      
-                                            android:paddingTop="10dp"
+                      android:paddingTop="10dp"
                       android:paddingBottom="10dp"
                       android:inputType="textPassword"
                         android:paddingLeft="15dp"
@@ -79,7 +78,7 @@
                       />
                   
               </LinearLayout>
-                       <Button 
+                    <Button 
                     android:layout_marginTop="15dp"
                     android:layout_width="120dp"
                     android:layout_height="40dp"

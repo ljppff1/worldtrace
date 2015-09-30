@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+   
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:orientation="horizontal"
+        >
+            <ImageView 
+        android:layout_weight="4"
+        android:layout_height="fill_parent"
+        android:layout_width="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ac11"
+        />
+            <RelativeLayout 
+                        android:layout_weight="1"
+                        android:layout_height="fill_parent"
+                android:layout_width="0dp"
+                >
+                <RelativeLayout 
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    >
+            <ImageView 
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_width="fill_parent"
+        android:src="@drawable/ac2"
+        
+        />
+            <ImageView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/aab1"
+                android:paddingTop="40dp"
+                android:id="@+id/mIVww"
+                />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="create"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/mIVww"
+                android:paddingTop="15dp"
+                />
+            </RelativeLayout>
+            
+            </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+         android:paddingLeft="5dp"
+         android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:layout_height="fill_parent"
+        android:background="@color/aliceblue"
+        >
+     <ListView 
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:id="@+id/mLvf11"
+       android:divider="@color/aliceblue" 
+       android:dividerHeight="8dp"
+         ></ListView>
+     <ProgressBar
+            android:id="@+id/progressBar_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+   
+
+</LinearLayout>

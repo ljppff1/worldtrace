@@ -52,7 +52,7 @@
                   
                   />
               <TextView 
-                                android:text="############################"
+                                android:text="########################################################"
               android:textSize="18sp"
               android:textColor="@color/black"
               android:id="@+id/mTvri12"

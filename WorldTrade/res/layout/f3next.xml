@@ -1,9 +1,14 @@
-
-
+<RelativeLayout 
+        android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    >
+    
 <LinearLayout 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    
     android:background="@drawable/background"
     android:orientation="vertical"
     android:id="@+id/mLLf3n"
@@ -68,40 +73,15 @@
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:text="@string/ad1"
+                android:id="@+id/mVf6"
                 android:layout_marginLeft="10dp"
                 />
-                        <LinearLayout 
-                                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                                android:layout_marginRight="10dp"
-                
-                android:id="@+id/mLLind1"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:orientation="vertical"
-                >
-                <ImageView 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/aa3"
-                    android:scaleType="fitXY"
-                    android:layout_gravity="center"
-                    />
-                            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                                android:textSize="14sp"
-                android:textColor="@color/black"
-                    android:layout_gravity="center"
-                android:text="@string/az1"
-                />
-                
-            </LinearLayout>
+                   
                                     <LinearLayout 
                                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                                 android:layout_marginRight="10dp"
-                android:layout_toLeftOf="@id/mLLind1"
+                android:layout_alignParentRight="true"
                 android:id="@+id/mLLind2"
                 android:layout_centerVertical="true"
                 android:orientation="vertical"
@@ -150,6 +130,7 @@
                                     
           
         </RelativeLayout>
+        
     </RelativeLayout>
     
     
@@ -202,6 +183,11 @@
               />
             </RelativeLayout>        
     </RelativeLayout>
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="104dp"
+        
+        >
        <org.yanzi.ui.HorizontalListView
         android:id="@+id/horizon_listview"
         android:layout_width="fill_parent"
@@ -210,7 +196,13 @@
         
         >
     </org.yanzi.ui.HorizontalListView>
-            
+       <ProgressBar
+            android:id="@+id/progressBar_sale1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+            </RelativeLayout>
        <RelativeLayout 
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
@@ -246,7 +238,7 @@
               android:layout_marginTop="16dp"
                         android:layout_marginLeft="8dp"
           android:layout_marginRight="10dp"
-              
+              android:id="@+id/mVf1"
              android:paddingBottom="25dp"
               />
           
@@ -298,6 +290,7 @@
            android:layout_marginTop="10dp"
            android:layout_height="wrap_content"
            >
+            
             <RelativeLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -331,6 +324,7 @@
                  android:layout_marginLeft="8dp"
                  android:textColor="@color/black"
                  android:textSize="16sp"
+                 android:id="@+id/mVf2"
                  android:layout_centerVertical="true"
                  android:layout_toRightOf="@id/mIvl1"
                  />
@@ -362,6 +356,8 @@
                  android:layout_marginLeft="8dp"
                  android:textColor="@color/black"
                  android:textSize="16sp"
+                                  android:id="@+id/mVf3"
+                 
                  android:layout_centerVertical="true"
                  android:layout_toRightOf="@id/mIvl2"
                  />
@@ -395,6 +391,8 @@
                  android:layout_marginLeft="8dp"
                  android:textColor="@color/black"
                  android:textSize="16sp"
+                                  android:id="@+id/mVf4"
+                 
                  android:layout_centerVertical="true"
                  android:layout_toRightOf="@id/mIvl3"
                  />
@@ -421,16 +419,18 @@
                  android:scaleType="fitXY"
                  android:id="@+id/mIvl4"
                  />
-             <TextView 
+
+             <TextView
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:text="@string/az8"
-                 android:layout_marginLeft="8dp"
-                 android:textColor="@color/black"
-                 android:textSize="16sp"
                  android:layout_centerVertical="true"
-                 android:layout_toRightOf="@id/mIvl4"
-                 />
+                 android:layout_toRightOf="@+id/mIvl4"
+                 android:text="@string/az8"
+                                  android:id="@+id/mVf5"
+                 
+                 android:textColor="@color/black"
+                 android:textSize="16sp" />
+
          </RelativeLayout>
                     <View 
              android:layout_width="fill_parent"
@@ -519,3 +519,11 @@
     
     
 </LinearLayout>
+    <ProgressBar
+            android:id="@+id/progressBar_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+</RelativeLayout>
+

@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.utils.Content;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
@@ -21,6 +22,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -40,7 +42,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 
 
-public class MingPianShouCangActivity extends Activity {
+public class MingPianShouCangActivity extends BaseActivity {
 
 	private ProgressBar progressBar_sale;
 	   private ListView mLv1;
@@ -50,20 +52,32 @@ public class MingPianShouCangActivity extends Activity {
 	   private ArrayList<Data> mDataList=new ArrayList<MingPianShouCangActivity.Data>();
 	   protected ImageLoader imageLoader = ImageLoader.getInstance();
 	private RelativeLayout mRlgs1;
+	private String userid;
+	private String CHINESE;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		if(CHINESE.equals("1")){
 		setContentView(R.layout.ziliaochefang2);
+		}else{
+			setContentView(R.layout.ziliaochefang2e);
+		}
+
 		mLv1 =(ListView)this.findViewById(R.id.mLv1);
+		SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		userid =mySharedPreferences.getString("id", "");
+
 	//	initData();
 		progressBar_sale =(ProgressBar)this.findViewById(R.id.progressBar_sale);
 		progressBar_sale.setVisibility(View.GONE);
-		  initListView();
+		
 			mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
 			mRlgs1.setOnClickListener(listener);
-
+			initData();
 	}
 	
 	OnClickListener listener =new  OnClickListener() {
@@ -87,11 +101,11 @@ private void initData() {
 public void downloadsearch(String area11){
 	 RequestParams params = new RequestParams();
    List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
-   nameValuePairs.add(new BasicNameValuePair("CategoryID", "1"));
+   nameValuePairs.add(new BasicNameValuePair("userid", userid));
    params.addBodyParameter(nameValuePairs);
    HttpUtils http = new HttpUtils();
    http.send(HttpRequest.HttpMethod.POST,
-  		 "http://josie.i3.com.hk/FG/json/article_list.php",
+  		 "http://pine.i3.com.hk/trade/json/collectionlist.php",
            params,
            new RequestCallBack<String>() {
 
@@ -117,10 +131,11 @@ public void downloadsearch(String area11){
 								  Data  data=new Data();
 								  
 								 JSONObject jsonObject2 = array.getJSONObject(i);
-								 data.ID= jsonObject2.getString("ArticleID");
-								 data.Name= jsonObject2.getString("ArticleTitle");
-								 data.StreetName = jsonObject2.getString("ArticleRemark");
-								 data.CoverPic=jsonObject2.getString("ArticlePhoto");
+								 data.ID= jsonObject2.getString("id");
+								 data.Name= jsonObject2.getString("title");
+								 data.StreetName = jsonObject2.getString("name");
+								 data.RentPrice = jsonObject2.getString("tell");
+								 data.CoverPic=jsonObject2.getString("img");
 								 mDataList_origin.add(data);
 								 
 		                          data.toString();						 
@@ -143,8 +158,6 @@ public void downloadsearch(String area11){
 				
 					
 				}
-
-			
      
    });
 }
@@ -157,7 +170,9 @@ private void initListView() {
 			@Override
 			public void onItemClick(AdapterView<?> parent,
 					View view, int position, long id) {
-			//	startActivity(new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQingActivity.class));
+				Intent intent =new Intent(getApplicationContext(), F3NextActivity.class);
+				intent.putExtra("ID", mDataList.get(position).ID);
+				startActivity(intent);
 			}
 		});
 	}
@@ -169,7 +184,7 @@ private void initImageLoaderOptions() {
 			.bitmapConfig(Bitmap.Config.RGB_565).build();
 }
 class Holder{
-	TextView mTvri10,mTvri11,mTvri12;
+	TextView mVi2,mVi1,mVi3;
 	ImageView imageView;
 }
 class  Myadapter extends   BaseAdapter{
@@ -182,6 +197,12 @@ class  Myadapter extends   BaseAdapter{
 			convertView = LayoutInflater.from(getApplicationContext())
 					.inflate(R.layout.item_listview_71, null);
 			holder = new Holder();
+			
+			holder.mVi1 =(TextView)convertView.findViewById(R.id.mVi1);
+			holder.mVi2 =(TextView)convertView.findViewById(R.id.mVi2);
+			holder.mVi3 =(TextView)convertView.findViewById(R.id.mVi3);
+			holder.imageView =(ImageView)convertView.findViewById(R.id.iv_listview_rent_pic);
+
 /*			holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri10);
 			holder.mTvri11 =(TextView)convertView.findViewById(R.id.mTvri11);
 			holder.mTvri12 =(TextView)convertView.findViewById(R.id.mTvri12);
@@ -192,19 +213,20 @@ class  Myadapter extends   BaseAdapter{
 			holder =(Holder)convertView.getTag();
 		}
 		
-	/*	holder.mTvri10.setText(mDataList.get(position).Name);
-		holder.mTvri11.setText(mDataList.get(position).StreetName);
+		holder.mVi1.setText(mDataList.get(position).Name);
+		holder.mVi2.setText(mDataList.get(position).StreetName);
+		holder.mVi3.setText(mDataList.get(position).RentPrice);
 		initImageLoaderOptions();
-		imageLoader.displayImage(mDataList.get(position).CoverPic,
+		imageLoader.displayImage(Content.ImageUrl+mDataList.get(position).CoverPic,
 				holder.imageView, options);
-		*/
+		
 		return convertView;
 
 	}
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return 16;
+		return mDataList.size();
 	}
 	@Override
 	public Object getItem(int position) {

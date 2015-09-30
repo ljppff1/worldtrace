@@ -1,0 +1,176 @@
+<ScrollView 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+        android:background="@color/aliceblue"
+    
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/aliceblue"
+    android:orientation="vertical"
+   >
+        <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:orientation="horizontal"
+        >
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            >
+            <View 
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                >
+                            <ImageView 
+               android:layout_width="fill_parent"
+               android:layout_height="0dp"
+               android:layout_weight="4"
+               android:src="@drawable/abq3"
+               /> 
+            <ImageView 
+                               android:layout_width="fill_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:src="@drawable/abq2"
+                android:layout_marginTop="20dp"
+                />
+            <ImageView 
+                               android:layout_width="fill_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:src="@drawable/abq1"
+                
+                />
+                
+            </LinearLayout>
+            
+            <View 
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    >
+                   <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:layout_gravity="center_horizontal"
+                        android:text="@string/ac9"
+                        android:textColor="@color/white"
+                        />
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:layout_gravity="center_horizontal"
+                        android:text="@string/ac10"
+                        android:textColor="@color/white"
+                        />
+                                        <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:layout_gravity="center_horizontal"
+                        android:text="@string/ac111"
+                        android:textColor="@color/white"
+                        />
+                    </LinearLayout>
+            </LinearLayout>
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
+        </LinearLayout>
+    
+     <RelativeLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="1dp"
+                  android:paddingTop="8dp"
+           android:paddingBottom="8dp"
+           android:layout_gravity="bottom"
+           android:background="@color/white"
+       android:id="@+id/mRlf4a1"
+       >
+             <TextView  android:textColor="@color/black" 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="20dp"
+               android:text="About Worldwide Trade"
+               android:textSize="22sp"
+               android:layout_centerVertical="true"
+               />     
+         </RelativeLayout>
+                <View 
+            android:layout_width="fill_parent"
+            android:layout_height="0.4dp"
+            android:background="@color/black"
+            />
+     
+<RelativeLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+                  android:paddingTop="8dp"
+           android:paddingBottom="8dp"
+           android:background="@color/white"
+       
+       >
+                         <TextView  android:textColor="@color/black" 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+                              android:layout_marginLeft="20dp"
+                              android:textSize="22sp"
+               
+               android:text="Customer Service"
+               android:layout_centerVertical="true"
+               />     
+       
+         </RelativeLayout>
+     <View 
+            android:layout_width="fill_parent"
+            android:layout_height="0.4dp"
+            android:background="@color/black"
+            />
+     
+<RelativeLayout 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+                  android:paddingTop="8dp"
+           android:paddingBottom="8dp"
+           android:background="@color/white"
+       
+       >
+                         <TextView  android:textColor="@color/black" 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+                              android:layout_marginLeft="20dp"
+                              android:textSize="22sp"
+               
+               android:text="Advertising Enquiry"
+               android:layout_centerVertical="true"
+               />     
+       
+         </RelativeLayout>
+   
+
+</LinearLayout>
+</ScrollView>

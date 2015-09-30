@@ -2,7 +2,16 @@ package org.yanzi.ui;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.example.domain.Data1;
+import com.example.utils.Content;
+import com.example.worldtrade.F3NextActivity;
 import com.example.worldtrade.R;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -22,16 +31,20 @@ public class HorizontalListViewAdapter extends BaseAdapter{
 	private LayoutInflater mInflater;
 	Bitmap iconBitmap;
 	private int selectIndex = -1;
+	   protected ImageLoader imageLoader = ImageLoader.getInstance();
 
-	public HorizontalListViewAdapter(Context context, String[] titles, int[] ids){
+	   private List<Data1> mlist =new ArrayList<Data1>();
+	private DisplayImageOptions options;
+
+	public HorizontalListViewAdapter(Context context,List<Data1> mlist ){
 		this.mContext = context;
-		this.mIconIDs = ids;
-		this.mTitles = titles;
+        this.mlist =mlist;
 		mInflater=(LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);//LayoutInflater.from(mContext);
+		
 	}
 	@Override
 	public int getCount() {
-		return mIconIDs.length;
+		return mlist.size();
 	}
 	@Override
 	public Object getItem(int position) {
@@ -50,8 +63,8 @@ public class HorizontalListViewAdapter extends BaseAdapter{
 		if(convertView==null){
 			holder = new ViewHolder();
 			convertView = mInflater.inflate(R.layout.item_listview_h8, null);
-			//holder.mImage=(ImageView)convertView.findViewById(R.id.img_list_item);
-			//holder.mTitle=(TextView)convertView.findViewById(R.id.text_list_item);
+			holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri10);
+			holder.imageView =(ImageView)convertView.findViewById(R.id.iv_listview_rent_pic);
 			convertView.setTag(holder);
 		}else{
 			holder=(ViewHolder)convertView.getTag();
@@ -62,16 +75,36 @@ public class HorizontalListViewAdapter extends BaseAdapter{
 			convertView.setSelected(false);
 		}
 		
+		
+		
+		
+		
+		
+		holder.mTvri10.setText(mlist.get(position).oname);
+		initImageLoaderOptions();
+		imageLoader.displayImage(Content.ImageUrl+mlist.get(position).pic,
+				holder.imageView, options);
+		
+
+		
+		
 	//	holder.mTitle.setText(mTitles[position]);
 	//	iconBitmap = getPropThumnail(mIconIDs[position]);
 	//	holder.mImage.setImageBitmap(iconBitmap);
 
 		return convertView;
 	}
+	private void initImageLoaderOptions() {
+		options = new DisplayImageOptions.Builder()
+				.showImageForEmptyUri(R.drawable.a)
+				.cacheInMemory()
+				.cacheOnDisc().displayer(new FadeInBitmapDisplayer(2000))
+				.bitmapConfig(Bitmap.Config.RGB_565).build();
+	}
 
 	private static class ViewHolder {
-		private TextView mTitle ;
-		private ImageView mImage;
+		private TextView mTvri10 ;
+		private ImageView imageView;
 	}
 	private Bitmap getPropThumnail(int id){
 		Drawable d = mContext.getResources().getDrawable(id);

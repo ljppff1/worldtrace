@@ -8,7 +8,10 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.yanzi.ui.HorizontalListViewAdapter;
 
+import com.example.domain.Data1;
+import com.example.utils.Content;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
@@ -21,6 +24,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -40,30 +44,40 @@ import android.widget.AdapterView.OnItemClickListener;
 
 
 
-public class ChanPinLieBiaoActivity extends Activity {
+public class ChanPinLieBiaoActivity extends BaseActivity {
 
 	private ProgressBar progressBar_sale;
 	   private ListView mLv1;
 	   private Myadapter myadapter;
 	   private DisplayImageOptions options;
-	   private ArrayList<Data> mDataList_origin=new ArrayList<ChanPinLieBiaoActivity.Data>();
-	   private ArrayList<Data> mDataList=new ArrayList<ChanPinLieBiaoActivity.Data>();
 	   protected ImageLoader imageLoader = ImageLoader.getInstance();
 	private RelativeLayout mRlgs1;
+	private ProgressBar progressBar_sale1;
+	   private List<Data1> mlist =new ArrayList<Data1>();
+	private String ID;
+	private String CHINESE;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		ID =mySharedPreferences1.getString("id","");
+		if(CHINESE.equals("1")){
 		setContentView(R.layout.ziliaochefang1);
+		}else{
+			setContentView(R.layout.ziliaochefang1e);
+		}
+
 		mLv1 =(ListView)this.findViewById(R.id.mLv1);
 	//	initData();
-		progressBar_sale =(ProgressBar)this.findViewById(R.id.progressBar_sale);
-		progressBar_sale.setVisibility(View.GONE);
-		  initListView();
+		progressBar_sale1 =(ProgressBar)this.findViewById(R.id.progressBar_sale);
+		progressBar_sale1.setVisibility(View.GONE);
+		 
 			mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
 			mRlgs1.setOnClickListener(listener);
-
+    initDatao1();
 	}
 	
 	OnClickListener listener =new  OnClickListener() {
@@ -80,24 +94,31 @@ public class ChanPinLieBiaoActivity extends Activity {
 			}
 		}
 	};
-
-private void initData() {
-	downloadsearch("0");
+   
+	
+@Override
+	protected void onResume() {
+	initDatao1();
+	super.onResume();
+	}
+private void initDatao1() {
+	downloadsearcho1("0");
 }
-public void downloadsearch(String area11){
+public void downloadsearcho1(String area11){
+	progressBar_sale1.setVisibility(View.VISIBLE);
 	 RequestParams params = new RequestParams();
    List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
-   nameValuePairs.add(new BasicNameValuePair("CategoryID", "1"));
+   nameValuePairs.add(new BasicNameValuePair("id", ID));
    params.addBodyParameter(nameValuePairs);
    HttpUtils http = new HttpUtils();
    http.send(HttpRequest.HttpMethod.POST,
-  		 "http://josie.i3.com.hk/FG/json/article_list.php",
+  		 "http://pine.i3.com.hk/trade/json/companyproduct.php",
            params,
            new RequestCallBack<String>() {
 
+				private String msg;
 				@Override
 				public void onFailure(HttpException arg0, String arg1) {
-					// TODO Auto-generated method stub
 					
 				}
 
@@ -107,44 +128,32 @@ public void downloadsearch(String area11){
 					try {
 						jsonObject = new JSONObject(arg0.result);
 						String string_code = jsonObject.getString("code");
+						 msg = jsonObject.getString("msg");
+						
 						 int  num_code=Integer.valueOf(string_code);
 						 if (num_code==1) {
 							 //保存到本地
-							 mDataList_origin.clear();
+							 mlist.clear();
 							 JSONArray array = jsonObject.getJSONArray("data");
-							  for (int i = 0; i < array.length(); i++) {
-								  
-								  Data  data=new Data();
-								  
-								 JSONObject jsonObject2 = array.getJSONObject(i);
-								 data.ID= jsonObject2.getString("ArticleID");
-								 data.Name= jsonObject2.getString("ArticleTitle");
-								 data.StreetName = jsonObject2.getString("ArticleRemark");
-								 data.CoverPic=jsonObject2.getString("ArticlePhoto");
-								 mDataList_origin.add(data);
-								 
-		                          data.toString();						 
-							}
-							  mDataList.clear();
-							  mDataList.addAll(mDataList_origin);
-								progressBar_sale.setVisibility(View.GONE);
-							  initListView();
-						}
+							 for(int i=0;i<array.length();i++){
+								 Data1 d1 =new Data1();
+								 d1.oid=array.getJSONObject(i).getString("id");
+								 d1.oname=array.getJSONObject(i).getString("title");
+								 d1.pic=array.getJSONObject(i).getString("img");
+								 mlist.add(d1);
+							 }
+							 progressBar_sale1.setVisibility(View.GONE);
+							 initListView();
+						 }
 						 else {
-							//new AlertInfoDialog(SaleActivity.this).show();
+								 Toast.makeText(getApplicationContext(),msg, 0).show();
+								 progressBar_sale1.setVisibility(View.GONE);
 						}
 					} catch (JSONException e) {
-						 if(mDataList.isEmpty())
-						//new Dialog_noInternet(SaleActivity.this).show();
-							 Toast.makeText(getApplicationContext(), "暫無相關內容", 0).show();
-						e.printStackTrace();
+						progressBar_sale1.setVisibility(View.GONE);
+						 Toast.makeText(getApplicationContext(),msg, 0).show();
 					}
-						
-				
-					
 				}
-
-			
      
    });
 }
@@ -157,7 +166,9 @@ private void initListView() {
 			@Override
 			public void onItemClick(AdapterView<?> parent,
 					View view, int position, long id) {
-				startActivity(new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQingActivity.class));
+				Intent intent =new Intent(getApplicationContext(), com.example.worldtrade.ChanPingXiangQing2Activity.class);
+				intent.putExtra("ID", mlist.get(position).oid);
+				startActivity(intent);
 			}
 		});
 	}
@@ -182,29 +193,27 @@ class  Myadapter extends   BaseAdapter{
 			convertView = LayoutInflater.from(getApplicationContext())
 					.inflate(R.layout.item_listview_7, null);
 			holder = new Holder();
-/*			holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri10);
-			holder.mTvri11 =(TextView)convertView.findViewById(R.id.mTvri11);
-			holder.mTvri12 =(TextView)convertView.findViewById(R.id.mTvri12);
+			holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri10);
 			holder.imageView =(ImageView)convertView.findViewById(R.id.iv_listview_rent_pic);
-*/			convertView.setTag(holder);
+			convertView.setTag(holder);
 
 		}else{
 			holder =(Holder)convertView.getTag();
 		}
 		
-	/*	holder.mTvri10.setText(mDataList.get(position).Name);
-		holder.mTvri11.setText(mDataList.get(position).StreetName);
+		holder.mTvri10.setText(mlist.get(position).oname);
 		initImageLoaderOptions();
-		imageLoader.displayImage(mDataList.get(position).CoverPic,
+		imageLoader.displayImage(Content.ImageUrl+mlist.get(position).pic,
 				holder.imageView, options);
-		*/
+		
+		
 		return convertView;
 
 	}
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return 16;
+		return mlist.size();
 	}
 	@Override
 	public Object getItem(int position) {

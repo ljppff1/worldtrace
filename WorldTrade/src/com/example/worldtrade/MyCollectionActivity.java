@@ -10,7 +10,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.easemob.chatuidemo.activity.ChatActivity;
 import com.example.fragment.Fragment1;
+import com.example.utils.Content;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
@@ -24,10 +26,12 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.CalendarContract;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -37,13 +41,14 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class MyCollectionActivity extends Activity {
+public class MyCollectionActivity extends BaseActivity {
 	private ImageView mTvback;
 	private RelativeLayout mRlf11;
 	private RelativeLayout mRlf12;
@@ -55,12 +60,22 @@ public class MyCollectionActivity extends Activity {
 	private Myadapter myadapter;
 	protected ImageLoader imageLoader = ImageLoader.getInstance();
 	private RelativeLayout mRlgs1;
+	private String userid;
+	private String CHINESE;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		if(CHINESE.equals("1")){
 		setContentView(R.layout.mycollection);
+		}else{
+			setContentView(R.layout.mycollectione);
+		}
+
+
 		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
 		mRlgs1.setOnClickListener(new OnClickListener() {
 			
@@ -69,7 +84,10 @@ public class MyCollectionActivity extends Activity {
 				finish();
 			}
 		});
-	
+		SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+
+		userid =mySharedPreferences.getString("id", "");
+
 		initView();
 		
 		
@@ -98,27 +116,28 @@ private void initData() {
 public void downloadsearch(String area11){
 	 RequestParams params = new RequestParams();
   List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
-  nameValuePairs.add(new BasicNameValuePair("PropertyLocation", area11));
-  nameValuePairs.add(new BasicNameValuePair("RentSale", "1"));
+  nameValuePairs.add(new BasicNameValuePair("userid", userid));
   params.addBodyParameter(nameValuePairs);
   HttpUtils http = new HttpUtils();
   http.send(HttpRequest.HttpMethod.POST,
- 		 com.example.utils.Content.URL_Search,
+ 		 "http://pine.i3.com.hk/trade/json/icollectionlist.php",
           params,
           new RequestCallBack<String>() {
 
 				@Override
 				public void onFailure(HttpException arg0, String arg1) {
-					// TODO Auto-generated method stub
+					
 					
 				}
 
 				@Override
 				public void onSuccess(ResponseInfo<String> arg0) {
 					JSONObject jsonObject;
+					String msg;
 					try {
 						jsonObject = new JSONObject(arg0.result);
 						String string_code = jsonObject.getString("code");
+						 msg = jsonObject.getString("msg");
 						 int  num_code=Integer.valueOf(string_code);
 						 if (num_code==1) {
 							 //保存到本地
@@ -129,39 +148,27 @@ public void downloadsearch(String area11){
 								  Data  data=new Data();
 								  
 								 JSONObject jsonObject2 = array.getJSONObject(i);
-								 data.ID= jsonObject2.getString("ID");
-								 data.Name= jsonObject2.getString("Name");
-								 data.StreetName = jsonObject2.getString("StreetName");
-								 data.AreaGross=jsonObject2.getString("AreaGross");
-								 data.AreaNet=jsonObject2.getString("AreaNet");
-								 data.CoverPic=jsonObject2.getString("CoverPic");
-								 data.SellingPrice=jsonObject2.getString("SellingPrice");
-								 data.RentPrice=jsonObject2.getString("RentPrice");
+								 data.ID= jsonObject2.getString("id");
+								 data.Name= jsonObject2.getString("title");
+								 data.StreetName = jsonObject2.getString("introduction");
+								 data.CoverPic=jsonObject2.getString("img");
 								 mDataList_origin.add(data);
 								 
 		                          data.toString();						 
 							}
 							  mDataList.clear();
 							  mDataList.addAll(mDataList_origin);
-								if (mDataList_origin.size()==0) {
-									 Toast.makeText(getApplicationContext(), "暫無相關內容", 0).show();
-								}
-								else {
-									//findViewById(R.id.tv_noresut).setVisibility(View.GONE);
-								}
+								 Toast.makeText(getApplicationContext(), msg, 0).show();
 
 							  initListView();
 						}
 						 else {
 							findViewById(R.id.progressBar_sale).setVisibility(View.GONE);
-							//new AlertInfoDialog(SaleActivity.this).show();
+							 Toast.makeText(getApplicationContext(), msg, 0).show();
 						}
 					} catch (JSONException e) {
-						 if(mDataList.isEmpty())
-						//new Dialog_noInternet(SaleActivity.this).show();
-							 Toast.makeText(getApplicationContext(), "暫無相關內容", 0).show();
-						e.printStackTrace();
 					}
+					
 						
 				
 					
@@ -197,20 +204,21 @@ private void initImageLoaderOptions() {
 class Holder{
 	TextView mTvri10,mTvri11,mTvri12;
 	ImageView imageView;
+	LinearLayout mLLww1,mLLww2;
 }
 class  Myadapter extends   BaseAdapter{
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		        
 		
 		Holder holder = null;
 		if(convertView==null){
 			convertView = LayoutInflater.from(MyCollectionActivity.this)
-					.inflate(R.layout.item_listview_2, null);
+					.inflate(R.layout.item_listview_1, null);
 			holder = new Holder();
-			holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri11);
-			holder.mTvri11 =(TextView)convertView.findViewById(R.id.mTvri12);
-			holder.mTvri12 =(TextView)convertView.findViewById(R.id.mTvri13);
+			holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri10);
+			holder.mTvri11 =(TextView)convertView.findViewById(R.id.mTvri11);
+			holder.mTvri12 =(TextView)convertView.findViewById(R.id.mTvri12);
 			holder.imageView =(ImageView)convertView.findViewById(R.id.iv_listview_rent_pic);
 			convertView.setTag(holder);
 
@@ -218,10 +226,13 @@ class  Myadapter extends   BaseAdapter{
 			holder =(Holder)convertView.getTag();
 		}
 		holder.mTvri10.setText(mDataList.get(position).Name);
+		holder.mTvri11.setText(mDataList.get(position).StreetName);
+
 		initImageLoaderOptions();
-		imageLoader.displayImage(mDataList.get(position).CoverPic,
+		imageLoader.displayImage(Content.ImageUrl+mDataList.get(position).CoverPic,
 				holder.imageView, options);
 		
+
 		return convertView;
 
 	}

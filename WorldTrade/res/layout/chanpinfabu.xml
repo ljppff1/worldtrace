@@ -1,5 +1,11 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout 
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      
+    >
+
+<LinearLayout 
     android:layout_width="match_parent"
     
     android:layout_height="match_parent"
@@ -22,7 +28,7 @@
          android:layout_width="38dp"
          android:layout_height="38dp"
          android:layout_marginLeft="5dp"
-         android:scaleType="fitXY"
+         android:scaleType="fitXY" 
          android:src="@drawable/abc1"
                android:layout_centerVertical="true"
                  android:id="@+id/mTvback"
@@ -107,7 +113,7 @@
                     android:layout_height="78dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="20dp"
-                    
+                    android:id="@+id/mIvww1"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:scaleType="fitXY"
@@ -120,33 +126,33 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/black"
                 />
+          
             <RelativeLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 >
                 <TextView 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/ad1a"
-                    android:layout_alignParentRight="true"
+                    android:text="@string/abc43a"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20sp"
+                    android:id="@+id/mTvwhat1a1"
+                    android:textColor="@color/my1"
+                    />
+                <EditText 
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/mTvwhat1a1"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:textSize="17sp"
+                    android:textSize="17sp"                    android:id="@+id/mTvwhat1a"
+                    
                     android:textColor="@color/black"
                     />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                                        android:layout_marginLeft="10dp"
-                    
-                    android:text="@string/abc43a"
-                    android:textColor="@color/my1"
-                    android:textSize="20sp" />
-
             </RelativeLayout>
                   <View 
                 android:layout_width="fill_parent"
@@ -168,18 +174,16 @@
                     android:text="@string/abc41a"
                     android:layout_marginLeft="10dp"
                     android:textSize="20sp"
-                    android:id="@+id/mTvwhat1"
+                    android:id="@+id/mTvwhat1b1"
                     android:textColor="@color/my1"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
+                <EditText 
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="@string/ad1a1"
-                    android:layout_toRightOf="@id/mTvwhat1"
+                    android:layout_toRightOf="@id/mTvwhat1b1"
                     android:layout_marginLeft="10dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="10dp"                    android:id="@+id/mTvwhat1b"
+                    
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
@@ -204,18 +208,16 @@
                     android:text="@string/abc79"
                     android:layout_marginLeft="10dp"
                     android:textSize="20sp"
-                    android:id="@+id/mTvwhat2"
+                    android:id="@+id/mTvwhat1c1"
                     android:textColor="@color/my1"
                     />
                 <EditText 
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:hint="@string/ad1a1"
-                    android:lines="4"
-                    android:layout_toRightOf="@id/mTvwhat2"
+                    android:lines="4"                    android:id="@+id/mTvwhat1c"
+                    
+                    android:layout_toRightOf="@id/mTvwhat1c1"
                     android:layout_marginLeft="10dp"
-                    android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
                     android:textSize="17sp"
                     android:textColor="@color/black"
@@ -245,6 +247,7 @@
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:layout_margin="10dp"
+        android:id="@+id/mRlb1"
         android:background="@drawable/az8"
         >
        <TextView 
@@ -266,3 +269,11 @@
     
     
 </LinearLayout>
+ <ProgressBar
+            android:id="@+id/progressBar_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+</RelativeLayout>

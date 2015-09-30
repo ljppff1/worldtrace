@@ -33,6 +33,8 @@ public class MainActivity1 extends FragmentActivity implements OnCheckedChangeLi
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		AppManager.getAppManager().addActivity(this);
+
 		setContentView(R.layout.activity_main);
 		initViews();
 		

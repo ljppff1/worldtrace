@@ -1,9 +1,31 @@
 package com.example.worldtrade;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.easemob.chatuidemo.activity.ChatActivity;
+import com.example.utils.Content;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -15,25 +37,118 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class ChanPingXiangQing1Activity extends Activity {
+public class ChanPingXiangQing1Activity extends BaseActivity {
 
 	private RelativeLayout mRlgs1;
 	private ImageView mIvwhat1;
+	private String CHINESE;
+	private String ID;
+	private ProgressBar progressBar_sale;
+	private ImageView mIvww;
+	private DisplayImageOptions options;
+	private TextView mTv2;
+	private TextView mTv1;
+	private RelativeLayout mRlww;
+	private String number;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		if(CHINESE.equals("1")){
 		setContentView(R.layout.chanpinxiangqing1);
-		
+		}else{
+			setContentView(R.layout.chanpinxiangqing1e);
+		}
+		progressBar_sale =(ProgressBar)this.findViewById(R.id.progressBar_sale);
+		progressBar_sale.setVisibility(View.VISIBLE);
+		ID =getIntent().getStringExtra("ID");
+	
 		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
 		mRlgs1.setOnClickListener(listener);
 		mIvwhat1 =(ImageView)this.findViewById(R.id.mIvwhat1);
 		mIvwhat1.setOnClickListener(listener);
-		
+		mIvww =(ImageView)this.findViewById(R.id.mIvww);
+		mTv2 =(TextView)this.findViewById(R.id.mTv2);
+		mTv1 =(TextView)this.findViewById(R.id.mTv1);
+		mRlww=(RelativeLayout)this.findViewById(R.id.mRlww);
+		mRlww.setOnClickListener(listener);
+		initData1();
 }
+	private void initImageLoaderOptions() {
+		options = new DisplayImageOptions.Builder()
+				.showImageForEmptyUri(R.drawable.a)
+				.cacheInMemory()
+				.cacheOnDisc().displayer(new FadeInBitmapDisplayer(2000))
+				.bitmapConfig(Bitmap.Config.RGB_565).build();
+	}
+
+	
+	private void initData1() {
+		downloadsearch1("0");
+	}
+	public void downloadsearch1(String area11){
+		 RequestParams params = new RequestParams();
+       List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
+       nameValuePairs.add(new BasicNameValuePair("id",ID));
+       params.addBodyParameter(nameValuePairs);
+       HttpUtils http = new HttpUtils();
+       http.send(HttpRequest.HttpMethod.POST,
+    		   "http://pine.i3.com.hk/trade/json/productshow.php",
+               params,
+               new RequestCallBack<String>() {
+
+					private String msg;
+
+					@Override
+					public void onFailure(HttpException arg0, String arg1) {
+					}
+
+					@Override
+					public void onSuccess(ResponseInfo<String> arg0) {
+						JSONObject jsonObject;
+						try {
+							jsonObject = new JSONObject(arg0.result);
+							String string_code = jsonObject.getString("code");
+							 msg = jsonObject.getString("msg");
+							 int  num_code=Integer.valueOf(string_code);
+							 if (num_code==1) {
+								 //保存到本地
+								 JSONObject array = jsonObject.getJSONObject("data");
+								 String title = array.getString("title");
+								 String introduction = array.getString("introduction");
+								 String img = array.getString("img");
+								 String content = array.getString("content");
+								 number =array.getString("number");
+								 
+									initImageLoaderOptions();
+									imageLoader.displayImage(Content.ImageUrl+img,
+											mIvww, options);
+									mTv1.setText(title);
+									mTv2.setText(content);
+									progressBar_sale.setVisibility(View.GONE);
+							}
+							 else {
+								 Toast.makeText(getApplicationContext(), msg, 0).show();
+									progressBar_sale.setVisibility(View.GONE);
+								//new AlertInfoDialog(SaleActivity.this).show();
+							}
+						} catch (JSONException e) {
+							 Toast.makeText(getApplicationContext(), msg, 0).show();
+
+							progressBar_sale.setVisibility(View.GONE);
+							e.printStackTrace();
+						}
+					}
+       });
+	}
 	
 	private View layout;
 	private PopupWindow mPop;
@@ -92,6 +207,17 @@ public class ChanPingXiangQing1Activity extends Activity {
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
+			case R.id.mRlww:
+				if(!TextUtils.isEmpty(number)){
+					Intent intent =new Intent(getApplicationContext(), ChatActivity.class);
+					intent.putExtra("userId", number);
+				 startActivity(intent);	
+					}else{
+						startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+					}
+
+
+				break;
 			case R.id.mRlgs1:
 				finish();
 				break;

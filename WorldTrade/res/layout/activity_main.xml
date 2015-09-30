@@ -44,7 +44,6 @@
             style="@style/main_tab_item"
             android:drawableTop="@drawable/btn3"
             android:text="@string/CCmb3" />
-
         <RadioButton
             android:id="@+id/main_tab_item_hongdong"
             style="@style/main_tab_item"

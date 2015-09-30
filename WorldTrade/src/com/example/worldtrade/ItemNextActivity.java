@@ -10,7 +10,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.easemob.chatuidemo.activity.ChatActivity;
 import com.example.fragment.Fragment1;
+import com.example.utils.Content;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
@@ -24,9 +26,11 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -36,13 +40,15 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class ItemNextActivity extends Activity {
+public class ItemNextActivity extends BaseActivity {
 	private ImageView mTvback;
 	private RelativeLayout mRlf11;
 	private RelativeLayout mRlf12;
@@ -54,12 +60,30 @@ public class ItemNextActivity extends Activity {
 	private Myadapter myadapter;
 	protected ImageLoader imageLoader = ImageLoader.getInstance();
 	private RelativeLayout mRlgs1;
+	private String TID;
+	private String wechatNo;
+	private String userid;
+	private ProgressBar progressBar_sale;
+	private String CHINESE;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		if(CHINESE.equals("1")){
 		setContentView(R.layout.itemlistnext);
+		}else{
+			setContentView(R.layout.itemlistnexte);
+		}
+
+		TID =getIntent().getStringExtra("TID");
+		SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		wechatNo =mySharedPreferences.getString("wechatNo","");
+		userid =mySharedPreferences.getString("id", "");
+		progressBar_sale =(ProgressBar)this.findViewById(R.id.progressBar_sale);
+		progressBar_sale.setVisibility(View.VISIBLE);
 		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
 		mRlgs1.setOnClickListener(new OnClickListener() {
 			
@@ -86,30 +110,29 @@ private void initView() {
 	mRlf11.setOnClickListener(listener);
 	mRlf12.setOnClickListener(listener);
 	mLvf11 =(ListView)this.findViewById(R.id.mLvf11);
-	
 	initData();
 
 	}
 
-private void initData() {
-	downloadsearch("0");
+private void initDataos(int position) {
+	downloadsearchos(position);
 }
-
-public void downloadsearch(String area11){
+public void downloadsearchos(int area11){
+	progressBar_sale.setVisibility(View.VISIBLE);
 	 RequestParams params = new RequestParams();
-  List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
-  nameValuePairs.add(new BasicNameValuePair("PropertyLocation", area11));
-  nameValuePairs.add(new BasicNameValuePair("RentSale", "1"));
-  params.addBodyParameter(nameValuePairs);
-  HttpUtils http = new HttpUtils();
-  http.send(HttpRequest.HttpMethod.POST,
- 		 com.example.utils.Content.URL_Search,
-          params,
-          new RequestCallBack<String>() {
+   List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
+   nameValuePairs.add(new BasicNameValuePair("anid", mDataList.get(area11).ID));
+   nameValuePairs.add(new BasicNameValuePair("userid", userid));
+   params.addBodyParameter(nameValuePairs);
+   HttpUtils http = new HttpUtils();
+   http.send(HttpRequest.HttpMethod.POST,
+  		 "http://pine.i3.com.hk/trade/json/addcollection.php",
+           params,
+           new RequestCallBack<String>() {
 
+				private String msg;
 				@Override
 				public void onFailure(HttpException arg0, String arg1) {
-					// TODO Auto-generated method stub
 					
 				}
 
@@ -119,59 +142,90 @@ public void downloadsearch(String area11){
 					try {
 						jsonObject = new JSONObject(arg0.result);
 						String string_code = jsonObject.getString("code");
+						 msg = jsonObject.getString("msg");
+						
+						 int  num_code=Integer.valueOf(string_code);
+						 progressBar_sale.setVisibility(View.GONE);
+					} catch (JSONException e) {
+						progressBar_sale.setVisibility(View.GONE);
+						 Toast.makeText(getApplicationContext(),msg, 0).show();
+					}
+				}
+   });
+}
+
+private void initData() {
+	downloadsearch("0");
+}
+
+public void downloadsearch(String area11){
+	progressBar_sale.setVisibility(View.VISIBLE);
+ if(flag){
+	 wechatNo=2+"";
+ }else{
+	 wechatNo=1+"";
+
+ }
+	 RequestParams params = new RequestParams();
+  List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
+  nameValuePairs.add(new BasicNameValuePair("type", wechatNo));
+  nameValuePairs.add(new BasicNameValuePair("categorytwo", TID));
+  params.addBodyParameter(nameValuePairs);
+  HttpUtils http = new HttpUtils();
+  http.send(HttpRequest.HttpMethod.POST,
+ 		"http://pine.i3.com.hk/trade/json/userlist.php",
+          params,
+          new RequestCallBack<String>() {
+
+				private String msg;
+
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<String> arg0) {
+					JSONObject jsonObject;
+					try {
+						jsonObject = new JSONObject(arg0.result);
+						String string_code = jsonObject.getString("code");
+						 msg = jsonObject.getString("msg");
 						 int  num_code=Integer.valueOf(string_code);
 						 if (num_code==1) {
 							 //保存到本地
 							 mDataList_origin.clear();
 							 JSONArray array = jsonObject.getJSONArray("data");
 							  for (int i = 0; i < array.length(); i++) {
-								  
 								  Data  data=new Data();
 								  
 								 JSONObject jsonObject2 = array.getJSONObject(i);
-								 data.ID= jsonObject2.getString("ID");
-								 data.Name= jsonObject2.getString("Name");
-								 data.StreetName = jsonObject2.getString("StreetName");
-								 data.AreaGross=jsonObject2.getString("AreaGross");
-								 data.AreaNet=jsonObject2.getString("AreaNet");
-								 data.CoverPic=jsonObject2.getString("CoverPic");
-								 data.SellingPrice=jsonObject2.getString("SellingPrice");
-								 data.RentPrice=jsonObject2.getString("RentPrice");
+								 data.ID= jsonObject2.getString("id");
+								 data.number= jsonObject2.getString("number");
+								 data.Name= jsonObject2.getString("title");
+								 data.StreetName = jsonObject2.getString("address");
+								 data.AreaNet=jsonObject2.getString("introduction");
+								 data.CoverPic=jsonObject2.getString("img");
 								 mDataList_origin.add(data);
-								 
 		                          data.toString();						 
 							}
 							  mDataList.clear();
 							  mDataList.addAll(mDataList_origin);
-								if (mDataList_origin.size()==0) {
-									 Toast.makeText(getApplicationContext(), "暫無相關內容", 0).show();
-								}
-								else {
-									//findViewById(R.id.tv_noresut).setVisibility(View.GONE);
-								}
-
+									progressBar_sale.setVisibility(View.GONE);
 							  initListView();
 						}
 						 else {
-							findViewById(R.id.progressBar_sale).setVisibility(View.GONE);
-							//new AlertInfoDialog(SaleActivity.this).show();
+								progressBar_sale.setVisibility(View.GONE);
+							 Toast.makeText(getApplicationContext(), msg, 0).show();
 						}
 					} catch (JSONException e) {
-						 if(mDataList.isEmpty())
-						//new Dialog_noInternet(SaleActivity.this).show();
-							 Toast.makeText(getApplicationContext(), "暫無相關內容", 0).show();
-						e.printStackTrace();
+						progressBar_sale.setVisibility(View.GONE);
+							 Toast.makeText(getApplicationContext(), msg, 0).show();
 					}
-						
-				
 					
 				}
-
-			
-    
   });
 }
-
 
 private void initListView() {
 	 this.findViewById(R.id.progressBar_sale).setVisibility(View.GONE);
@@ -183,7 +237,9 @@ private void initListView() {
 			@Override
 			public void onItemClick(AdapterView<?> parent,
 					View view, int position, long id) {
-				startActivity(new Intent(getApplicationContext(), F3NextActivity.class));
+				Intent intent =new Intent(getApplicationContext(), F3NextActivity.class);
+				intent.putExtra("ID", mDataList.get(position).ID);
+				startActivity(intent);
 			}
 		});
 	}
@@ -196,11 +252,12 @@ private void initImageLoaderOptions() {
 }
 class Holder{
 	TextView mTvri10,mTvri11,mTvri12;
+	LinearLayout mLLww1,mLLww2;
 	ImageView imageView;
 }
 class  Myadapter extends   BaseAdapter{
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		        
 		
 		Holder holder = null;
@@ -211,15 +268,46 @@ class  Myadapter extends   BaseAdapter{
 			holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri11);
 			holder.mTvri11 =(TextView)convertView.findViewById(R.id.mTvri12);
 			holder.mTvri12 =(TextView)convertView.findViewById(R.id.mTvri13);
+			holder.mLLww1=(LinearLayout)convertView.findViewById(R.id.mLLww1);
+			holder.mLLww2=(LinearLayout)convertView.findViewById(R.id.mLLww2);
 			holder.imageView =(ImageView)convertView.findViewById(R.id.iv_listview_rent_pic);
 			convertView.setTag(holder);
 
 		}else{
 			holder =(Holder)convertView.getTag();
 		}
+
+		holder.mLLww1.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			if(!TextUtils.isEmpty(wechatNo)){
+             initDataos(position);			
+			}else{
+				startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+			}
+			}
+		});
+		holder.mLLww2.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if(!TextUtils.isEmpty(wechatNo)){
+					Intent intent =new Intent(getApplicationContext(), ChatActivity.class);
+					intent.putExtra("userId", mDataList.get(position).number);
+	             startActivity(intent);	
+					}else{
+						startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+					}
+
+			}
+		});
 		holder.mTvri10.setText(mDataList.get(position).Name);
+		holder.mTvri11.setText(mDataList.get(position).AreaNet);
+		
+		holder.mTvri12.setText(mDataList.get(position).StreetName);
 		initImageLoaderOptions();
-		imageLoader.displayImage(mDataList.get(position).CoverPic,
+		imageLoader.displayImage(Content.ImageUrl+mDataList.get(position).CoverPic,
 				holder.imageView, options);
 		
 		return convertView;
@@ -243,6 +331,7 @@ class  Myadapter extends   BaseAdapter{
 }
 class Data{
 	String   ID;
+	String number;
 	String   Name;
 	String   StreetName;
 	String   AreaGross;
@@ -269,14 +358,18 @@ OnClickListener listener =new OnClickListener() {
 		switch (v.getId()) {
 		case R.id.mRlf11:
 			if(flag){
+				flag =false;
+
 				mRlf11.setBackground(getResources().getDrawable(R.drawable.ax1));
 				mRlf12.setBackground(getResources().getDrawable(R.drawable.ax2));
+				initData();
 			}
 			break;
 		case R.id.mRlf12:
 			flag =true;
 			mRlf11.setBackground(getResources().getDrawable(R.drawable.ax2));
 			mRlf12.setBackground(getResources().getDrawable(R.drawable.ax1));
+			initData();
 			break;
 
 		default:

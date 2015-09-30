@@ -48,7 +48,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class ItemNextDetailActivity extends Activity {
+public class ItemNextDetailActivity extends BaseActivity {
 	private ImageView mTvback;
 	private RelativeLayout mRlgs1;
 	private ImageView mIvn1;

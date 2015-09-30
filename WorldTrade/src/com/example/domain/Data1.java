@@ -1,0 +1,1 @@
+package com.example.domain;public class Data1 {	public String oid;	public String oname;	public String pic;}

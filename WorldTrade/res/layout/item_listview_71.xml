@@ -45,23 +45,11 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/aaaz14"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
                     android:textSize="17sp"
+                    android:id="@+id/mVi1"
                     android:textColor="@color/black"
                     />
 
-                <TextView
-                    android:id="@+id/mTvwhat2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/abc43"
-                                        android:layout_marginLeft="10dp"
-                    
-                    android:textColor="@color/my1"
-                    android:textSize="20sp" />
             </RelativeLayout>
                         
             
@@ -75,22 +63,13 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/aaaz14"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
                     android:textSize="17sp"
+                                        android:id="@+id/mVi2"
+                    
                     android:textColor="@color/black"
                     />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/aaz7"
-                                        android:layout_marginLeft="10dp"
-                    
-                    android:textColor="@color/my1"
-                    android:textSize="20sp" />
+                
 
             </RelativeLayout>
                       
@@ -105,22 +84,12 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="@string/aaaz14"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
                     android:textSize="17sp"
+                                        android:id="@+id/mVi3"
+                    
                     android:textColor="@color/black"
                     />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/aaz1b"
-                                        android:layout_marginLeft="10dp"
-                    
-                    android:textColor="@color/my1"
-                    android:textSize="20sp" />
 
             </RelativeLayout>
                 

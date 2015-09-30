@@ -4,6 +4,7 @@ package com.example.worldtrade;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -19,18 +20,26 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class ItemlistActivity extends Activity {
+public class ItemlistActivity extends BaseActivity {
     private int[] a ={R.string.c1,R.string.c2,R.string.c3,R.string.c4,R.string.c5,R.string.c6,R.string.c7,R.string.c8,R.string.c9};
 	private GridView mGvm1;
 	private Myadapter adapter;
 	private ImageView mTvback;
 	private RelativeLayout mRlgs1;
+	private String CHINESE;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		if(CHINESE.equals("1")){
 		setContentView(R.layout.itemlist);
+		}else{
+			setContentView(R.layout.itemliste);
+		}
+
 		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
 		mRlgs1.setOnClickListener(new OnClickListener() {
 			

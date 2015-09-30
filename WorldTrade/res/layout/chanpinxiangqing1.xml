@@ -102,11 +102,18 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="@string/ad1a"
+                android:id="@+id/mTv1"
                 android:layout_marginLeft="10dp"
                 />
            
             
         </RelativeLayout>
+        <ImageView 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:id="@+id/mIvww"
+            />
     </RelativeLayout>
     
     
@@ -120,10 +127,18 @@
             
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerInParent="true"                android:id="@+id/mTv2"
+            
             android:text="@string/abc78"
             android:textColor="@color/black"
             />
+          <ProgressBar
+            android:id="@+id/progressBar_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+     />
+      
     </RelativeLayout>
     
     
@@ -138,6 +153,7 @@
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_margin="10dp"
+        android:id="@+id/mRlww"
         android:layout_centerInParent="true"
         android:background="@drawable/az8"
         >
@@ -146,9 +162,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_centerInParent="true"
-            
+            android:id="@+id/mTvww112"
             android:layout_centerVertical="true"
-            android:text="@string/abc46a"
+            android:text="@string/ax2"
             android:textSize="20sp"
             android:textColor="@color/black"
             />

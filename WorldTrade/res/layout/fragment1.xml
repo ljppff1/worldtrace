@@ -1,10 +1,19 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-   >
 
+<com.example.view.StickyScrollView
+    android:id="@+id/ScrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+   android:fillViewport="true"
+       android:background="@drawable/aa1"
+    android:layout_height="fill_parent" >
+
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+              
+    
+   >
      <RelativeLayout 
        android:layout_width="fill_parent"
        android:layout_height="180dp"
@@ -12,8 +21,10 @@
     <com.tianshicoffeeom.app.imgscroll.MyImgScroll
         android:id="@+id/myvp"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
-
+        android:layout_height="180dp" />
+         
+        
+    
     <LinearLayout
         android:id="@+id/vb"
         android:layout_width="match_parent"
@@ -24,12 +35,15 @@
         android:orientation="horizontal" >
     </LinearLayout>
 </RelativeLayout>
-  <LinearLayout 
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"
-      android:orientation="vertical"
-      android:background="@drawable/aa1"
-      >
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="85dp"
+    android:orientation="vertical"
+    android:tag="sticky"
+        android:id="@+id/mLLw"
+    
+    android:background="@drawable/ra6"
+    >
      <RelativeLayout 
          android:layout_width="fill_parent"
          android:layout_height="wrap_content"
@@ -93,6 +107,7 @@
               android:layout_width="fill_parent"
               android:gravity="center"
               android:paddingTop="2dp"
+              android:id="@+id/mTvw1"
               android:textSize="20sp"
               android:textColor="@color/black"
               android:layout_height="wrap_content"
@@ -106,13 +121,14 @@
                       android:id="@+id/mRlf12"
            android:layout_weight="1"    
            android:layout_height="wrap_content"
-           android:background="@drawable/aa8"
+           android:background="@drawable/ra2"
               >
            <TextView 
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
                             android:textColor="@color/black"
                             android:textSize="20sp"
+                            android:id="@+id/mTvw2"
               
                             android:gravity="center"
                android:paddingTop="2dp"
@@ -121,17 +137,18 @@
               
           </RelativeLayout>
           </LinearLayout>
+          </LinearLayout>
      <RelativeLayout 
          android:layout_width="fill_parent"
          android:layout_height="fill_parent"
          >
-     <ListView 
+     <com.example.view.MyListView 
          android:layout_width="fill_parent"
          android:layout_height="fill_parent"
          android:id="@+id/mLvf11"
                      android:visibility="gone"
          
-         ></ListView>
+         ></com.example.view.MyListView>
            <ProgressBar
             android:id="@+id/progressBar_sale"
             android:layout_width="wrap_content"
@@ -149,6 +166,6 @@
             android:visibility="invisible"
             android:textAppearance="?android:attr/textAppearanceMedium" />
      </RelativeLayout>
-     </LinearLayout>
 
 </LinearLayout>
+</com.example.view.StickyScrollView>

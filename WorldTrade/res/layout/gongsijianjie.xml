@@ -108,7 +108,7 @@
                     android:layout_height="78dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="20dp"
-                    
+                    android:id="@+id/mIv12"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:scaleType="fitXY"
@@ -143,6 +143,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
                     android:textSize="17sp"
+                    android:id="@+id/Tv1"
                     android:textColor="@color/black"
                     />
             </RelativeLayout>
@@ -166,6 +167,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
                     android:textSize="17sp"
+                                        android:id="@+id/Tv2"
+                    
                     android:textColor="@color/black"
                     />
 
@@ -203,6 +206,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
                     android:textSize="17sp"
+                                        android:id="@+id/Tv3"
+                    
                     android:textColor="@color/black"
                     />
 
@@ -248,6 +253,8 @@
                     android:text="@string/abc46"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
+                                        android:id="@+id/Tv4"
+                    
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
@@ -265,6 +272,7 @@
         android:layout_marginRight="8dp"
         android:background="@color/white"
         >
+        
         <LinearLayout 
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -296,6 +304,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
                     android:textSize="17sp"
+                                        android:id="@+id/Tv5"
+                    
                     android:textColor="@color/black"
                     />
             </RelativeLayout>
@@ -328,6 +338,8 @@
                     android:text="@string/abc53"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
+                                        android:id="@+id/Tv6"
+                    
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
@@ -362,6 +374,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
                     android:textSize="17sp"
+                                        android:id="@+id/Tv7"
+                    
                     android:textColor="@color/black"
                     />
             </RelativeLayout>
@@ -397,6 +411,8 @@
                     android:gravity="right"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
+                                        android:id="@+id/Tv8"
+                    
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
@@ -431,11 +447,20 @@
                     android:text="@string/abc56"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="10dp"
+                                        android:id="@+id/Tv9"
+                    
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
             </RelativeLayout>
             </LinearLayout>
+                        <ProgressBar
+            android:id="@+id/progressBar_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+       />
+        
     </RelativeLayout>
     
         <LinearLayout 
@@ -513,6 +538,7 @@
     <RelativeLayout 
         android:layout_width="fill_parent"
         android:layout_height="48dp"
+        android:id="@+id/mLoginOut"
         android:layout_margin="10dp"
         android:background="@drawable/az8"
         >

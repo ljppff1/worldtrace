@@ -68,41 +68,16 @@
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:text="@string/ad1"
+                android:id="@+id/mV1"
                 android:layout_marginLeft="10dp"
                 />
-                        <LinearLayout 
-                                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                                android:layout_marginRight="10dp"
-                
-                android:id="@+id/mLLind1"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:orientation="vertical"
-                >
-                <ImageView 
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/aa3"
-                    android:scaleType="fitXY"
-                    android:layout_gravity="center"
-                    />
-                            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                                android:textSize="14sp"
-                android:textColor="@color/black"
-                    android:layout_gravity="center"
-                android:text="@string/az1"
-                />
-                
-            </LinearLayout>
+                    
                                     <LinearLayout 
                                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                                 android:layout_marginRight="10dp"
-                android:layout_toLeftOf="@id/mLLind1"
-                android:id="@+id/mLLind2"
+                android:id="@+id/mLLind2"                android:layout_alignParentRight="true"
+                
                 android:layout_centerVertical="true"
                 android:orientation="vertical"
                 >

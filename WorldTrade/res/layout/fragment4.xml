@@ -33,10 +33,33 @@
             android:background="@color/half_transparent"
             android:layout_alignParentBottom="true"
             >
+                          <RelativeLayout 
+                   android:layout_width="80dp"
+                   android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                   android:background="@drawable/ad15"
+                  android:layout_marginRight="10dp"
+                  android:visibility="gone"
+                   android:id="@+id/mRlzhx"
+                   >
+                                      <TextView 
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       android:textSize="20sp"
+                       android:textColor="@color/red"
+                       android:text="Logout"
+                       />
+                  
+                   </RelativeLayout>
+                    
             <LinearLayout 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                           android:visibility="gone"
+                
                 android:orientation="horizontal"
                 >
                 <View 
@@ -123,7 +146,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center_vertical"
-                android:text="@string/ad2"
+                android:text="Company Profile"
                 android:textSize="20sp"
                 />
                 
@@ -162,7 +185,7 @@
                 android:id="@+id/mIvte1"
                 />
             <TextView  android:textColor="@color/black" 
-                android:text="@string/ad3"
+                android:text="My collection"
                 android:layout_below="@id/mIvte1"
                                 android:layout_centerHorizontal="true"
                 
@@ -195,7 +218,7 @@
                 android:id="@+id/mIvte2"
                 />
             <TextView  android:textColor="@color/black" 
-                android:text="@string/ad3a"
+                android:text="Business Card"
                 android:layout_below="@id/mIvte2"
                                 android:layout_centerHorizontal="true"
                 
@@ -229,7 +252,7 @@
                 android:id="@+id/mIvte3"
                 />
             <TextView  android:textColor="@color/black" 
-                android:text="@string/ad5"
+                android:text="Calendar"
                 android:layout_below="@id/mIvte3"
                                 android:layout_centerHorizontal="true"
                 
@@ -276,7 +299,7 @@
                android:layout_centerVertical="true"
                android:layout_marginLeft="10dp"
                android:layout_toRightOf="@id/mIv1"
-               android:text="@string/ad6"
+               android:text="Demand release"
                />
                       
            
@@ -309,7 +332,7 @@
                android:layout_toRightOf="@id/mIv2"
                               android:layout_marginLeft="10dp"
                
-               android:text="@string/ad7"
+               android:text="Demand list"
                android:layout_centerVertical="true"
                />
                       
@@ -322,6 +345,7 @@
        android:layout_height="wrap_content"
        android:layout_marginTop="25dp"
            android:paddingTop="8dp"
+           android:id="@+id/mRRll1"
            android:paddingBottom="8dp"
            android:background="@color/white"
        >
@@ -337,7 +361,7 @@
                <TextView  android:textColor="@color/black" 
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="@string/ad8"
+               android:text="Im"
                                android:layout_centerVertical="true"
                android:layout_marginLeft="10dp"
                android:layout_toRightOf="@id/mIvf42"
@@ -365,7 +389,7 @@
                <TextView  android:textColor="@color/black" 
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="@string/ad4"
+               android:text="Comment"
                                android:layout_centerVertical="true"
                android:layout_marginLeft="10dp"
                android:layout_toRightOf="@id/mIvf421"
@@ -385,7 +409,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginLeft="20dp"
-               android:text="@string/ad9"
+               android:text="Vip purchase full"
                android:layout_centerVertical="true"
                />     
          </RelativeLayout>
@@ -408,7 +432,7 @@
                android:layout_height="wrap_content"
                               android:layout_marginLeft="20dp"
                
-               android:text="@string/ad10"
+               android:text="Advertise with Us"
                android:layout_centerVertical="true"
                />     
        
@@ -473,7 +497,7 @@
                 android:layout_toRightOf="@id/mIv4"
                                      android:layout_centerVertical="true"
                 android:layout_marginLeft="8dp"
-               android:text="@string/ad11"
+               android:text="Message Center"
                />
                        
                    </RelativeLayout>
@@ -514,7 +538,7 @@
                    android:layout_toRightOf="@id/mIv5"
                                                    android:layout_centerVertical="true"
                       android:layout_marginLeft="8dp"
-               android:text="@string/ad12"
+               android:text="Setting"
                />
 
                         </RelativeLayout>
