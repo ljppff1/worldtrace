@@ -75,6 +75,7 @@ public class ChanPingXiangQing2Activity extends BaseActivity {
 			mTvww112.setText("Delete");
 
 		}
+		findViewById(R.id.mLLind2).setVisibility(View.GONE);
 		progressBar_sale =(ProgressBar)this.findViewById(R.id.progressBar_sale);
 		progressBar_sale.setVisibility(View.VISIBLE);
 		ID =getIntent().getStringExtra("ID");

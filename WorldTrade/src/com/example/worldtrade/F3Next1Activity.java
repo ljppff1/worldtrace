@@ -31,6 +31,8 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -404,6 +406,23 @@ public void downloadsearchos(String area11){
 				}
    });
 }
+public void choiceWhat(View v){
+	   new AlertDialog.Builder(F3Next1Activity.this).setTitle(R.string.zg5)//设置对话框标题  
+	     .setMessage(R.string.zg6)//设置显示的内容  
+	     .setPositiveButton(R.string.zg7,new DialogInterface.OnClickListener() {//添加确定按钮  
+	         @Override  
+	         public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件  
+	        		startActivity(new Intent(F3Next1Activity.this,MainActivityl3.class));
+	  
+	         }  
+	     }).setNegativeButton(R.string.zg8,new DialogInterface.OnClickListener() {//添加返回按钮  
+	         @Override  
+	         public void onClick(DialogInterface dialog, int which) {//响应事件  
+	  
+	         }  
+	     }).show();
+	  
+}
 
 	OnClickListener listener =new OnClickListener() {
 		
@@ -415,7 +434,8 @@ public void downloadsearchos(String area11){
 
 				initDataos();
 				}else{
-					startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+				//	startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+					choiceWhat(v);
 
 				}
 				break;
@@ -426,8 +446,8 @@ public void downloadsearchos(String area11){
 				intent.putExtra("userId", "l");
              startActivity(intent);	
 				}else{
-					startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
-
+				//	startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+					choiceWhat(v);
 				}
 
 				break;

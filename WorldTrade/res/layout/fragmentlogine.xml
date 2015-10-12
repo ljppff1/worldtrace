@@ -54,7 +54,6 @@
                       android:textSize="18sp"
                       android:textColor="@color/black"
                       android:paddingTop="10dp"
-                      android:inputType="textEmailAddress"
                       android:paddingBottom="10dp"
                       android:id="@+id/ui_username_input"
                       />

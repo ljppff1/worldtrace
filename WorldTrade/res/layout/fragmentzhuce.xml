@@ -4,22 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/aliceblue"
-    
+    android:descendantFocusability="afterDescendants"
     >
-<LinearLayout 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" 
->
 
-    <RelativeLayout 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        >
-        
+
             <RelativeLayout 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/mRlwww1"
         android:layout_marginTop="50dp"
         >
        <RadioGroup
@@ -102,16 +94,15 @@
                 />
             
                       
-    </RelativeLayout>
               </RelativeLayout>
-                            <android.support.v4.view.ViewPager
+              <android.support.v4.view.ViewPager
+                                android:layout_below="@id/mRlwww1"
             android:id="@+id/vp1z"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" />
                 
                          
               
-         
-</LinearLayout>
+
 
 </RelativeLayout>

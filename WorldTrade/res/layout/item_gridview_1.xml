@@ -15,6 +15,7 @@
       android:text="@string/b1"
       android:textSize="20sp"
       android:id="@+id/mTvg1"
+      android:gravity="center"
       android:textColor="@color/black"
       android:layout_height="wrap_content"
       android:layout_centerInParent="true"

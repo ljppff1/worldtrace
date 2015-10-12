@@ -41,9 +41,6 @@ public class UILApplication1 extends Application {
 	// login user name
 	public final String PREF_USERNAME = "username";
 	
-	/**
-	 * 褰撳墠鐢ㄦ埛nickname,涓轰簡鑻规灉鎺ㄩ�佷笉鏄痷serid鑰屾槸鏄电О
-	 */
 	public static String currentUserNick = "";
 	public static DemoHXSDKHelper hxSDKHelper = new DemoHXSDKHelper();
 

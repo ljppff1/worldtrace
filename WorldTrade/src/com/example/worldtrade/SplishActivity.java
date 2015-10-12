@@ -27,7 +27,7 @@ public class SplishActivity extends BaseActivity {
 				SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
 				String wechatNo = mySharedPreferences.getString("wechatNo", ""); 
 		         if(TextUtils.isEmpty(wechatNo)){
-				startActivity(new Intent(getApplicationContext(), MainActivityl1.class));
+				startActivity(new Intent(getApplicationContext(), MainActivityl2r.class));
 				finish();
 		         }else if(wechatNo.equals("1")){
 						startActivity(new Intent(getApplicationContext(),MainActivity.class));

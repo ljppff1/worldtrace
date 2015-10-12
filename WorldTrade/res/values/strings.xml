@@ -493,6 +493,7 @@
           <string name="aaz7">姓名</string>
           <string name="aaz8">必須確認</string>
           <string name="aaz9">密碼</string>
+          <string name="aaz99">確认密碼</string>
           <string name="aaz11">6至20個字符</string>
           <string name="aaz12">出生年份</string>
           <string name="aaz13">請選擇</string>
@@ -531,7 +532,7 @@
     <string name="ac7">注销</string> 
     <string name="ac8">消息详情</string> 
     <string name="ac9">Copyright 2015</string> 
-        <string name="ac10">HYP Hong Kong Limited</string> 
+        <string name="ac10">KYP Hong Kong Limited</string> 
         <string name="ac111">All rights reserved</string> 
 <string name="ds1">详情>></string>
 <string name="ds2">需求发布</string>
@@ -545,6 +546,19 @@
 <string name="abc43aa3">请輸入需求详情</string>
 <string name="abc43aa4">请輸入需求图片</string>
 <string name="abc43aa5">正在上传，请稍后</string>
-
+<string name="zg1">开通展会</string>
+<string name="zg2">开通价格</string>
+<string name="zg3">开通介绍</string>
+<string name="zg4">开通内容详情</string>
+<string name="zg5">提示</string>
+<string name="zg6">使用此功能需要登錄</string>
+<string name="zg7">確定</string>
+<string name="zg8">取消</string>
+<string name="zg11">請輸入電郵</string>
+<string name="zg12">請輸入公司名稱</string>
+<string name="zg13">請輸入姓名</string>
+<string name="zg14">請輸入密碼</string>
+<string name="zg15">請輸入確認密碼</string>
+<string name="zg16">兩次輸入密碼不一致</string>
 
 </resources>

@@ -20,6 +20,8 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -36,6 +38,7 @@ import android.view.View.OnKeyListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -55,6 +58,8 @@ public class ChanPingXiangQing1Activity extends BaseActivity {
 	private TextView mTv1;
 	private RelativeLayout mRlww;
 	private String number;
+	private LinearLayout mLLind2;
+	private String userid;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +72,10 @@ public class ChanPingXiangQing1Activity extends BaseActivity {
 		}else{
 			setContentView(R.layout.chanpinxiangqing1e);
 		}
+		userid =mySharedPreferences1.getString("id", "");
+
+		mLLind2 =(LinearLayout)this.findViewById(R.id.mLLind2);
+		mLLind2.setOnClickListener(listener);
 		progressBar_sale =(ProgressBar)this.findViewById(R.id.progressBar_sale);
 		progressBar_sale.setVisibility(View.VISIBLE);
 		ID =getIntent().getStringExtra("ID");
@@ -202,17 +211,86 @@ public class ChanPingXiangQing1Activity extends BaseActivity {
 	}
 	
 
+
+private void initDataos() {
+	downloadsearchos("0");
+}
+public void downloadsearchos(String area11){
+	progressBar_sale.setVisibility(View.VISIBLE);
+	 RequestParams params = new RequestParams();
+   List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
+   nameValuePairs.add(new BasicNameValuePair("id", ID));
+   nameValuePairs.add(new BasicNameValuePair("userid", userid));
+   params.addBodyParameter(nameValuePairs);
+   HttpUtils http = new HttpUtils();
+   http.send(HttpRequest.HttpMethod.POST,
+  		 "http://pine.i3.com.hk/trade/json/addicolle.php",
+           params,
+           new RequestCallBack<String>() {
+
+				private String msg;
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<String> arg0) {
+					JSONObject jsonObject;
+					try {
+						jsonObject = new JSONObject(arg0.result);
+						String string_code = jsonObject.getString("code");
+						 msg = jsonObject.getString("msg");
+						
+						 int  num_code=Integer.valueOf(string_code);
+						 progressBar_sale.setVisibility(View.GONE);
+					} catch (JSONException e) {
+						progressBar_sale.setVisibility(View.GONE);
+						 Toast.makeText(getApplicationContext(),msg, 0).show();
+					}
+				}
+   });
+}
+public void choiceWhat(View v){
+	   new AlertDialog.Builder(ChanPingXiangQing1Activity.this).setTitle(R.string.zg5)//设置对话框标题  
+	     .setMessage(R.string.zg6)//设置显示的内容  
+	     .setPositiveButton(R.string.zg7,new DialogInterface.OnClickListener() {//添加确定按钮  
+	         @Override  
+	         public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件  
+	        		startActivity(new Intent(ChanPingXiangQing1Activity.this,MainActivityl3.class));
+	  
+	         }  
+	     }).setNegativeButton(R.string.zg8,new DialogInterface.OnClickListener() {//添加返回按钮  
+	         @Override  
+	         public void onClick(DialogInterface dialog, int which) {//响应事件  
+	  
+	         }  
+	     }).show();
+	  
+}
+
 	OnClickListener listener =new  OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
 			switch (v.getId()) {
+			case R.id.mLLind2:
+				if(!TextUtils.isEmpty(number)){
+
+				initDataos();
+				}else{
+					//startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+					choiceWhat(v);
+
+				}
+				break;
 			case R.id.mRlww:
 				if(!TextUtils.isEmpty(number)){
 					Intent intent =new Intent(getApplicationContext(), ChatActivity.class);
 					intent.putExtra("userId", number);
 				 startActivity(intent);	
 					}else{
+						
 						startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
 					}
 

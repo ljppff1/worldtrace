@@ -23,6 +23,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
@@ -81,11 +82,20 @@ public class FragmentZhuCe extends Fragment{
 			public void onPageSelected(int arg0) {
 				if (arg0==0) {
 		             rb1.setChecked(true);
-		             mTvhy1.setText(getResources().getString(R.string.za1));
+		     		if(CHINESE.equals("1")){
+		     			  mTvhy1.setText(getResources().getString(R.string.za1));
+		    		}else{
+		    			  mTvhy1.setText("Member Login");
+		    		}
 					}
 					if(arg0==1){
 						rb2.setChecked(true);
-			             mTvhy1.setText(getResources().getString(R.string.za1a));
+				     		if(CHINESE.equals("1")){
+					             mTvhy1.setText(getResources().getString(R.string.za1a));
+				    		}else{
+				    			  mTvhy1.setText("Member Register");
+				    		}
+
 					}
 			}
 			
@@ -122,7 +132,8 @@ public class FragmentZhuCe extends Fragment{
 			}
 		});
 		rb1.setChecked(true);
-
+		vp.setCurrentItem(0);
+		
 	
 		return parentView;
 	}
@@ -150,7 +161,16 @@ class ZxzcAdapter extends FragmentStatePagerAdapter {
 		@SuppressLint("ResourceAsColor")
 		@Override
 		public Fragment getItem(int arg0) {		
+		/*	if(arg0==0){
+				return new FragmentLogin();
+			}else {
+				return new FragmentRegister();
+			}*/
+			
 			return list.get(arg0);
+			
+
+			
 		}
 		@Override
 		public int getCount() {

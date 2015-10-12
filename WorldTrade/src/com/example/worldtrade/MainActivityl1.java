@@ -3,12 +3,9 @@ package com.example.worldtrade;
 
 import java.util.ArrayList;
 
-import com.easemob.chat.EMChatManager;
-import com.easemob.exceptions.EaseMobException;
 import com.example.fragment.*;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -24,7 +21,7 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 public class MainActivityl1 extends FragmentActivity implements OnCheckedChangeListener {
 
 	private Fragment1 f1;
-	private Fragment2 f2;
+	private Fragment6 f2;
 	private Fragment3 f3;
 	private FragmentZhuCe f4;
 	private Fragment5 f5;
@@ -41,8 +38,6 @@ public class MainActivityl1 extends FragmentActivity implements OnCheckedChangeL
 
 		setContentView(R.layout.activity_main);
 		initViews();
-		SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
-		number =mySharedPreferences.getString("number","");
 
 		group = (RadioGroup) findViewById(R.id.main_tab_bar);
 		group.setOnCheckedChangeListener(this);
@@ -61,20 +56,7 @@ public class MainActivityl1 extends FragmentActivity implements OnCheckedChangeL
 		transaction.replace(R.id.main_framelayout, fragment);
 		transaction.commit();
          
-		new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-				try {
-					EMChatManager.getInstance().createAccountOnServer(number, "asdf22");
-				} catch (EaseMobException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				
-			}
-		}).start();
+		
 		
 		
 
@@ -82,7 +64,7 @@ public class MainActivityl1 extends FragmentActivity implements OnCheckedChangeL
 
 	private void initViews() {
 		f1 =new Fragment1();
-		f2 =new Fragment2();
+		f2 =new Fragment6();
 		f3 =new Fragment3();
 		f4 =new FragmentZhuCe();
 		f5 =new Fragment5();
@@ -117,15 +99,13 @@ public class MainActivityl1 extends FragmentActivity implements OnCheckedChangeL
 			}
 		}
 
-
-		
 		FragmentManager manager = getSupportFragmentManager();
 		FragmentTransaction transaction = manager.beginTransaction();
 		Fragment fragment = null;
 		switch (checkedIndex) {
 		case 0:
 			fragment = fragments.get(0);
-			transaction.replace(R.id.main_framelayout, new Fragment1());
+			transaction.replace(R.id.main_framelayout, fragment);
 			transaction.commit();
 			break;
 		case 1:

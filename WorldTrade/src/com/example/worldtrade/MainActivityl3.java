@@ -39,7 +39,7 @@ public class MainActivityl3 extends FragmentActivity implements OnCheckedChangeL
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		AppManager.getAppManager().addActivity(this);
 
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main2);
 		initViews();
 		SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
 		number =mySharedPreferences.getString("number","");
@@ -58,7 +58,7 @@ public class MainActivityl3 extends FragmentActivity implements OnCheckedChangeL
 		FragmentTransaction transaction = manager.beginTransaction();
 		Fragment fragment = null;
 		fragment = fragments.get(3);
-		transaction.replace(R.id.main_framelayout, fragment);
+		transaction.replace(R.id.main_framelayout, new FragmentZhuCe());
 		transaction.commit();
          
 		new Thread(new Runnable() {
@@ -125,7 +125,7 @@ public class MainActivityl3 extends FragmentActivity implements OnCheckedChangeL
 		switch (checkedIndex) {
 		case 0:
 			fragment = fragments.get(0);
-			transaction.replace(R.id.main_framelayout, new Fragment1());
+			transaction.replace(R.id.main_framelayout,fragment);
 			transaction.commit();
 			break;
 		case 1:

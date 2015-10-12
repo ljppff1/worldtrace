@@ -25,6 +25,8 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -65,6 +67,8 @@ public class ItemNextActivity extends BaseActivity {
 	private String userid;
 	private ProgressBar progressBar_sale;
 	private String CHINESE;
+	private String HG;
+	private TextView mTvw1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +81,11 @@ public class ItemNextActivity extends BaseActivity {
 		}else{
 			setContentView(R.layout.itemlistnexte);
 		}
-
+				HG =getIntent().getStringExtra("HG");
 		TID =getIntent().getStringExtra("TID");
+		mTvw1 =(TextView)this.findViewById(R.id.mTvw1);
+		mTvw1.setText(HG);
+ 
 		SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
 		wechatNo =mySharedPreferences.getString("wechatNo","");
 		userid =mySharedPreferences.getString("id", "");
@@ -255,6 +262,24 @@ class Holder{
 	LinearLayout mLLww1,mLLww2;
 	ImageView imageView;
 }
+public void choiceWhat(View v){
+	   new AlertDialog.Builder(ItemNextActivity.this).setTitle(R.string.zg5)//设置对话框标题  
+	     .setMessage(R.string.zg6)//设置显示的内容  
+	     .setPositiveButton(R.string.zg7,new DialogInterface.OnClickListener() {//添加确定按钮  
+	         @Override  
+	         public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件  
+	        		startActivity(new Intent(ItemNextActivity.this,MainActivityl3.class));
+	  
+	         }  
+	     }).setNegativeButton(R.string.zg8,new DialogInterface.OnClickListener() {//添加返回按钮  
+	         @Override  
+	         public void onClick(DialogInterface dialog, int which) {//响应事件  
+	  
+	         }  
+	     }).show();
+	  
+}
+
 class  Myadapter extends   BaseAdapter{
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
@@ -284,7 +309,8 @@ class  Myadapter extends   BaseAdapter{
 			if(!TextUtils.isEmpty(wechatNo)){
              initDataos(position);			
 			}else{
-				startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+			//	startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+				choiceWhat(v);
 			}
 			}
 		});
@@ -297,7 +323,8 @@ class  Myadapter extends   BaseAdapter{
 					intent.putExtra("userId", mDataList.get(position).number);
 	             startActivity(intent);	
 					}else{
-						startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+					//	startActivity(new Intent(getApplicationContext(),MainActivityl3.class));
+						choiceWhat(v);
 					}
 
 			}

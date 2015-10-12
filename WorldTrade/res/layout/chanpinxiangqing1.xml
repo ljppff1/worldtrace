@@ -114,6 +114,32 @@
             android:scaleType="fitXY"
             android:id="@+id/mIvww"
             />
+           <LinearLayout 
+                                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="4dp"
+                android:id="@+id/mLLind2"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                >
+                <ImageView 
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/abc4"
+                    android:layout_gravity="center"
+                    />
+                            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                                android:textSize="14sp"
+                android:textColor="@color/black"
+                    android:layout_gravity="center"
+                android:text="@string/ax1"
+                />
+                
+            </LinearLayout>
     </RelativeLayout>
     
     

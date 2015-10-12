@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="afterDescendants"
     android:background="@color/aliceblue"
  >
  <ScrollView 
@@ -46,16 +47,15 @@
                   android:id="@+id/mLL1"
                   android:orientation="vertical"
                   >
-                  <EditText 
+                  <com.llew.e.clear.view.wedgit.ClearEditText 
+                      android:drawableRight="@drawable/clear_normal_list"
                       android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:hint="@string/za4"
-                      android:paddingLeft="15dp"
                       android:textSize="18sp"
+                      android:focusable="true"
+                      android:inputType="textPersonName"
                       android:textColor="@color/black"
-                      android:paddingTop="10dp"
-                      android:inputType="textEmailAddress"
-                      android:paddingBottom="10dp"
                       android:id="@+id/ui_username_input"
                       />
                   <View 
@@ -64,16 +64,14 @@
                       android:background="@color/gray1"
                       
                       />
-                  <EditText 
+                  <com.llew.e.clear.view.wedgit.ClearEditText 
+                      android:drawableRight="@drawable/clear_normal_list"
                     android:textColor="@color/black"
                       android:textSize="18sp"
                       android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:hint="@string/za5"
-                      android:paddingTop="10dp"
-                      android:paddingBottom="10dp"
                       android:inputType="textPassword"
-                        android:paddingLeft="15dp"
                      android:id="@+id/ui_password_input"
                       />
                   
@@ -82,7 +80,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_width="120dp"
                     android:layout_height="40dp"
-                    android:text="@string/za3"
+                    android:text="@string/za2"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="2dp"

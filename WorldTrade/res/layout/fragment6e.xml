@@ -2,141 +2,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/ab1"
-   >
-   
-<RelativeLayout
-    android:layout_width="fill_parent"
-    android:layout_height="50dp"
-    android:background="@color/white"
-    android:orientation="vertical"
-   >
-   
-    <TextView 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        android:layout_centerInParent="true"
-        android:text="Category"
-        />
-  
-                  <RelativeLayout 
-              android:layout_width="wrap_content"
-              android:layout_height="fill_parent"
-              android:id="@+id/mRlgs1"
-              
-              >
-     <ImageView 
-         android:layout_width="38dp"
-         android:layout_height="38dp"
-         android:src="@drawable/abc1"
-         android:scaleType="fitXY"
-         android:layout_marginLeft="5dp"
-               android:layout_centerVertical="true"
-                 android:id="@+id/mTvback"
-         
-         />
-                 <TextView 
-               android:layout_marginLeft="5dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/mTvw1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:maxEms="8"
+            android:singleLine="true"
+            android:text="Category"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/mRlgs1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" >
+
+            <ImageView
+                android:id="@+id/mTvback"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/abc1" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                                android:textSize="18sp"
-                android:textColor="@color/my2"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/mTvback"
-               android:layout_centerVertical="true"
-                android:text="@string/back"
-                />
-     </RelativeLayout>
+                android:text="back"
+                android:textColor="@color/my2"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </RelativeLayout>
 
-    
-
-</RelativeLayout>    <RelativeLayout 
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:background="@drawable/background"
         android:layout_height="fill_parent"
-        >
-                                 <LinearLayout 
-        android:layout_width="fill_parent"
-        android:layout_height="400dp"
-        android:layout_centerInParent="true"
-        android:orientation="horizontal"
-        >
-        <View 
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1"
-            />
-        <LinearLayout 
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="4"
-            android:orientation="vertical"
-            >
-            <View 
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                />
-            <LinearLayout 
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
+        android:background="@drawable/background" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="400dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
                 android:layout_weight="4"
-                android:orientation="vertical"
-                >
-                  <ImageView 
-                               android:layout_width="fill_parent"
-               android:layout_height="0dp"
-               android:layout_weight="1"
-                
-                />
-                            <ImageView 
-               android:layout_width="fill_parent"
-               android:layout_height="0dp"
-               android:layout_weight="4"
-               android:src="@drawable/abb6"
-               /> 
-            <ImageView 
-                               android:layout_width="fill_parent"
-               android:layout_height="0dp"
-               android:layout_weight="1"
-                
-                />
-          
-                
+                android:orientation="vertical" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="4"
+                        android:src="@drawable/abb6" />
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
             </LinearLayout>
-            <View 
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                />
-            </LinearLayout>
-        <View 
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1"
-            />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
         </LinearLayout>
-        
-        
-  <GridView 
-      android:layout_margin="10dp"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"
-      android:id="@+id/mGvm1"
-      android:horizontalSpacing="10dp"
-      android:numColumns="3"
-      ></GridView>
-                    <ProgressBar
+
+        <GridView
+            android:id="@+id/mGvm1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp"
+            android:horizontalSpacing="10dp"
+            android:numColumns="3" >
+        </GridView>
+
+        <ProgressBar
             android:id="@+id/progressBar_sale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true" />
-  
     </RelativeLayout>
-    
-   
 
 </LinearLayout>

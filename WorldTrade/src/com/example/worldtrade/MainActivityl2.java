@@ -35,7 +35,7 @@ public class MainActivityl2 extends FragmentActivity implements OnCheckedChangeL
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		AppManager.getAppManager().addActivity(this);
 
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main1);
 		initViews();
 		
 		group = (RadioGroup) findViewById(R.id.main_tab_bar);
@@ -89,7 +89,7 @@ public class MainActivityl2 extends FragmentActivity implements OnCheckedChangeL
 		switch (checkedIndex) {
 		case 0:
 			fragment = fragments.get(0);
-			transaction.replace(R.id.main_framelayout, new Fragment1());
+			transaction.replace(R.id.main_framelayout,fragment);
 			transaction.commit();
 			break;
 		case 1:

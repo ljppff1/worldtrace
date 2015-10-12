@@ -12,14 +12,17 @@
     android:orientation="vertical"
    >
    
-    <TextView 
+    <TextView
+        android:id="@+id/mTvw1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:textColor="@color/black"
         android:layout_centerInParent="true"
+        android:ellipsize="end"
+        android:maxEms="8"
+        android:singleLine="true"
         android:text="@string/ab1"
-        />
+        android:textColor="@color/black"
+        android:textSize="25sp" />
 
        <RelativeLayout 
               android:layout_width="wrap_content"

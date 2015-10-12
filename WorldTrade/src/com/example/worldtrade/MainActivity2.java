@@ -122,7 +122,7 @@ public class MainActivity2 extends FragmentActivity implements OnCheckedChangeLi
 		switch (checkedIndex) {
 		case 0:
 			fragment = fragments.get(0);
-			transaction.replace(R.id.main_framelayout, new Fragment1());
+			transaction.replace(R.id.main_framelayout, fragment);
 			transaction.commit();
 			break;
 		case 1:

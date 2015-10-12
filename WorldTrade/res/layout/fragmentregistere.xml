@@ -32,19 +32,16 @@
          android:layout_marginLeft="4dp"
          android:text="Email"
          />
-     <EditText 
+                  <com.llew.e.clear.view.wedgit.ClearEditText 
+                      android:drawableRight="@drawable/clear_normal_list"
          android:layout_width="0dp"
          android:layout_weight="2.5"
          android:textSize="13sp"
          
          android:id="@+id/mEtfr1"
-         android:paddingRight="14dp"
          
          android:textColor="@color/black"
-         android:layout_gravity="center_vertical"
-         android:gravity="right"
          android:layout_height="wrap_content"
-         android:hint="@string/aaz2"
          />
  </LinearLayout>
  <View 
@@ -107,14 +104,12 @@
          android:layout_marginLeft="4dp"
          android:text="Company"
          />
-     <EditText 
+                  <com.llew.e.clear.view.wedgit.ClearEditText 
+                      android:drawableRight="@drawable/clear_normal_list"
          android:layout_width="0dp"
          android:layout_weight="2.5"
          android:textSize="13sp"
          
-         android:paddingRight="14dp"
-         android:layout_gravity="center_vertical"
-         android:gravity="right"
                   android:textColor="@color/black"
          
                   android:id="@+id/mEtfr2"     
@@ -143,14 +138,12 @@
          android:layout_marginLeft="4dp"
          android:text="Name"
          />
-     <EditText 
+                  <com.llew.e.clear.view.wedgit.ClearEditText 
+                      android:drawableRight="@drawable/clear_normal_list"
          android:layout_width="0dp"
          android:layout_weight="2.5"
          android:textSize="13sp"
          
-         android:paddingRight="14dp"
-         android:layout_gravity="center_vertical"
-         android:gravity="right"
                   android:id="@+id/mEtfr3"
          android:layout_height="wrap_content"
          android:hint=""
@@ -180,26 +173,55 @@
          android:layout_marginLeft="4dp"
          android:text="Password"
          />
-     <EditText 
+                  <com.llew.e.clear.view.wedgit.ClearEditText 
+                      android:drawableRight="@drawable/clear_normal_list"
          android:layout_width="0dp"
          android:layout_weight="2.5"
          android:textSize="13sp"
-         
-         android:paddingRight="14dp"
-                  android:id="@+id/mEtfr4"
-         android:layout_gravity="center_vertical"
-         android:gravity="right"
+                           android:id="@+id/mEtfr4"
                   android:textColor="@color/black"
          
          android:inputType="textPassword"
          android:layout_height="wrap_content"
-         android:hint="@string/aaz11"
          />
  </LinearLayout>
           <View 
      android:layout_width="fill_parent"
      android:layout_height="0.5dp"
      android:visibility="gone"
+     android:background="@color/black"
+     />
+           <LinearLayout
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:paddingTop="8dp"
+     android:paddingBottom="8dp"
+     android:background="@color/aliceblue"
+     >
+     <TextView 
+         android:layout_width="0dp"
+         android:layout_weight="1"
+         android:layout_height="wrap_content"
+         android:textSize="22sp"
+         android:textColor="@color/black"
+         android:layout_gravity="center"
+         android:layout_marginLeft="4dp"
+         android:text="Confirm"
+         />
+                  <com.llew.e.clear.view.wedgit.ClearEditText 
+                      android:drawableRight="@drawable/clear_normal_list"
+         android:layout_width="0dp"
+         android:layout_weight="2.5"
+         android:textSize="13sp"
+                  android:id="@+id/mEtfr44"
+                  android:textColor="@color/black"
+         android:inputType="textPassword"
+         android:layout_height="wrap_content"
+         />
+ </LinearLayout>
+          <View 
+     android:layout_width="fill_parent"
+     android:layout_height="0.5dp"
      android:background="@color/black"
      />
         <LinearLayout

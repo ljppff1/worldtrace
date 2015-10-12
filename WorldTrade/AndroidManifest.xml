@@ -1,32 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.worldtrade"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="100"
+    android:versionName="2.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="10"
         android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
@@ -44,12 +38,11 @@
     
     <application
         android:name="com.example.utils.UILApplication1"
-        android:allowBackup="true"
         android:icon="@drawable/bbbb"
-        android:theme="@android:style/Theme.Light.NoTitleBar"
         android:label="@string/app_name"
         >
         <activity
+             android:theme="@style/activityTheme" 
             android:name="com.example.worldtrade.SplishActivity"
             android:label="@string/app_name" >
             <intent-filter>
@@ -85,6 +78,7 @@
         <activity android:name="com.example.worldtrade.XiaoxixiangqingActivity"></activity>
                 <activity android:name="com.example.worldtrade.ChanPinFabu1Activity"></activity>
                 <activity android:name="com.example.worldtrade.ChanPinLieBiao1Activity"></activity>
+                <activity android:name="com.example.worldtrade.KaiTongzhanhuiActivity"></activity>
                 
                 
                 <activity android:name="com.easemob.chatuidemo.activity.WodeActivity"></activity>
@@ -95,6 +89,8 @@
                                 <activity android:name="com.example.worldtrade.MainActivityl1"></activity>
                                 <activity android:name="com.example.worldtrade.ChanPinxiangqingActivity"></activity>
                                 <activity android:name="com.example.worldtrade.ChanPingXiangQing2Activity"></activity>
+                                <activity android:name="com.example.worldtrade.D1Activity"></activity>
+                                <activity android:name="com.example.worldtrade.MainActivityl2r"></activity>
                                 
                 
                    <service android:name="com.easemob.chat.EMGCMListenerService"
@@ -116,19 +112,19 @@
             android:name="EASEMOB_APPKEY"
             android:value="ljppff#world" />
         <!-- 声明sdk所需的service -->
-        <service android:name="com.easemob.chat.EMChatService"/>
+        <service android:name="com.easemob.chat.EMChatService" />
         <!-- 声明sdk所需的receiver -->
-        <receiver android:name="com.easemob.chat.EMMonitorReceiver">
+        <receiver android:name="com.easemob.chat.EMMonitorReceiver" >
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
-                
     </application>
 
 </manifest>

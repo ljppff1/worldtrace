@@ -109,14 +109,14 @@
            android:paddingBottom="8dp"
            android:layout_gravity="bottom"
            android:background="@color/white"
-       android:id="@+id/mRlf4a1"
+       android:id="@+id/mRl1"
        >
              <TextView  android:textColor="@color/black" 
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginLeft="20dp"
                android:text="About Worldwide Trade"
-               android:textSize="22sp"
+               android:textSize="18sp"
                android:layout_centerVertical="true"
                />     
          </RelativeLayout>
@@ -130,7 +130,8 @@
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
                   android:paddingTop="8dp"
-           android:paddingBottom="8dp"
+           android:paddingBottom="8dp"       android:id="@+id/mRl2"
+           
            android:background="@color/white"
        
        >
@@ -138,7 +139,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                               android:layout_marginLeft="20dp"
-                              android:textSize="22sp"
+                              android:textSize="18sp"
                
                android:text="Customer Service"
                android:layout_centerVertical="true"
@@ -154,7 +155,8 @@
 <RelativeLayout 
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
-                  android:paddingTop="8dp"
+                  android:paddingTop="8dp"       android:id="@+id/mRl3"
+                  
            android:paddingBottom="8dp"
            android:background="@color/white"
        
@@ -163,7 +165,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                               android:layout_marginLeft="20dp"
-                              android:textSize="22sp"
+                              android:textSize="18sp"
                
                android:text="Advertising Enquiry"
                android:layout_centerVertical="true"
