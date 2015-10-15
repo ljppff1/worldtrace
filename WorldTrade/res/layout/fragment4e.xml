@@ -33,31 +33,13 @@
             android:background="@color/half_transparent"
             android:layout_alignParentBottom="true"
             >
-                          <RelativeLayout 
-                   android:layout_width="80dp"
-                   android:layout_height="35dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                   android:background="@drawable/ad15"
-                  android:layout_marginRight="10dp"
-                   android:id="@+id/mRlzhx"
-                   >
-                                      <TextView 
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_centerInParent="true"
-                       android:textSize="20sp"
-                       android:textColor="@color/red"
-                       android:text="@string/ac7"
-                       />
-                  
-                   </RelativeLayout>
+                          
                     
             <LinearLayout 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                           android:visibility="gone"
+                            android:id="@+id/mLLEE1"
                 
                 android:orientation="horizontal"
                 >
@@ -469,7 +451,7 @@
                    >
                      </RelativeLayout>
                <RelativeLayout 
-                   android:layout_weight="1.4"
+                   android:layout_weight="1.5"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
                    android:background="@drawable/ad15"
@@ -505,14 +487,14 @@
                         
                </RelativeLayout>      
                                              <RelativeLayout 
-                   android:layout_weight="0.3"
+                   android:layout_weight="0.1"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
                    >
                      </RelativeLayout>
                
                         <RelativeLayout 
-                   android:layout_weight="1"
+                   android:layout_weight="1.2"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
                                       android:layout_marginLeft="10dp"
@@ -542,8 +524,45 @@
 
                         </RelativeLayout>
                </RelativeLayout>     
+               <RelativeLayout 
+                   android:layout_weight="0.1"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
+                   >
+                     </RelativeLayout>
+               <RelativeLayout 
+                   android:layout_weight="0.8"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
+                                      android:layout_marginLeft="10dp"
+                                      android:background="@drawable/ad15"
+                                      android:id="@+id/mRlf44"
+                   
+                   >  <RelativeLayout 
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       >
+                               
+           <TextView  android:textColor="@color/black" 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+                     android:layout_centerVertical="true"
+                      android:layout_marginLeft="8dp"
+               android:text="@string/button_logout"
+               />
+
+                        </RelativeLayout>
+                                             <RelativeLayout 
+                   android:layout_weight="0.1"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
+                   >
+                     </RelativeLayout>
+                                             
+                     </RelativeLayout>
                                          <RelativeLayout 
-                   android:layout_weight="0.3"
+                   android:layout_weight="0.1"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
                    >

@@ -34,16 +34,7 @@
                  android:id="@+id/mTvback"
          
          />
-                 <TextView 
-               android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                                android:textSize="18sp"
-                android:textColor="@color/my2"
-                android:layout_toRightOf="@id/mTvback"
-               android:layout_centerVertical="true"
-                android:text="@string/back"
-                />
+                 
      </RelativeLayout>
      
         
@@ -172,7 +163,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="@string/ds5"
+                    android:text="@string/ds51"
                     android:layout_marginLeft="10dp"
                     android:textSize="20sp"
                     android:id="@+id/mTvwhat1b1"
@@ -186,7 +177,7 @@
                     android:layout_marginRight="10dp"
                     android:textSize="17sp"
                                         android:id="@+id/mTvwhat1b"
-                    
+                    android:numeric="integer"
                     android:textColor="@color/black"
                     />
             </RelativeLayout>
@@ -201,6 +192,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:visibility="gone"
                 android:layout_marginBottom="10dp"
                 >
                 <TextView 

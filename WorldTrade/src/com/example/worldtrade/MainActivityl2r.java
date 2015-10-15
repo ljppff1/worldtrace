@@ -23,7 +23,7 @@ public class MainActivityl2r extends FragmentActivity implements OnCheckedChange
 	private Fragment1 f1;
 	private Fragment2 f2;
 	private Fragment3 f3;
-	private FragmentZhuCe f4;
+	private Fragment4no f4;
 	private Fragment5 f5;
 	private RadioGroup group;
 	private ArrayList<Fragment> fragments;
@@ -62,7 +62,7 @@ public class MainActivityl2r extends FragmentActivity implements OnCheckedChange
 		f1 =new Fragment1();
 		f2 =new Fragment2();
 		f3 =new Fragment3();
-		f4 =new FragmentZhuCe();
+		f4 =new Fragment4no();
 		f5 =new Fragment5();
 		
 	}
@@ -105,7 +105,7 @@ public class MainActivityl2r extends FragmentActivity implements OnCheckedChange
 			break;
 		case 3:
 			fragment = fragments.get(3);
-			transaction.replace(R.id.main_framelayout,  new FragmentZhuCe());
+			transaction.replace(R.id.main_framelayout,  fragment);
 			transaction.commit();
 			break;
 		case 4:

@@ -28,17 +28,7 @@
                  android:id="@+id/mTvback"
          
          />
-                 <TextView 
-               android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                                android:textSize="18sp"
-                android:textColor="@color/my2"
-                android:id="@+id/mTvww1"
-                android:layout_toRightOf="@id/mTvback"
-               android:layout_centerVertical="true"
-                android:text="@string/back"
-                />
+                 
      </RelativeLayout>
                       <TextView 
                 android:layout_width="wrap_content"

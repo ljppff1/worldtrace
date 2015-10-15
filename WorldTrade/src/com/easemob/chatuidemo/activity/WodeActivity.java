@@ -47,6 +47,7 @@ import com.easemob.chat.EMConversation.EMConversationType;
 import com.easemob.chatuidemo.Constant;
 import com.easemob.chatuidemo.DemoHXSDKHelper;
 import com.example.utils.UILApplication1;
+import com.example.worldtrade.BaseActivity;
 import com.example.worldtrade.R;
 
 import com.easemob.chatuidemo.adapter.ChatAllHistoryAdapter;
@@ -56,7 +57,7 @@ import com.easemob.chatuidemo.db.InviteMessgeDao;
  * 鏄剧ず鎵�鏈変細璇濊褰曪紝姣旇緝绠�鍗曠殑瀹炵幇锛屾洿濂界殑鍙兘鏄妸闄岀敓浜哄瓨鍏ユ湰鍦帮紝杩欐牱鍙栧埌鐨勮亰澶╄褰曟槸鍙帶鐨�
  * 
  */
-public class WodeActivity extends Activity {
+public class WodeActivity extends BaseActivity {
 
 	private InputMethodManager inputMethodManager;
 	private ListView listView;
@@ -83,12 +84,24 @@ public class WodeActivity extends Activity {
     private LinearLayout mLLmy1;
     private RelativeLayout mRla1;
 	private String number;
+	private TextView message_title;
+	private String CHINESE;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	       setContentView(R.layout.wode);
 	       mLLmy1 =(LinearLayout)this.findViewById(R.id.mLLmy1);
 	       mRla1 =(RelativeLayout)this.findViewById(R.id.mRla1);
+	       message_title =(TextView)this.findViewById(R.id.message_title);
+			SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+			CHINESE =mySharedPreferences1.getString("CHINESE","1");
+			if(CHINESE.equals("1")){
+			
+			}else{
+				message_title.setText("Live Chat");
+			}
+
+	       
 	       if (DemoHXSDKHelper.getInstance().isLogined()) {
 	           initView();
 	       }else{
@@ -96,10 +109,7 @@ public class WodeActivity extends Activity {
 	           mRla1.setVisibility(View.VISIBLE);
 	           login();
 	       }
-	       
-	       
-	       
-	    
+	       	    
 	        
 	    }
 private void login() {
@@ -149,7 +159,7 @@ void initView(){
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             EMConversation conversation = adapter.getItem(position);
             String username = conversation.getUserName();
-            
+           
             Intent intent = new Intent(WodeActivity.this, ChatActivity.class);
             intent.putExtra("userId", username);
             startActivity(intent);
@@ -256,7 +266,6 @@ void initView(){
 	}
 
 	/**
-	 * 鑾峰彇鎵�鏈変細璇�
 	 * 
 	 * @param context
 	 * @return

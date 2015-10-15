@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ax1"
                                                         android:layout_gravity="center_horizontal"
-                    
+                    android:id="@+id/mEE1"
                     />
                 </LinearLayout>
                                             <LinearLayout 
@@ -76,6 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/ax2"
+                    android:id="@+id/mEE2"
                     />
                 </LinearLayout>
                 </LinearLayout>

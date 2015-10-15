@@ -257,7 +257,7 @@ public void choiceWhat(View v){
 	     .setPositiveButton(R.string.zg7,new DialogInterface.OnClickListener() {//添加确定按钮  
 	         @Override  
 	         public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件  
-	        		startActivity(new Intent(ChanPingXiangQing1Activity.this,MainActivityl3.class));
+	        		startActivity(new Intent(ChanPingXiangQing1Activity.this,huiyuandengluActivity.class));
 	  
 	         }  
 	     }).setNegativeButton(R.string.zg8,new DialogInterface.OnClickListener() {//添加返回按钮  

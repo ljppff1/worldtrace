@@ -33,33 +33,12 @@
             android:background="@color/half_transparent"
             android:layout_alignParentBottom="true"
             >
-                          <RelativeLayout 
-                   android:layout_width="80dp"
-                   android:layout_height="35dp"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                   android:background="@drawable/ad15"
-                  android:layout_marginRight="10dp"
-                  android:visibility="gone"
-                   android:id="@+id/mRlzhx"
-                   >
-                                      <TextView 
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_centerInParent="true"
-                       android:textSize="20sp"
-                       android:textColor="@color/red"
-                       android:text="Logout"
-                       />
-                  
-                   </RelativeLayout>
                     
             <LinearLayout 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                           android:visibility="gone"
-                
+                android:id="@+id/mLLEE1"
                 android:orientation="horizontal"
                 >
                 <View 
@@ -80,7 +59,7 @@
                        android:layout_centerInParent="true"
                        android:textSize="20sp"
                        android:textColor="@color/white"
-                       android:text="@string/za2"
+                       android:text="Log in"
                        />
                    </RelativeLayout>
                                    <View 
@@ -102,7 +81,7 @@
                        android:layout_centerInParent="true"
                        android:textSize="20sp"
                        android:textColor="@color/white"
-                       android:text="@string/za3"
+                       android:text="Register"
                        />
                   
                    </RelativeLayout>
@@ -299,7 +278,7 @@
                android:layout_centerVertical="true"
                android:layout_marginLeft="10dp"
                android:layout_toRightOf="@id/mIv1"
-               android:text="Demand release"
+               android:text="New Release"
                />
                       
            
@@ -332,7 +311,7 @@
                android:layout_toRightOf="@id/mIv2"
                               android:layout_marginLeft="10dp"
                
-               android:text="Demand list"
+               android:text="Catalog"
                android:layout_centerVertical="true"
                />
                       
@@ -361,7 +340,7 @@
                <TextView  android:textColor="@color/black" 
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Im"
+               android:text="Live Chat"
                                android:layout_centerVertical="true"
                android:layout_marginLeft="10dp"
                android:layout_toRightOf="@id/mIvf42"
@@ -409,7 +388,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginLeft="20dp"
-               android:text="Vip purchase full"
+               android:text="Purchase VIP"
                android:layout_centerVertical="true"
                />     
          </RelativeLayout>
@@ -432,7 +411,7 @@
                android:layout_height="wrap_content"
                               android:layout_marginLeft="20dp"
                
-               android:text="Advertise with Us"
+               android:text="Advertising"
                android:layout_centerVertical="true"
                />     
        
@@ -464,13 +443,13 @@
                      android:layout_toRightOf="@id/mIvf413"
                      >
                           <RelativeLayout 
-                   android:layout_weight="0.3"
+                   android:layout_weight="0.1"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
                    >
                      </RelativeLayout>
                <RelativeLayout 
-                   android:layout_weight="1.4"
+                   android:layout_weight="1.1"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
                    android:background="@drawable/ad15"
@@ -497,7 +476,7 @@
                 android:layout_toRightOf="@id/mIv4"
                                      android:layout_centerVertical="true"
                 android:layout_marginLeft="8dp"
-               android:text="Message Center"
+               android:text="News"
                />
                        
                    </RelativeLayout>
@@ -506,14 +485,14 @@
                         
                </RelativeLayout>      
                                              <RelativeLayout 
-                   android:layout_weight="0.3"
+                   android:layout_weight="0.1"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
                    >
                      </RelativeLayout>
                
                         <RelativeLayout 
-                   android:layout_weight="1"
+                   android:layout_weight="1.3"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
                                       android:layout_marginLeft="10dp"
@@ -544,10 +523,42 @@
                         </RelativeLayout>
                </RelativeLayout>     
                                          <RelativeLayout 
-                   android:layout_weight="0.3"
+                   android:layout_weight="0.1"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
+                   > 
+                   </RelativeLayout>
+                   
+                   <RelativeLayout 
+                   android:layout_weight="0.9"
+                   android:layout_width="0dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/mRlf44"
+                                      android:layout_marginLeft="10dp"
+                                      android:background="@drawable/ad15"
+                   
+                   >  <RelativeLayout 
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+                       >
+                               
+           <TextView  android:textColor="@color/black" 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+                     android:layout_centerVertical="true"
+                      android:layout_marginLeft="8dp"
+               android:text="Logout"
+               />
+
+                        </RelativeLayout>
+                                             <RelativeLayout 
+                   android:layout_weight="0.1"
                    android:layout_width="0dp"
                    android:layout_height="35dp"
                    >
+                     </RelativeLayout>
+                                             
                      </RelativeLayout>
                         
                  </LinearLayout>

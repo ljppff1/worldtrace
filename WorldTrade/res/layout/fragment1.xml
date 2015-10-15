@@ -139,17 +139,24 @@
           </LinearLayout>
           </LinearLayout>
      <RelativeLayout 
-         android:layout_width="fill_parent"
-         android:layout_height="fill_parent"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
          >
      <com.example.view.MyListView 
-         android:layout_width="fill_parent"
-         android:layout_height="fill_parent"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
          android:id="@+id/mLvf11"
                      android:visibility="gone"
          
          ></com.example.view.MyListView>
-           <ProgressBar
+     <com.example.view.MyListView 
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/mLvf12"
+                     android:visibility="gone"
+         
+         ></com.example.view.MyListView>
+     <ProgressBar
             android:id="@+id/progressBar_sale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

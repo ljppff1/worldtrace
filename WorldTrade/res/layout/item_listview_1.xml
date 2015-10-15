@@ -28,11 +28,11 @@
             android:layout_toRightOf="@+id/iv_listview_rent_pic" >
           <TextView 
               android:text="@string/abc83"
-              android:textSize="18sp"
+              android:textSize="15sp"
               android:textColor="@color/black"
               android:id="@+id/mTvri10"
               android:layout_marginTop="10dp"
-              android:layout_width="wrap_content"
+              android:layout_width="60dp"
               android:layout_height="wrap_content"
               android:layout_alignParentRight="true"
               />

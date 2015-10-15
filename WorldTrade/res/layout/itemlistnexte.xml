@@ -16,11 +16,11 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:ellipsize="end"
-            android:maxEms="8"
+            android:maxEms="12"
             android:singleLine="true"
-            android:text="Category"
+            android:text="Business Categories"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <RelativeLayout
             android:id="@+id/mRlgs1"
@@ -35,15 +35,7 @@
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/abc1" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/mTvback"
-                android:text="back"
-                android:textColor="@color/my2"
-                android:textSize="18sp" />
+            
         </RelativeLayout>
     </RelativeLayout>
 
@@ -109,8 +101,8 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:paddingTop="4dp"
-                    android:text="Country"
+                    android:paddingTop="4dp" android:singleLine="true"  
+                    android:text="Country"  android:id="@+id/mTvreg244"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
             </RelativeLayout>

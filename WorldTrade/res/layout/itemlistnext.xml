@@ -39,16 +39,7 @@
                  android:id="@+id/mTvback"
          
          />
-                 <TextView 
-               android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                                android:textSize="18sp"
-                android:textColor="@color/my2"
-                android:layout_toRightOf="@id/mTvback"
-               android:layout_centerVertical="true"
-                android:text="@string/back"
-                />
+                 
      </RelativeLayout>
     
 </RelativeLayout>    
@@ -122,10 +113,11 @@
               android:layout_height="wrap_content"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-              
+              android:id="@+id/mTvreg244"
+             android:singleLine="true"  
                             android:gravity="center"
                android:paddingTop="4dp"
-              android:text="@string/aa3"
+              android:text="@string/zg17"
               />
               
           </RelativeLayout>

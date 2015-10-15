@@ -39,6 +39,7 @@
          android:textSize="13sp"
          
          android:id="@+id/mEtfr1"
+                               android:inputType="textPersonName"
          
          android:textColor="@color/black"
          android:layout_height="wrap_content"

@@ -28,16 +28,7 @@
                  android:id="@+id/mTvback"
          
          />
-                 <TextView 
-               android:layout_marginLeft="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                                android:textSize="18sp"
-                android:textColor="@color/my2"
-                android:layout_toRightOf="@id/mTvback"
-               android:layout_centerVertical="true"
-                android:text="back"
-                />
+                 
      </RelativeLayout>
      
         
@@ -47,23 +38,23 @@
                       <TextView 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                                android:textSize="24sp"
+                                android:textSize="20sp"
                 android:textColor="@color/my1"
                                android:layout_centerVertical="true"
                 
                android:layout_centerHorizontal="true"
-                android:text="My business card"
+                android:text="Business Card"
                 />
         <TextView 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                                android:textSize="20sp"
+                                android:textSize="16sp"
                 android:textColor="@color/my1"
                                android:layout_centerVertical="true"
                 android:layout_marginRight="5dp"
                 android:id="@+id/mTvmmp1"
               android:layout_alignParentRight="true"
-                android:text="Collect"
+                android:text="My Favorite"
                 />
     </RelativeLayout>
     
@@ -114,14 +105,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Card"
+                    android:text="Photo"
                     android:layout_marginLeft="10dp"
                     android:textSize="20sp"
                     android:textColor="@color/my1"
                     />
                 <ImageView 
-                    android:layout_width="120dp"
-                    android:layout_height="78dp"
+                    android:layout_width="180dp"
+                    android:layout_height="100dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginRight="20dp"
                     android:id="@+id/mIvw1"
@@ -203,8 +194,41 @@
                 android:layout_height="0.5dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/black"
+                /> <RelativeLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                >
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/mV2x"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/mTvwhat2x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="Job Title"
+                                        android:layout_marginLeft="10dp"
+                    
+                    android:textColor="@color/my1"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+             <View 
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/black"
                 />
-            
             <RelativeLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -273,7 +297,38 @@
                 android:layout_marginTop="20dp"
                 android:background="@color/black"
                 />
-            
+              <RelativeLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+               
+                >
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Contact Info"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/my1"
+                    />
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/mV4x"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    />
+            </RelativeLayout>
+                <View 
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/black"
+                />
             <RelativeLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

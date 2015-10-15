@@ -10,22 +10,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.easemob.chatuidemo.activity.ChatActivity;
-import com.example.fragment.Fragment1;
-import com.example.utils.Content;
-import com.lidroid.xutils.HttpUtils;
-import com.lidroid.xutils.exception.HttpException;
-import com.lidroid.xutils.http.RequestParams;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
-import com.lidroid.xutils.http.client.HttpRequest;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -39,8 +27,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -48,7 +36,18 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
+
+import com.easemob.chatuidemo.activity.ChatActivity;
+import com.example.utils.Content;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 public class ItemNextActivity extends BaseActivity {
 	private ImageView mTvback;
@@ -69,7 +68,11 @@ public class ItemNextActivity extends BaseActivity {
 	private String CHINESE;
 	private String HG;
 	private TextView mTvw1;
-
+	private TextView mTvreg244;
+	private List<Data3> listd3 =new ArrayList<ItemNextActivity.Data3>();
+	private String[] listd3s =new String[]{};
+	private int ilistd3=-1;
+    private String locationone ="";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -85,7 +88,9 @@ public class ItemNextActivity extends BaseActivity {
 		TID =getIntent().getStringExtra("TID");
 		mTvw1 =(TextView)this.findViewById(R.id.mTvw1);
 		mTvw1.setText(HG);
- 
+		mTvreg244 = (TextView)this.findViewById(R.id.mTvreg244);
+		mTvreg244.setOnClickListener(listener);
+
 		SharedPreferences mySharedPreferences= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
 		wechatNo =mySharedPreferences.getString("wechatNo","");
 		userid =mySharedPreferences.getString("id", "");
@@ -177,6 +182,8 @@ public void downloadsearch(String area11){
   List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
   nameValuePairs.add(new BasicNameValuePair("type", wechatNo));
   nameValuePairs.add(new BasicNameValuePair("categorytwo", TID));
+  nameValuePairs.add(new BasicNameValuePair("locationone", locationone));
+  
   params.addBodyParameter(nameValuePairs);
   HttpUtils http = new HttpUtils();
   http.send(HttpRequest.HttpMethod.POST,
@@ -258,7 +265,7 @@ private void initImageLoaderOptions() {
 			.bitmapConfig(Bitmap.Config.RGB_565).build();
 }
 class Holder{
-	TextView mTvri10,mTvri11,mTvri12;
+	TextView mTvri10,mTvri11,mTvri12,mEE1,mEE2;
 	LinearLayout mLLww1,mLLww2;
 	ImageView imageView;
 }
@@ -268,7 +275,7 @@ public void choiceWhat(View v){
 	     .setPositiveButton(R.string.zg7,new DialogInterface.OnClickListener() {//添加确定按钮  
 	         @Override  
 	         public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件  
-	        		startActivity(new Intent(ItemNextActivity.this,MainActivityl3.class));
+	        		startActivity(new Intent(ItemNextActivity.this,huiyuandengluActivity.class));
 	  
 	         }  
 	     }).setNegativeButton(R.string.zg8,new DialogInterface.OnClickListener() {//添加返回按钮  
@@ -293,6 +300,8 @@ class  Myadapter extends   BaseAdapter{
 			holder.mTvri10 =(TextView)convertView.findViewById(R.id.mTvri11);
 			holder.mTvri11 =(TextView)convertView.findViewById(R.id.mTvri12);
 			holder.mTvri12 =(TextView)convertView.findViewById(R.id.mTvri13);
+			holder.mEE1 =(TextView)convertView.findViewById(R.id.mEE1);
+			holder.mEE2 =(TextView)convertView.findViewById(R.id.mEE2);
 			holder.mLLww1=(LinearLayout)convertView.findViewById(R.id.mLLww1);
 			holder.mLLww2=(LinearLayout)convertView.findViewById(R.id.mLLww2);
 			holder.imageView =(ImageView)convertView.findViewById(R.id.iv_listview_rent_pic);
@@ -300,6 +309,14 @@ class  Myadapter extends   BaseAdapter{
 
 		}else{
 			holder =(Holder)convertView.getTag();
+		}
+
+		if(CHINESE.equals("1")){
+			holder.mEE1.setText(R.string.ax1);
+			holder.mEE2.setText(R.string.ax2);
+		}else{
+			holder.mEE1.setText(R.string.ax1e);
+			holder.mEE2.setText(R.string.ax2e);
 		}
 
 		holder.mLLww1.setOnClickListener(new OnClickListener() {
@@ -383,6 +400,10 @@ OnClickListener listener =new OnClickListener() {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+		case R.id.mTvreg244:
+		     initDatao3();
+			break;
+
 		case R.id.mRlf11:
 			if(flag){
 				flag =false;
@@ -407,6 +428,104 @@ OnClickListener listener =new OnClickListener() {
 
 
 
+private void initDatao3() {
+	downloadsearcho3("0");
+}
+public void downloadsearcho3(String area11){
+	progressBar_sale.setVisibility(View.VISIBLE);
+	 RequestParams params = new RequestParams();
+   List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
+   params.addBodyParameter(nameValuePairs);
+   HttpUtils http = new HttpUtils();
+   http.send(HttpRequest.HttpMethod.POST,
+  		 "http://pine.i3.com.hk/trade/json/locationonelist.php",
+           params,
+           new RequestCallBack<String>() {
+
+				private String msg;
+
+				@Override
+				public void onFailure(HttpException arg0, String arg1) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void onSuccess(ResponseInfo<String> arg0) {
+					JSONObject jsonObject;
+					try {
+						jsonObject = new JSONObject(arg0.result);
+						String string_code = jsonObject.getString("code");
+						 msg = jsonObject.getString("msg");
+						
+						 int  num_code=Integer.valueOf(string_code);
+						 if (num_code==1) {
+							 //保存到本地
+							 listd3.clear();
+							
+							 JSONArray array = jsonObject.getJSONArray("data");
+							 listd3s=new String[array.length()];
+							 for(int i=0;i<array.length();i++){
+								
+								 Data3 d1 =new Data3();
+								 d1.oid=array.getJSONObject(i).getString("locationoneid");
+								 d1.oname=array.getJSONObject(i).getString("locationonename");
+								 listd3.add(d1);
+								 listd3s[i]=d1.oname;
+							 }
+								progressBar_sale.setVisibility(View.GONE);
+                            initd1();
+						 }
+						
+						 else {
+								 Toast.makeText(getApplicationContext(),msg, 0).show();
+									progressBar_sale.setVisibility(View.GONE);
+
+							//new AlertInfoDialog(SaleActivity.this).show();
+						}
+					} catch (JSONException e) {
+						//new Dialog_noInternet(SaleActivity.this).show();
+						progressBar_sale.setVisibility(View.GONE);
+						 Toast.makeText(getApplicationContext(),msg, 0).show();
+
+						e.printStackTrace();
+					}
+						
+				
+					
+				}
+
+				private void initd1() {
+					 Dialog alertDialog = new AlertDialog.Builder(ItemNextActivity.this). 
+				                setTitle(R.string.ac4)
+				                .setItems(listd3s, new DialogInterface.OnClickListener() { 
+				  
+				                    @Override 
+				                    public void onClick(DialogInterface dialog, int which) { 
+				                    //    Toast.makeText(Dialog_AlertDialogDemoActivity.this, arrayFruit[which], Toast.LENGTH_SHORT).show(); 
+				                    	ilistd3=which;
+				                    	mTvreg244.setText(listd3s[which]);
+				                    	locationone =listd3.get(which).oid;
+				                    	initData();
+				                    } 
+				                }). 
+				                setNegativeButton(R.string.ac3, new DialogInterface.OnClickListener() { 
+				 
+				                    @Override 
+				                    public void onClick(DialogInterface dialog, int which) { 
+				                        // TODO Auto-generated method stub  
+				                    } 
+				                }). 
+				                create(); 
+				        alertDialog.show(); 
+				}
+     
+   });
+}
+class Data3 {
+	public String oid;
+	public String oname;
+}
 private Handler handler =new Handler();
 	
 }

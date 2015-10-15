@@ -12,6 +12,7 @@ import com.example.fragment.FragmentRegister;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -43,12 +44,21 @@ public class huiyuandengluActivity extends FragmentActivity {
 	private FragmentRegister fb;
 	private TextView mTvhy1;
 	private RelativeLayout mRL123;
+	private String CHINESE;
 	@SuppressLint("ResourceAsColor")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		AppManager.getAppManager().addActivity(this);
+		SharedPreferences mySharedPreferences1= getSharedPreferences("USER", Activity.MODE_PRIVATE); 
+		CHINESE =mySharedPreferences1.getString("CHINESE","1");
+		if(CHINESE.equals("1")){
+			setContentView(R.layout.huiyuandenglu);
+		}else{
+			setContentView(R.layout.huiyuandenglue);
+		}
+
 		setContentView(R.layout.huiyuandenglu);
 		rg1 = (RadioGroup) this.findViewById(R.id.rg1);
 		rb1 = (RadioButton) this.findViewById(R.id.rb1);

@@ -93,6 +93,7 @@ import com.easemob.chat.VideoMessageBody;
 import com.easemob.chat.VoiceMessageBody;
 import com.easemob.chatuidemo.DemoHXSDKHelper;
 import com.example.utils.UILApplication1;
+import com.example.worldtrade.BaseActivity;
 import com.example.worldtrade.R;
 
 import com.easemob.chatuidemo.adapter.ExpressionAdapter;
@@ -115,7 +116,7 @@ import com.easemob.util.VoiceRecorder;
  * 鑱婂ぉ椤甸潰
  * 
  */
-public class ChatActivity extends Activity implements OnClickListener, EMEventListener{
+public class ChatActivity extends BaseActivity implements OnClickListener, EMEventListener{
 	private static final String TAG = "ChatActivity";
 	private static final int REQUEST_CODE_EMPTY_HISTORY = 2;
 	public static final int REQUEST_CODE_CONTEXT_MENU = 3;

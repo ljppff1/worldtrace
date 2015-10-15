@@ -40,6 +40,7 @@
          
          android:id="@+id/mEtfr1"
          android:textColor="@color/black"
+                               android:inputType="textPersonName"
          
          
          android:layout_height="wrap_content"

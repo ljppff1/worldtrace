@@ -37,15 +37,7 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/abc1" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="5dp"
-                android:layout_toRightOf="@id/mTvback"
-                android:text="@string/back"
-                android:textColor="@color/my2"
-                android:textSize="18sp" />
+            
         </RelativeLayout>
     </RelativeLayout>
 

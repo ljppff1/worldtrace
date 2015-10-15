@@ -40,7 +40,6 @@ public class D1Activity extends BaseActivity {
 	private TextView mTv2;
 	private TextView mTv3;
 	private ProgressBar progressBar_sale;
-	private TextView mTvww1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -49,34 +48,28 @@ public class D1Activity extends BaseActivity {
 		CHINESE =mySharedPreferences1.getString("CHINESE","1");
 		setContentView(R.layout.d1);
 		mTvv1 =(TextView)this.findViewById(R.id.mTvv1);
-		mTvww1 =(TextView)this.findViewById(R.id.mTvww1);
 		what =getIntent().getExtras().getString("WHAT");
 		if(CHINESE.equals("1")){
 			if("a".equals(what)){
 				mTvv1.setText("關於環貿");
-				mTvww1.setText("返回");
 			}
 			if("b".equals(what)){
-				mTvv1.setText("聯絡客服");				mTvww1.setText("返回");
-
+				mTvv1.setText("聯絡客服");				
 			}
 			if("c".equals(what)){
-				mTvv1.setText("廣告查詢");				mTvww1.setText("返回");
-
+				mTvv1.setText("廣告查詢");				
 			}
 		}else{
 			if("a".equals(what)){
-				
-				mTvv1.setText("About Worldwide Trade");				mTvww1.setText("back");
+				mTvv1.setText("About Worldwide Trade");				
 				mTvv1.setTextSize(16);
 			}
 			if("b".equals(what)){
-				mTvv1.setText("Customer Service");	mTvww1.setText("back");mTvv1.setTextSize(16);
+				mTvv1.setText("Customer Service");	mTvv1.setTextSize(16);
 			}
 			if("c".equals(what)){
-				mTvv1.setText("Advertising Enquiry");	mTvww1.setText("back");mTvv1.setTextSize(16);
+				mTvv1.setText("Advertising Enquiry");	mTvv1.setTextSize(16);
 			}
-
 		}
 
 		progressBar_sale =(ProgressBar)this.findViewById(R.id.progressBar_sale);

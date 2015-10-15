@@ -65,6 +65,7 @@ public class GongsijianjieActivity extends BaseActivity {
 		}
 		mLoginOut =(RelativeLayout)this.findViewById(R.id.mLoginOut);
 		mLoginOut.setOnClickListener(listener);
+		mLoginOut.setVisibility(View.GONE);
 		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
 		mRlgs1.setOnClickListener(listener);
 		progressBar_sale =(ProgressBar)this.findViewById(R.id.progressBar_sale);

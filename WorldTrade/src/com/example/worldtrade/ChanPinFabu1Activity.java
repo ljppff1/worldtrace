@@ -151,8 +151,6 @@ public class ChanPinFabu1Activity extends BaseActivity {
 					Toast.makeText(getApplicationContext(), getResources().getString(R.string.abc42aa2), 0).show();
 				}else if(TextUtils.isEmpty(mTvwhat1b.getEditableText().toString())){
 					Toast.makeText(getApplicationContext(), getResources().getString(R.string.abc41aa1), 0).show();
-				}else if(TextUtils.isEmpty(mTvwhat1c.getEditableText().toString())){
-					Toast.makeText(getApplicationContext(), getResources().getString(R.string.abc43aa3), 0).show();
 				}else if(file==null){
 					Toast.makeText(getApplicationContext(), getResources().getString(R.string.abc43aa4), 0).show();
 				}
@@ -400,14 +398,15 @@ public void downloadsearch(String area11){
    List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
    nameValuePairs.add(new BasicNameValuePair("title", mTvwhat1a.getEditableText().toString()));
    nameValuePairs.add(new BasicNameValuePair("introduction", mTvwhat1b.getEditableText().toString()));
-   nameValuePairs.add(new BasicNameValuePair("content", mTvwhat1c.getEditableText().toString()));
-   nameValuePairs.add(new BasicNameValuePair("userID", id));
+   nameValuePairs.add(new BasicNameValuePair("content", mTvwhat1b.getEditableText().toString()));
+   nameValuePairs.add(new BasicNameValuePair("userid", id));
    nameValuePairs.add(new BasicNameValuePair("img", message));
-   
+   nameValuePairs.add(new BasicNameValuePair("num",   mTvwhat1b.getEditableText().toString()));
+  
    params.addBodyParameter(nameValuePairs);
    HttpUtils http = new HttpUtils();
    http.send(HttpRequest.HttpMethod.POST,
-  		 "http://pine.i3.com.hk/trade/json/addproduct.php",
+  		 "http://pine.i3.com.hk/trade/json/addpurchase.php",
            params,
            new RequestCallBack<String>() {
 
