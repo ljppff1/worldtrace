@@ -33,16 +33,34 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_top_bar"
-        android:background="@color/top_bar_normal_bg"
+        android:background="@color/white"
         android:gravity="center_vertical" >
-
+        <RelativeLayout 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+                             android:layout_centerVertical="true"
+              android:id="@+id/mRlgs1"
+              >
+     <ImageView 
+         android:layout_width="38dp"
+         android:layout_height="38dp"
+         android:layout_marginLeft="5dp"
+         android:scaleType="fitXY"
+         android:src="@drawable/abc1"
+               android:layout_centerVertical="true"
+                 android:id="@+id/mTvback"
+         
+         />
+                 
+     </RelativeLayout>
+        
         <TextView
             android:id="@+id/message_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="@string/session"
-            android:textColor="#fff"
+            android:textColor="@color/my1"
             android:textSize="18sp" />
 
     </RelativeLayout>

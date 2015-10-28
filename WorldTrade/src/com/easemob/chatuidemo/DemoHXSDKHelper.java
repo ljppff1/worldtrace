@@ -517,6 +517,6 @@ public class DemoHXSDKHelper extends HXSDKHelper{
          mList.addAll(contactList.values());
         ((DemoHXSDKModel)getModel()).saveContactList(mList);
     }
-    
+
     
 }

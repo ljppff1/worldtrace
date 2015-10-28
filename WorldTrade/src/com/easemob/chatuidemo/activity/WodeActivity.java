@@ -86,10 +86,21 @@ public class WodeActivity extends BaseActivity {
 	private String number;
 	private TextView message_title;
 	private String CHINESE;
+	private RelativeLayout mRlgs1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	       setContentView(R.layout.wode);
+			
+			mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
+			mRlgs1.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					finish();
+				}
+			});
+
 	       mLLmy1 =(LinearLayout)this.findViewById(R.id.mLLmy1);
 	       mRla1 =(RelativeLayout)this.findViewById(R.id.mRla1);
 	       message_title =(TextView)this.findViewById(R.id.message_title);

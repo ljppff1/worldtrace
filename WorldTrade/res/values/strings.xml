@@ -310,7 +310,7 @@
     <string name="CCmb1">首頁</string>
     <string name="CCmb2">分類</string>
     <string name="CCmb3">展會</string>
-        <string name="CCmb4">我的帳護</string>
+        <string name="CCmb4">我的帳戶</string>
         <string name="CCmb5">更多</string>
     <string name="CCmb1e">Home</string>
     <string name="CCmb2e">Categories</string>
@@ -353,14 +353,14 @@
                   <string name="ad5">行程表</string>   
                   <string name="ad6">產品發佈</string>   
                         <string name="ad7">產品列表</string>   
-                        <string name="ad8">即時通訊(10)</string>   
+                        <string name="ad8">即時對話</string>   
                         <string name="ad9">購買VIP會員</string>   
                         <string name="ad10">刊登廣告</string>
                         <string name="ad11">消息中心</string>
     <string name="ad12">設置</string>
                         
         <string name="ax1">收藏</string>
-        <string name="ax2">即時通訊</string>
+        <string name="ax2">即時對話</string>
         <string name="ax1e">Favorite</string>
         <string name="ax2e">Live Chat</string>
         <string name="ax3">xxxxxxxx文字間介XXXXXXXXXXXXXXXX</string>
@@ -369,7 +369,7 @@
      <string name="az1">翻譯</string>                   
      <string name="az2">公司詳細介紹</string>                   
      <string name="az3">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</string>
-     <string name="az4">聯酪我們</string>
+     <string name="az4">聯絡我們</string>
      <string name="az5">聯酪人:陳大文</string>
           <string name="az6">聯酪電話:XXXXXXXX</string>
           <string name="az7">電子郵箱:XXXXXXX@XXX.com</string>
@@ -384,15 +384,15 @@
                     <string name="ac11">進入>></string>
                     <string name="ac11e">Entry>></string>
                     <string name="ac12">XXX公司建築設計展會</string>
-                    <string name="ac13">公司間介</string>
-                                        <string name="ac14">聯酪我們</string>
+                    <string name="ac13">公司簡介</string>
+                                        <string name="ac14">聯絡我們</string>
                                         <string name="ac15">產品詳情XXXX</string>
                     <string name="abc1">產品展示</string>
                     <string name="abc2">詳細> ></string>
                     <string name="abc6">更多> ></string>
-                    <string name="abc3">公司間介</string>
-                    <string name="abc31a">聯酪我們</string>
-                    <string name="abc4">公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介公司間介</string>
+                    <string name="abc3">公司簡介</string>
+                    <string name="abc31a">聯絡我們</string>
+                    <string name="abc4">公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介公司簡介</string>
                    <string name="abc21">首頁</string>
 <string name="abc22">分類</string>
 <string name="abc23">展會</string>
@@ -408,12 +408,12 @@
 <string name="abc36">白金會員</string>
 <string name="abc37">黃金VIP會員特權</string>
 <string name="abc38">免費XX</string>
-<string name="abc41">公司間介</string>
+<string name="abc41">公司簡介</string>
 <string name="abc42">公司圖片</string>
 <string name="abc43">公司名稱</string>
 <string name="abc44">會員等級</string>
 <string name="abc45">愛尚信息科技有限公司  ></string>
-<string name="abc46">普通會員  ></string>
+<string name="abc46">普通會員</string>
 
 <string name="abc47">聯酪人</string>
 <string name="abc48">聯酪電話</string>
@@ -445,7 +445,7 @@
 <string name="abc74">我來評價</string>
 <string name="abc75">提問</string>
 <string name="abc76">產品列表</string>
-<string name="abc77">即時通訊</string>
+<string name="abc77">即時對話</string>
 <string name="abc78">產品說明</string>
 <string name="abc79">產品詳情</string>
 <string name="abc81">客戶評價</string>
@@ -466,8 +466,10 @@
 <string name="abc46a">刪除</string>
 
 <string name="abb1">關於環貿</string>
-<string name="abb2">聯酪客服</string>
+<string name="abb2">聯絡客服</string>
 <string name="abb3">廣告查詢</string>
+<string name="abb3a">權限聲明</string>
+<string name="abb3b">條款細則</string>
 <string name="abc45b">公司詳情</string>
 <string name="abc45c">國際壹流開發團隊,專註於移動互聯網開發、APP開發、企業APP、O2O應用開發,IOS開發、移動應用平臺開發,香港手機軟件開發,手機APP應用軟件開發公司深圳愛尚信息科技. </string>
 <string name="abc45b1">所屬國家</string>
@@ -528,6 +530,7 @@
 
   <string name="ac1">請選擇壹級行業</string> 
   <string name="ac4">請選擇所屬國家</string> 
+  <string name="ac41">請選擇語言</string> 
   <string name="ac2">請選擇二級行業</string> 
   <string name="ac3">取消</string> 
   <string name="ac5">需求發佈</string> 
@@ -569,5 +572,10 @@
 <string name="zg18">職位</string>
 <string name="zg19">聯絡資訊</string>
 <string name="zg20">需求数量:</string>
+<string name="dd1">我的收藏</string>   
+<string name="dd2">编辑</string>   
+<string name="dd3">完成</string>   
+<string name="dd4">請選擇行業分類</string>
+<string name="dd5">Choose industry classification</string>
 
 </resources>

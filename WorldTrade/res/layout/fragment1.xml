@@ -18,22 +18,13 @@
        android:layout_width="fill_parent"
        android:layout_height="180dp"
        >
-    <com.tianshicoffeeom.app.imgscroll.MyImgScroll
-        android:id="@+id/myvp"
+    <com.example.slideshowdemo.customview.SlideShowView
+        android:id="@+id/slideshowView"
         android:layout_width="fill_parent"
-        android:layout_height="180dp" />
-         
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true" />
         
     
-    <LinearLayout
-        android:id="@+id/vb"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal" >
-    </LinearLayout>
 </RelativeLayout>
 <LinearLayout 
     android:layout_width="fill_parent"
@@ -76,16 +67,23 @@
              android:layout_alignParentTop="true"
              android:scaleType="fitXY"
              android:src="@drawable/aa2" />
-         <TextView 
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_toRightOf="@id/mIvaa2"
+             <com.example.view.ScrollForeverTextView
+        android:id="@+id/ttt"
+                             android:layout_toRightOf="@id/mIvaa2"
              android:layout_toLeftOf="@id/mIvaa3"
-             android:text="@string/abc82"
-             android:layout_centerVertical="true"
-             android:textColor="@color/black"
-             />
-
+        android:layout_centerVertical="true"
+             android:layout_width="fill_parent"  
+        android:layout_height="wrap_content"  
+        android:ellipsize="marquee"  
+        android:focusable="true"  
+        android:marqueeRepeatLimit="marquee_forever"  
+        android:singleLine="true"  
+        android:textColor="@color/black"  
+        android:textSize="20sp" 
+        
+        android:text="" />
+             
+    
          
          </RelativeLayout>
       <LinearLayout 
@@ -161,7 +159,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
+             />
      
         <TextView
             android:id="@+id/tv_noresut"

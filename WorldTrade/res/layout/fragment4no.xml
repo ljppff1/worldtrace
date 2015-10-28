@@ -386,13 +386,23 @@
            android:background="@color/white"
        android:id="@+id/mRlf4a1"
        >
-             <TextView  android:textColor="@color/black" 
+             <ImageView 
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/eee"
+                android:id="@+id/mIvf421d"
+                    android:layout_marginLeft="18dp"
+                
+                android:layout_centerVertical="true"
+                />
+               <TextView  android:textColor="@color/black" 
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:layout_marginLeft="20dp"
                android:text="@string/ad9"
-               android:layout_centerVertical="true"
-               />     
+                               android:layout_centerVertical="true"
+               android:layout_marginLeft="10dp"
+               android:layout_toRightOf="@id/mIvf421d"
+               />          
          </RelativeLayout>
                 <View 
             android:layout_width="fill_parent"
@@ -408,14 +418,24 @@
            android:background="@color/white"
        
        >
-                         <TextView  android:textColor="@color/black" 
+                               <ImageView 
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ddd"
+                android:id="@+id/mIvf421g"
+                    android:layout_marginLeft="18dp"
+                
+                android:layout_centerVertical="true"
+                />
+               <TextView  android:textColor="@color/black" 
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-                              android:layout_marginLeft="20dp"
-               
                android:text="@string/ad10"
-               android:layout_centerVertical="true"
+                               android:layout_centerVertical="true"
+               android:layout_marginLeft="10dp"
+               android:layout_toRightOf="@id/mIvf421g"
                />     
+            
        
          </RelativeLayout>
          
@@ -533,6 +553,7 @@
                <RelativeLayout 
                    android:layout_weight="0.8"
                    android:layout_width="0dp"
+                   android:visibility="gone"
                    android:layout_height="35dp"
                                       android:layout_marginLeft="10dp"
                                       android:background="@drawable/ad15"

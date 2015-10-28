@@ -1,12 +1,13 @@
 package com.example.worldtrade;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,19 +17,13 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.utils.HttpFileUpTool;
-import com.lidroid.xutils.HttpUtils;
-import com.lidroid.xutils.exception.HttpException;
-import com.lidroid.xutils.http.RequestParams;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
-import com.lidroid.xutils.http.client.HttpRequest;
-
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.Cursor;
+import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -38,19 +33,27 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.example.utils.HttpFileUpTool;
+import com.example.utils.ImageTools;
+import com.example.utils.LoadingDialog;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
 
 public class ChanPinFabuActivity extends BaseActivity {
 
@@ -154,7 +157,7 @@ public class ChanPinFabuActivity extends BaseActivity {
 					Toast.makeText(getApplicationContext(), getResources().getString(R.string.abc41aa1), 0).show();
 				}else if(TextUtils.isEmpty(mTvwhat1c.getEditableText().toString())){
 					Toast.makeText(getApplicationContext(), getResources().getString(R.string.abc43aa3), 0).show();
-				}else if(file==null){
+				}else if(f==null){
 					Toast.makeText(getApplicationContext(), getResources().getString(R.string.abc43aa4), 0).show();
 				}
 				else{
@@ -170,62 +173,43 @@ public class ChanPinFabuActivity extends BaseActivity {
 			}
 		}
 	};
-	
-	
+
 	private AlertDialog alertDialog;
 	
 	private void showCustomAlertDialog() {
-		 alertDialog = new AlertDialog.Builder(this).create();
-		alertDialog.show();
-		Window win = alertDialog.getWindow();
+		
+        AlertDialog.Builder builder = new AlertDialog.Builder(ChanPinFabuActivity.this);
+        builder.setTitle("加入照片");
+        //    指定下拉列表的显示数据
+        final String[] cities = {"拍摄照片", "选择照片"};
+        //    设置一个下拉的列表选择项
+        builder.setItems(cities, new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                if(which==0){
+                	cameraPhoto();
+                }else{
+                	systemPhoto();
+                }
+            }
+        });
+        builder.show();
+		
+		
 
-		WindowManager.LayoutParams lp = win.getAttributes();
-		win.setGravity(Gravity.LEFT | Gravity.BOTTOM);
-		//lp.alpha = 0.7f;
-		win.setAttributes(lp);
-		win.setContentView(R.layout.dialog);
-
-		Button cancelBtn = (Button) win.findViewById(R.id.camera_cancel);
-		cancelBtn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				alertDialog.cancel();
-			}
-		});
-		Button camera_phone = (Button) win.findViewById(R.id.camera_phone);
-		camera_phone.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				systemPhoto();
-			}
-
-		});
-		Button camera_camera = (Button) win.findViewById(R.id.camera_camera);
-		camera_camera.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				cameraPhoto();
-			}
-
-		});
-
-	}	private final int SYS_INTENT_REQUEST = 0XFF01;
-	private final int CAMERA_INTENT_REQUEST = 0XFF02;
-	private Bitmap bitmap;
+	}	
+	private static final int CROP_PICTURE = 3;
 
 	/**
 	 * 打开系统相册
 	 */
 	private void systemPhoto() {
 
-		Intent intent = new Intent();
-		intent.setType("image/*");
-		intent.setAction(Intent.ACTION_GET_CONTENT);
-		startActivityForResult(intent, SYS_INTENT_REQUEST);
-
+		Intent openAlbumIntent = new Intent(Intent.ACTION_GET_CONTENT);
+		openAlbumIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+		startActivityForResult(openAlbumIntent, 2);
 	}
 
 	/**
@@ -233,54 +217,73 @@ public class ChanPinFabuActivity extends BaseActivity {
 	 */
 	private void cameraPhoto() {
 		String sdStatus = Environment.getExternalStorageState();
-		/* 检测sd是否可用 */
-		if (!sdStatus.equals(Environment.MEDIA_MOUNTED)) {
-			//Toast.makeText(this, "SD卡不可用！", Toast.LENGTH_SHORT).show();
-			return;
-		}
-		Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-		startActivityForResult(intent, CAMERA_INTENT_REQUEST);
+		
+		Uri imageUri = null;
+		String fileName = null;
+		Intent openCameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+			//删除上一次截图的临时文件
+			SharedPreferences sharedPreferences =getSharedPreferences("temp",Context.MODE_WORLD_WRITEABLE);
+			ImageTools.deletePhotoAtPathAndName(Environment.getExternalStorageDirectory().getAbsolutePath(), sharedPreferences.getString("tempName", ""));
+			//保存本次截图临时文件名字
+			fileName = String.valueOf(System.currentTimeMillis()) + ".jpg";
+			Editor editor = sharedPreferences.edit();
+			editor.putString("tempName", fileName);
+			editor.commit();
+		imageUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(),fileName));
+		//指定照片保存路径（SD卡），image.jpg为一个临时文件，每次拍照后这个图片都会被替换
+		openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+		startActivityForResult(openCameraIntent,2);
+		
 	}
 
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == SYS_INTENT_REQUEST && resultCode == RESULT_OK
-				&& data != null) {
-			try {
-				Uri uri = data.getData();
-				Cursor cursor = getContentResolver().query(uri, null, null,
-						null, null);
-				cursor.moveToFirst();
-
-				String imageFilePath = cursor.getString(1);
-				System.out.println("File path is----->" + imageFilePath);
-
-				FileInputStream fis = new FileInputStream(imageFilePath);
-				bitmap = BitmapFactory.decodeStream(fis);
-				file=new File(imageFilePath);
-
-				int width = bitmap.getWidth();
-				int height = bitmap.getHeight();
-
-				/* 压缩获取的图像 */
-				showImgs(bitmap, false);
-
-				fis.close();
-				cursor.close();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == 2 ) {
+			Uri uri = null;
+			if (data != null) {
+				uri = data.getData();
+				System.out.println("Data");
+			}else {
+				System.out.println("File");
+				String fileName = getSharedPreferences("temp",Context.MODE_WORLD_WRITEABLE).getString("tempName", "");
+				uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(),fileName));
 			}
+			cropImage(uri, 500, 500, CROP_PICTURE);
 
-		} else if (requestCode == CAMERA_INTENT_REQUEST
-				&& resultCode == RESULT_OK && data != null) {
-			cameraCamera(data);
+	}  else if (requestCode == CROP_PICTURE) {
+		Bitmap photo = null;
+		Uri photoUri = data.getData();
+		if (photoUri != null) {
+			photo = BitmapFactory.decodeFile(photoUri.getPath());
 		}
-		super.onActivityResult(requestCode, resultCode, data);
-
+		if (photo == null) {
+			Bundle extra = data.getExtras();
+			if (extra != null) {
+                photo = (Bitmap)extra.get("data");  
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();  
+                photo.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            }  
+		}
+		showImgs(photo, false);
+         
 	}
-
+	super.onActivityResult(requestCode, resultCode, data);
+}
+	private final int PHOTO_PICKED_WITH_DATA = 0XFF03;
+	//截取图片
+	public void cropImage(Uri uri, int outputX, int outputY, int requestCode){
+		Intent intent = new Intent("com.android.camera.action.CROP");  
+        intent.setDataAndType(uri, "image/*");  
+        intent.putExtra("crop", "true");  
+        intent.putExtra("aspectX", 4);  
+        intent.putExtra("aspectY", 3);  
+        intent.putExtra("outputX", 400);   
+        intent.putExtra("outputY", 300); 
+        intent.putExtra("outputFormat", "JPEG");
+        intent.putExtra("noFaceDetection", true);
+        intent.putExtra("return-data", true);  
+	    startActivityForResult(intent, requestCode);
+	}  
 	/**
 	 * @param bitmap
 	 * @return 压缩后的bitmap
@@ -316,42 +319,11 @@ public class ChanPinFabuActivity extends BaseActivity {
 	 *            拍照后获取照片
 	 */
 	private File file;
-	private com.example.utils.LoadingDialog dialoga;
-	private void cameraCamera(Intent data) {
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmssSSS");
-		String name = formatter.format(System.currentTimeMillis()) + ".jpg";
-		Log.i("zhiwei.zhao", "image name:" + name);
-		Bundle bundle = data.getExtras();
-		/* 获取相机返回的数据，并转换为Bitmap图片格式 */
-		Bitmap bitmap = (Bitmap) bundle.get("data");
-		FileOutputStream b = null;
 
-		String path = Environment.getExternalStorageDirectory().getPath();
-		File file1 = new File(path + "/myImage/");
-		/** 检测文件夹是否存在，不存在则创建文件夹 **/
-		if (!file1.exists() && !file1.isDirectory())
-			file1.mkdirs();
-		String fileName = file1.getPath() + "/" + name;
-		file=new File(fileName);
-		Log.i("zhiwei.zhao", "camera file path:" + fileName);
-		try {
-			b = new FileOutputStream(fileName);
-			/* 把数据写入文件 */
-			bitmap.compress(Bitmap.CompressFormat.JPEG, 100, b);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (b == null)
-					return;
-				b.flush();
-				b.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		showImgs(bitmap, true);
-	}
+	private LoadingDialog dialoga;
+
+	private File f;
+	
 	/**
 	 * 展示选择的图片
 	 * 
@@ -359,12 +331,57 @@ public class ChanPinFabuActivity extends BaseActivity {
 	 * @param isSysUp
 	 */
 	private void showImgs(Bitmap bitmap, boolean isSysUp) {
-		if(alertDialog.isShowing()){
-			alertDialog.cancel();
-		}
 		mIvww1.setImageBitmap(bitmap);
-		
+		SaveBitmap(bitmap);
 	}
+
+
+
+	
+	public static String SDPATH = Environment.getExternalStorageDirectory()
+			+ "/WorldTrade/";
+
+    public static void makeRootDirectory(String filePath) {
+        File file = null;
+        try {
+            file = new File(filePath);
+            if (!file.exists()) {
+                file.mkdir();
+            }
+        } catch (Exception e) {
+
+        }
+}
+
+    public void SaveBitmap(Bitmap bmp) {  
+  	  Date date = new Date();
+  	  SimpleDateFormat format = new SimpleDateFormat("hh-mm-ss");
+  	  String newDate = format.format(date);
+  	  String path = "/sdcard/namecard";
+/*    	  if (!destDir.exists()) {
+  	   destDir.mkdirs();
+  	  }
+*/    	  makeRootDirectory(SDPATH);
+  	   f = new File(SDPATH+"pic"+newDate+".png");
+  	  
+  	  try {
+	    	   FileOutputStream out = new FileOutputStream(f);
+	    	   bmp.compress(Bitmap.CompressFormat.PNG, 90, out);
+	    	   out.flush();
+	    	   out.close();
+	    	 //  Toast.makeText(getApplicationContext(), "保存成功", Toast.LENGTH_SHORT).show();
+
+  	  } catch (FileNotFoundException e) {
+  	       e.printStackTrace();
+
+  	    //   Toast.makeText(getApplicationContext(), "保存失败1", Toast.LENGTH_SHORT).show();
+  	  } catch (IOException e) {
+
+ 	     //  Toast.makeText(getApplicationContext(), "保存失败2", Toast.LENGTH_SHORT).show();
+
+  	       e.printStackTrace();
+  	  }
+  }
 
 
 	private void sendFile(){
@@ -377,11 +394,11 @@ public class ChanPinFabuActivity extends BaseActivity {
 				public void run() {
 					
 					Map<String, File> files=new HashMap<String, File>();
-					files.put(file.getName(), file);
+					files.put(f.getName(), f);
 					 Map<String, String> params =new HashMap<String, String>();
 					try {
 						Looper.prepare(); 
-						HttpFileUpTool.Upload(file.getPath(),handler);
+						HttpFileUpTool.Upload(f.getPath(),handler);
 					} catch (IOException e) {
 						Message msg =new Message();
 						msg.what=2;

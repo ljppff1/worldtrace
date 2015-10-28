@@ -54,7 +54,7 @@
                 android:layout_marginRight="5dp"
                 android:id="@+id/mTvmmp1"
               android:layout_alignParentRight="true"
-                android:text="@string/ad3a2"
+                android:text="@string/dd2"
                 />
     </RelativeLayout>
     
@@ -95,269 +95,287 @@
                     android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
             >
-            <RelativeLayout 
+            <LinearLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:id="@+id/mRlww1"
+                android:orientation="horizontal"
                 android:layout_marginBottom="10dp"
                 >
                 <TextView 
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="@string/ad3a"
-                    android:layout_marginLeft="10dp"
+                    android:text="@string/dd1"
                     android:textSize="20sp"
                     android:textColor="@color/my1"
                     />
-                <ImageView 
-                    android:layout_width="180dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="20dp"
-                    android:id="@+id/mIvw1"
-                    android:layout_alignParentRight="true"
+              
+                                <TextView 
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/mVd1"
+                    android:textSize="17sp"
+                    android:text="@string/ad3a2"
+                    android:textColor="@color/black"
+                    />
+                
+                
+            </LinearLayout>
+                        <View 
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black"
+                />
+            
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                >
+                <TextView 
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_centerVertical="true"
+                    android:text="@string/ad3a"
+                    android:textSize="20sp"
+                    android:textColor="@color/my1"
+                    />
+                <View 
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="1dp"
+                    />
+                <ImageView 
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="130dp"
+                    android:id="@+id/mIvw1"
                     android:scaleType="fitXY"
                     android:src="@drawable/abd48"
                     />
-            </RelativeLayout>
+            </LinearLayout>
             <View 
                 android:layout_width="fill_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/black"
                 />
-            <RelativeLayout 
+            <LinearLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:orientation="horizontal"
                 >
                 <TextView 
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:text="@string/abc43"
-                    android:layout_marginLeft="10dp"
+                    android:id="@+id/mwo1"
                     android:textSize="20sp"
                     android:textColor="@color/my1"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
+                  <EditText  android:gravity="right"   android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/mV1"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
+                    android:id="@+id/mEt1"
+                 
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
-            </RelativeLayout>
+            </LinearLayout>
                         <View 
                 android:layout_width="fill_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/black"
                 />
-            
-            <RelativeLayout 
+                        <LinearLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:orientation="horizontal"
                 >
                 <TextView 
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/mV2"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
-                    android:textSize="17sp"
-                    android:textColor="@color/black"
-                    />
-
-                <TextView
-                    android:id="@+id/mTvwhat2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
                     android:text="@string/aaz7"
-                                        android:layout_marginLeft="10dp"
-                    
+                    android:textSize="20sp"
                     android:textColor="@color/my1"
-                    android:textSize="20sp" />
-
-            </RelativeLayout>
-                        <View 
-                android:layout_width="fill_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/black"
-                />
-             <RelativeLayout 
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                >
-                <TextView 
-                    android:layout_width="wrap_content"
+                    />
+                  <EditText  android:gravity="right"   android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/mV2x"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
+                    android:id="@+id/mEt2"
+                 
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
-
-                <TextView
-                    android:id="@+id/mTvwhat2x"
-                    android:layout_width="wrap_content"
+            </LinearLayout>
+                     
+                       <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                >
+                <TextView 
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
                     android:text="@string/zg18"
-                                        android:layout_marginLeft="10dp"
-                    
+                    android:textSize="20sp"
                     android:textColor="@color/my1"
-                    android:textSize="20sp" />
-
-            </RelativeLayout>
+                    />
+                  <EditText  android:gravity="right"   android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mEt3"
+                 
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    />
+            </LinearLayout>
                         <View 
                 android:layout_width="fill_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/black"
-                />
+                />    
             
-            <RelativeLayout 
+                     <LinearLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:orientation="horizontal"
                 >
-                
                 <TextView 
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/mV3"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
-                    android:textSize="17sp"
-                    android:textColor="@color/black"
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
                     android:text="@string/aaz1b"
-                                        android:layout_marginLeft="10dp"
-                    
+                    android:textSize="20sp"
                     android:textColor="@color/my1"
-                    android:textSize="20sp" />
-
-            </RelativeLayout>
+                    />
+                  <EditText  android:gravity="right"   android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mEt4"
+                 android:inputType="number"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    />
+            </LinearLayout>
                         <View 
                 android:layout_width="fill_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/black"
-                />
+                />    
             
-            <RelativeLayout 
+                     <LinearLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-               
+                android:orientation="horizontal"
                 >
                 <TextView 
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:text="@string/aaz1a"
-                    android:layout_marginLeft="10dp"
                     android:textSize="20sp"
                     android:textColor="@color/my1"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
+                  <EditText  android:gravity="right"   android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/mV4"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
+                    android:id="@+id/mEt5"
+                 
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
-            </RelativeLayout>
-                <View 
-                android:layout_width="fill_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/black"
-                />    <RelativeLayout 
+            </LinearLayout>
+                 <LinearLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-               
+                android:visibility="gone"
+                android:orientation="horizontal"
                 >
                 <TextView 
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:text="@string/zg19"
-                    android:layout_marginLeft="10dp"
                     android:textSize="20sp"
                     android:textColor="@color/my1"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
+                  <EditText  android:gravity="right"   android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/mV4x"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
+                    android:id="@+id/mEt6"
+                 
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
-            </RelativeLayout>
-                <View 
+            </LinearLayout>
+                        <View 
                 android:layout_width="fill_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/black"
-                />
-            
-            <RelativeLayout 
+                />       <LinearLayout 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                           android:layout_marginBottom="20dp"
-               
+                android:orientation="horizontal"
                 >
                 <TextView 
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
                     android:text="@string/abc50"
-                    android:layout_marginLeft="10dp"
                     android:textSize="20sp"
                     android:textColor="@color/my1"
                     />
-                <TextView 
-                    android:layout_width="wrap_content"
+                  <EditText  android:gravity="right"   android:focusableInTouchMode="false"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/mV5"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
+                    android:id="@+id/mEt7"
+                 
                     android:textSize="17sp"
                     android:textColor="@color/black"
                     />
-            </RelativeLayout>
+            </LinearLayout>
+                        <View 
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/black"
+                />    
+            
+            
+           
         </LinearLayout>
     </RelativeLayout>
     

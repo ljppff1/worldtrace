@@ -224,12 +224,20 @@ public class ChatActivity extends BaseActivity implements OnClickListener, EMEve
     };
 	private String number;
 	private TextView name;
+	private RelativeLayout mRlgs1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chat);
-		
+		mRlgs1 =(RelativeLayout)this.findViewById(R.id.mRlgs1);
+		mRlgs1.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+
         File file = null;
         try {
             file = new File(SDPATH);
@@ -279,7 +287,28 @@ private void login() {
         }
     });
     }
+public void changenick(){
+    new Thread(new Runnable() {
 
+        @Override
+        public void run() {
+/*            boolean updatenick = ((DemoHXSDKHelper)HXSDKHelper.getInstance()).getUserProfileManager().updateParseNickName("asdf");
+            if (!updatenick) {
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                    }
+                });
+            } else {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                    }
+                });
+            }
+*/        }
+    }).start();
+
+}
 	       
 		
 		
@@ -458,7 +487,7 @@ void initView1(){
 	//	chatType = getIntent().getIntExtra("chatType", CHATTYPE_SINGLE);
 		chatType =CHATTYPE_SINGLE;
 
-		if (chatType == CHATTYPE_SINGLE) { // 鍗曡亰
+		if (chatType == CHATTYPE_SINGLE) { 
 			toChatUsername = getIntent().getStringExtra("userId");
 		 //   toChatUsername="j";
 			Map<String,RobotUser> robotMap=((DemoHXSDKHelper)HXSDKHelper.getInstance()).getRobotList();
@@ -478,8 +507,6 @@ void initView1(){
 			}
 		} else {
 			// 缇よ亰
-			findViewById(R.id.container_to_group).setVisibility(View.VISIBLE);
-			findViewById(R.id.container_remove).setVisibility(View.GONE);
 			toChatUsername = getIntent().getStringExtra("groupId");
 
 			if(chatType == CHATTYPE_GROUP){
@@ -604,7 +631,6 @@ void initView1(){
 	}
 	
 	protected void onChatRoomViewCreation(){
-        findViewById(R.id.container_to_group).setVisibility(View.GONE);
         
         final ProgressDialog pd = ProgressDialog.show(this, "", "Joining......");
         EMChatManager.getInstance().joinChatRoom(toChatUsername, new EMValueCallBack<EMChatRoom>() {

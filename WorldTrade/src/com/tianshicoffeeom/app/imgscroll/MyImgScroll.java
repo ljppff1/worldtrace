@@ -65,7 +65,7 @@ public class MyImgScroll extends ViewPager {
 		this.setAdapter(new MyPagerAdapter());// 设置适配器
 		if (scrollTime != 0 && imgList.size() > 1) {
 			// 设置滑动动画时间  ,如果用默认动画时间可不用 ,反射技术实现
-			 new FixedSpeedScroller(mActivity).setDuration(this, 700);
+			 new FixedSpeedScroller(mActivity).setDuration(this, 3000);
 	
 			startTimer();
 			// 触摸时停止滚动

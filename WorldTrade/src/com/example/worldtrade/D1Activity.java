@@ -59,6 +59,12 @@ public class D1Activity extends BaseActivity {
 			if("c".equals(what)){
 				mTvv1.setText("廣告查詢");				
 			}
+			if("d".equals(what)){
+				mTvv1.setText("權限聲明");				
+			}
+			if("e".equals(what)){
+				mTvv1.setText("條款細則");				
+			}
 		}else{
 			if("a".equals(what)){
 				mTvv1.setText("About Worldwide Trade");				
@@ -69,6 +75,12 @@ public class D1Activity extends BaseActivity {
 			}
 			if("c".equals(what)){
 				mTvv1.setText("Advertising Enquiry");	mTvv1.setTextSize(16);
+			}
+			if("d".equals(what)){
+				mTvv1.setText("Permission declaration");	mTvv1.setTextSize(16);
+			}
+			if("e".equals(what)){
+				mTvv1.setText("Terms conditions");	mTvv1.setTextSize(16);
 			}
 		}
 
@@ -95,6 +107,12 @@ public class D1Activity extends BaseActivity {
        }
        if("c".equals(what)){
     	   url ="http://pine.i3.com.hk/trade/json/infoshow.php?infoid=3";
+       }
+       if("d".equals(what)){
+    	   url ="http://pine.i3.com.hk/trade/json/infoshow.php?infoid=4";
+       }
+       if("e".equals(what)){
+    	   url ="http://pine.i3.com.hk/trade/json/infoshow.php?infoid=5";
        }
 		 RequestParams params = new RequestParams();
        List<NameValuePair> nameValuePairs=new ArrayList<NameValuePair>(10);
